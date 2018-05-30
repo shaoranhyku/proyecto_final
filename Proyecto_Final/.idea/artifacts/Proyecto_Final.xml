@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="Proyecto_Final">
+    <output-path>$PROJECT_DIR$/out/artifacts/Proyecto_Final</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="Main" />
+        <option name="description" value="" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="Prueba Build Proyecto" />
+        <option name="vendor" value="" />
+        <option name="version" value="0.0.1" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="Proyecto_Final.jar">
+        <element id="module-output" name="Proyecto_Final" />
+      </element>
+    </root>
+  </artifact>
+</component>

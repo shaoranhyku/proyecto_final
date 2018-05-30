@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="parent" prefHeight="150.0" prefWidth="800.0" style="-fx-border-color: black; -fx-border-radius: 2px; -fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ListItem_AsignacionDiaController">
+   <children>
+      <Label fx:id="lbl_asignatura" layoutX="14.0" layoutY="14.0" text="ASIGNATURA" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="16.0">
+         <font>
+            <Font name="System Italic" size="25.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl_hora" layoutX="188.0" layoutY="17.0" text="14:34 - Quedan X horas." AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="16.0">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl_nombreAsignacion" layoutX="10.0" layoutY="46.0" text="NOMBRE ASIGNACION" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="55.0">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl_descripcion" layoutX="14.0" layoutY="106.0" prefHeight="27.0" prefWidth="778.0" text="Descripcion  larga larga largalarga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga  Descripcion  larga larga largalarga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga " wrapText="true" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="108.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

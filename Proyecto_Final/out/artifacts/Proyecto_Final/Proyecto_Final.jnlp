@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="Proyecto_Final.jnlp">
+  <information>
+    <title>Prueba Build Proyecto</title>
+    <vendor>Unknown</vendor>
+    <description>Proyecto_Final</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="Proyecto_Final.jar" size="27194" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="600" height="400" main-class="Main"  name="Proyecto_Final" />
+  <update check="background"/>
+</jnlp>

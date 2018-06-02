@@ -21,10 +21,14 @@ public class ListItem_AsignacionDiaController {
     @FXML
     private Label lbl_descripcion;
     @FXML
+    private Label lbl_entregado;
+    @FXML
     private AnchorPane parent;
 
     private double lbl_descripcion_height;
     private double parent_height;
+    private String LBL_ENTREGADO_TRUE = "Entregado";
+    private String LBL_ENTREGADO_FALSE = "";
 
     public void initialize() {
         lbl_descripcion_height = lbl_descripcion.getPrefHeight();
@@ -71,6 +75,12 @@ public class ListItem_AsignacionDiaController {
         }
 
         parent.setPrefHeight(parent.getPrefHeight() + sumatorio);
+
+        if(asignacion.isEntregado()){
+            lbl_entregado.setText(LBL_ENTREGADO_TRUE);
+        }else{
+            lbl_entregado.setText(LBL_ENTREGADO_FALSE);
+        }
     }
 
     public double getHeight() {

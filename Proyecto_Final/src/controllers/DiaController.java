@@ -29,30 +29,38 @@ public class DiaController {
 
         // TODO: Buscar en la base de datos y hacer cosas
         ArrayList<Asignacion> asignaciones = new ArrayList<>();
-        asignaciones.add(new Asignacion("Asignacion 1",
-                "Asignatura 1",
-                "Descripcionc larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga",
-                LocalDateTime.of(2018, 9, 12, 15, 23)));
+        asignaciones.add(new Asignacion("EXPOSICIÓN FINAL DE PROYECTO EMPRESARIAL",
+                "Libre Configuración: PHP MySQL",
+                "Descripcionc larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga la",
+                LocalDateTime.of(2018, 9, 12, 15, 23), false));
+        asignaciones.add(new Asignacion("EXPOSICIÓN FINAL DE PROYECTO EMPRESARIAL",
+                "Libre Configuración: PHP MySQL",
+                "Descripcionc larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga la",
+                LocalDateTime.of(2018, 9, 12, 15, 23), true));
+        asignaciones.add(new Asignacion("kk",
+                "pp",
+                "Descripcion",
+                LocalDateTime.of(2018, 9, 12, 15, 23), false));
         asignaciones.add(new Asignacion("Asignacion 2",
                 "Asignatura 2",
                 "Descripcionc larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga",
-                LocalDateTime.of(2018, 5, 30, 21, 0)));
+                LocalDateTime.of(2018, 5, 30, 21, 0), true));
         asignaciones.add(new Asignacion("Asignacion 3",
                 "Asignatura 3",
                 "Descripcionc larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga",
-                LocalDateTime.of(2018, 5, 30, 21, 30)));
+                LocalDateTime.of(2018, 5, 30, 21, 30), true));
         asignaciones.add(new Asignacion("Asignacion 4",
                 "Asignatura 4",
                 "Descripcionc larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga",
-                LocalDateTime.of(2018, 5, 30, 23, 12)));
+                LocalDateTime.of(2018, 5, 30, 23, 12), false));
         asignaciones.add(new Asignacion("Asignacion 5",
                 "Asignatura 5",
                 "Descripcionc larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga",
-                LocalDateTime.of(2018, 6, 10, 23, 12)));
+                LocalDateTime.of(2018, 6, 10, 23, 12),false));
         asignaciones.add(new Asignacion("Asignacion 5",
                 "Asignatura 5",
                 "Descripcionc larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga",
-                LocalDateTime.of(2018, 7, 10, 23, 12)));
+                LocalDateTime.of(2018, 7, 10, 23, 12), true));
 
         ArrayList<Parent> asignacionesItemList = new ArrayList<>();
         double sumarioHeight = 0;

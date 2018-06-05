@@ -1,7 +1,6 @@
 package controllers;
 
-import javafx.scene.control.Button;
-import models.ItemListAsignacion;
+import models.AsignacionUltimaLista;
 import models.ItemListAsignatura;
 import models.Sesion;
 import javafx.collections.FXCollections;
@@ -35,7 +34,7 @@ public class PrincipalController {
     @FXML
     private BorderPane rootPane;
     private ObservableList<ItemListAsignatura> observableList_ItemList_asignaturas;
-    private ObservableList<ItemListAsignacion> observableList_ItemList_asignaciones;
+    private ObservableList<AsignacionUltimaLista> observableList_ItemList_asignaciones;
 
     public void initialize() {
         lbl_bienvenidaUsuario.setText(String.format("Bienvenido/a %s %s", Sesion.getInstance().getUsuario().getNombre(), Sesion.getInstance().getUsuario().getApellidos()));
@@ -47,22 +46,22 @@ public class PrincipalController {
                 new ItemListAsignatura("ItemListAsignatura 4", "ASG4"));
 
         observableList_ItemList_asignaciones = FXCollections.observableArrayList(
-                new ItemListAsignacion(1111, "Examen noseque 1", "99999999999999999999999999999999999999999999999999999999999999", LocalDate.now()),
-                new ItemListAsignacion(1111, "Examen Final Programación", "Asginatura 187654321345687", LocalDate.of(2018, 2, 3)),
-                new ItemListAsignacion(1111, "EXPOSICIÓN FINAL PROYECTO EMPRESARIAL", "Asginatura 2", LocalDate.of(2018, 7, 10)),
-                new ItemListAsignacion(1111, "1234512345123451234512345123451234512345", "Asginatura 2", LocalDate.of(2018, 9, 23)),
-                new ItemListAsignacion(1111, "Examen noseque 1", "99999999999999999999999999999999999999999999999999999999999999", LocalDate.now()),
-                new ItemListAsignacion(1111, "Examen Final Programación", "Asginatura 187654321345687", LocalDate.of(2018, 2, 3)),
-                new ItemListAsignacion(1111, "EXPOSICIÓN FINAL PROYECTO EMPRESARIAL", "Asginatura 2", LocalDate.of(2018, 7, 10)),
-                new ItemListAsignacion(1111, "1234512345123451234512345123451234512345", "Asginatura 2", LocalDate.of(2018, 9, 23)),
-                new ItemListAsignacion(1111, "Examen noseque 1", "99999999999999999999999999999999999999999999999999999999999999", LocalDate.now()),
-                new ItemListAsignacion(1111, "Examen Final Programación", "Asginatura 187654321345687", LocalDate.of(2018, 2, 3)),
-                new ItemListAsignacion(1111, "EXPOSICIÓN FINAL PROYECTO EMPRESARIAL", "Asginatura 2", LocalDate.of(2018, 7, 10)),
-                new ItemListAsignacion(1111, "1234512345123451234512345123451234512345", "Asginatura 2", LocalDate.of(2018, 9, 23)),
-                new ItemListAsignacion(1111, "Examen noseque 1", "99999999999999999999999999999999999999999999999999999999999999", LocalDate.now()),
-                new ItemListAsignacion(1111, "Examen Final Programación", "Asginatura 187654321345687", LocalDate.of(2018, 2, 3)),
-                new ItemListAsignacion(1111, "EXPOSICIÓN FINAL PROYECTO EMPRESARIAL", "Asginatura 2", LocalDate.of(2018, 7, 10)),
-                new ItemListAsignacion(1111, "1234512345123451234512345123451234512345", "Asginatura 2", LocalDate.of(2018, 9, 23))
+                new AsignacionUltimaLista(1111, "Examen noseque 1", "99999999999999999999999999999999999999999999999999999999999999", LocalDate.now()),
+                new AsignacionUltimaLista(1111, "Examen Final Programación", "Asginatura 187654321345687", LocalDate.of(2018, 2, 3)),
+                new AsignacionUltimaLista(1111, "EXPOSICIÓN FINAL PROYECTO EMPRESARIAL", "Asginatura 2", LocalDate.of(2018, 7, 10)),
+                new AsignacionUltimaLista(1111, "1234512345123451234512345123451234512345", "Asginatura 2", LocalDate.of(2018, 9, 23)),
+                new AsignacionUltimaLista(1111, "Examen noseque 1", "99999999999999999999999999999999999999999999999999999999999999", LocalDate.now()),
+                new AsignacionUltimaLista(1111, "Examen Final Programación", "Asginatura 187654321345687", LocalDate.of(2018, 2, 3)),
+                new AsignacionUltimaLista(1111, "EXPOSICIÓN FINAL PROYECTO EMPRESARIAL", "Asginatura 2", LocalDate.of(2018, 7, 10)),
+                new AsignacionUltimaLista(1111, "1234512345123451234512345123451234512345", "Asginatura 2", LocalDate.of(2018, 9, 23)),
+                new AsignacionUltimaLista(1111, "Examen noseque 1", "99999999999999999999999999999999999999999999999999999999999999", LocalDate.now()),
+                new AsignacionUltimaLista(1111, "Examen Final Programación", "Asginatura 187654321345687", LocalDate.of(2018, 2, 3)),
+                new AsignacionUltimaLista(1111, "EXPOSICIÓN FINAL PROYECTO EMPRESARIAL", "Asginatura 2", LocalDate.of(2018, 7, 10)),
+                new AsignacionUltimaLista(1111, "1234512345123451234512345123451234512345", "Asginatura 2", LocalDate.of(2018, 9, 23)),
+                new AsignacionUltimaLista(1111, "Examen noseque 1", "99999999999999999999999999999999999999999999999999999999999999", LocalDate.now()),
+                new AsignacionUltimaLista(1111, "Examen Final Programación", "Asginatura 187654321345687", LocalDate.of(2018, 2, 3)),
+                new AsignacionUltimaLista(1111, "EXPOSICIÓN FINAL PROYECTO EMPRESARIAL", "Asginatura 2", LocalDate.of(2018, 7, 10)),
+                new AsignacionUltimaLista(1111, "1234512345123451234512345123451234512345", "Asginatura 2", LocalDate.of(2018, 9, 23))
         );
 
         listView_asignaturas.setItems(observableList_ItemList_asignaturas);
@@ -79,9 +78,7 @@ public class PrincipalController {
 
         listView_ultimasAsignaciones.setCellFactory(param -> new CellUltimaAsignacion(mouseEvent -> {
             if (mouseEvent.getButton().equals(MouseButton.PRIMARY)) {
-                if (mouseEvent.getClickCount() == 2) {
-                    System.out.print(((Parent) mouseEvent.getSource()).getUserData().toString());
-                }
+                setCenterAsignacion(Integer.parseInt(((Parent) mouseEvent.getSource()).getUserData().toString()));
             }
         }));
 
@@ -122,6 +119,22 @@ public class PrincipalController {
         DiaController controller = loader.getController();
         controller.setDiaActual(fechaDia);
         rootPane.setCenter(center);
+    }
+
+    public void setCenterAsignacion(int codigoAsignacion) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ui/node_asignacion.fxml"));
+
+        Parent center = null;
+
+        try {
+            center = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        AsignacionController controller = loader.getController();
+        rootPane.setCenter(center);
+        controller.setAsignacion(codigoAsignacion);
     }
 
     public void cerrarSesion(ActionEvent actionEvent) {
@@ -171,7 +184,7 @@ public class PrincipalController {
         }
     }
 
-    private class CellUltimaAsignacion extends ListCell<ItemListAsignacion> {
+    private class CellUltimaAsignacion extends ListCell<AsignacionUltimaLista> {
         private Parent itemRoot;
         private Label lbl_fechaEntrega;
         private EventHandler<MouseEvent> callback;
@@ -184,9 +197,9 @@ public class PrincipalController {
         }
 
         @Override
-        protected void updateItem(ItemListAsignacion itemListAsignacion, boolean empty) {
-            super.updateItem(itemListAsignacion, empty);
-            if (itemListAsignacion == null) {
+        protected void updateItem(AsignacionUltimaLista asignacionUltimaLista, boolean empty) {
+            super.updateItem(asignacionUltimaLista, empty);
+            if (asignacionUltimaLista == null) {
                 setText(null);
                 setGraphic(null);
                 return;
@@ -204,10 +217,10 @@ public class PrincipalController {
                 lbl_nombreAsignacion = (Label) itemRoot.lookup("#lbl_nombreAsignacion");
                 itemRoot.setOnMouseClicked(callback);
             }
-            itemRoot.setUserData(itemListAsignacion);
-            lbl_fechaEntrega.setText(itemListAsignacion.getFechaEntrega().toString());
-            lbl_nombreAsignatura.setText(itemListAsignacion.getNombreAsignatura());
-            lbl_nombreAsignacion.setText(itemListAsignacion.getNombreAsignacion());
+            itemRoot.setUserData(asignacionUltimaLista.getCodAsignacion());
+            lbl_fechaEntrega.setText(asignacionUltimaLista.getFechaEntrega().toString());
+            lbl_nombreAsignatura.setText(asignacionUltimaLista.getNombreAsignatura());
+            lbl_nombreAsignacion.setText(asignacionUltimaLista.getNombreAsignacion());
             controller.recalculateSize();
             setGraphic(itemRoot);
         }

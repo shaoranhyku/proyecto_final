@@ -2,13 +2,13 @@ package models;
 
 import java.time.LocalDate;
 
-public class ItemListAsignacion {
+public class AsignacionUltimaLista {
     private int codAsignacion;
     private String nombreAsignacion;
     private String nombreAsignatura;
     private LocalDate fechaEntrega;
 
-    public ItemListAsignacion(int codAsignacion, String nombreAsignacion, String nombreAsignatura, LocalDate fechaEntrega) {
+    public AsignacionUltimaLista(int codAsignacion, String nombreAsignacion, String nombreAsignatura, LocalDate fechaEntrega) {
         this.codAsignacion = codAsignacion;
         this.nombreAsignacion = nombreAsignacion;
         this.nombreAsignatura = nombreAsignatura;

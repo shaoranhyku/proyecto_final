@@ -6,12 +6,14 @@ public class Usuario {
     private String clave;
     private String nombre;
     private String apellidos;
+    private String nombreGit;
 
-    public Usuario(String nombreLogin, String clave, String nombre, String apellidos) {
+    public Usuario(String nombreLogin, String clave, String nombre, String apellidos, String nombreGit) {
         this.nombreLogin = nombreLogin;
         this.clave = clave;
         this.nombre = nombre;
         this.apellidos = apellidos;
+        this.nombreGit = nombreGit;
     }
 
     public String getNombreLogin() {
@@ -44,5 +46,13 @@ public class Usuario {
 
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
+    }
+
+    public String getNombreGit() {
+        return nombreGit;
+    }
+
+    public void setNombreGit(String nombreGit) {
+        this.nombreGit = nombreGit;
     }
 }

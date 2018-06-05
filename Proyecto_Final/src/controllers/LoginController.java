@@ -41,7 +41,9 @@ public class LoginController {
         if (resultado.next()) {
             String nombre = resultado.getString(2);
             String apellidos = resultado.getString(3);
-            Sesion.crearSesion(new Usuario(usuario, clave, nombre, apellidos));
+            // TODO: Sacar usuario git
+            String nombreGit = "pruebausuariogit";
+            Sesion.crearSesion(new Usuario(usuario, clave, nombre, apellidos, nombreGit));
             Node node = (Node) actionEvent.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             Parent root = FXMLLoader.load(getClass().getResource("/fxml/ui/scene_principal.fxml"));/* Exception */

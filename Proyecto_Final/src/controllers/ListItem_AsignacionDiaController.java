@@ -1,11 +1,9 @@
 package controllers;
 
-import com.mysql.jdbc.StringUtils;
-import controllers.Utils;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import models.Asignacion;
+import models.AsignacionLista;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -35,26 +33,26 @@ public class ListItem_AsignacionDiaController {
         parent_height = parent.getPrefHeight();
     }
 
-    public void setAsignacion(Asignacion asignacion) {
+    public void setAsignacion(AsignacionLista asignacionLista) {
         int sumatorio = 0;
         lbl_descripcion.setPrefHeight(lbl_descripcion_height);
         parent.setPrefHeight(parent_height);
 
-        lbl_asignatura.setText(asignacion.getAsignatura());
-        lbl_nombreAsignacion.setText(asignacion.getNombre());
-        lbl_descripcion.setText(asignacion.getDescripcion());
+        lbl_asignatura.setText(asignacionLista.getAsignatura());
+        lbl_nombreAsignacion.setText(asignacionLista.getNombreAsignacion());
+        lbl_descripcion.setText(asignacionLista.getDescripcion());
 
         // Creo la cadena que indica la hora del dia en la que se entrega
-        String horaEntrega = String.format("%s:%s - ", asignacion.getFechaEntrega().getHour(), asignacion.getFechaEntrega().getMinute());
+        String horaEntrega = String.format("%s:%s - ", asignacionLista.getFechaEntrega().getHour(), asignacionLista.getFechaEntrega().getMinute());
 
         // Obtengo los dias, horas y minutos restantes
         LocalDateTime actual = LocalDateTime.now();
         LocalDateTime tempDateTime = LocalDateTime.from(actual);
-        long diasRestantes = tempDateTime.until(asignacion.getFechaEntrega(), ChronoUnit.DAYS);
+        long diasRestantes = tempDateTime.until(asignacionLista.getFechaEntrega(), ChronoUnit.DAYS);
         tempDateTime = tempDateTime.plusDays(diasRestantes);
-        long horasRestanttes = tempDateTime.until(asignacion.getFechaEntrega(), ChronoUnit.HOURS);
+        long horasRestanttes = tempDateTime.until(asignacionLista.getFechaEntrega(), ChronoUnit.HOURS);
         tempDateTime = tempDateTime.plusHours(horasRestanttes);
-        long minutosRestantes = tempDateTime.until(asignacion.getFechaEntrega(), ChronoUnit.MINUTES);
+        long minutosRestantes = tempDateTime.until(asignacionLista.getFechaEntrega(), ChronoUnit.MINUTES);
 
         // Creo cadenas para las hora, dias y minutos restantes si son mayores que 1
         if(diasRestantes>1){
@@ -76,7 +74,7 @@ public class ListItem_AsignacionDiaController {
 
         parent.setPrefHeight(parent.getPrefHeight() + sumatorio);
 
-        if(asignacion.isEntregado()){
+        if(asignacionLista.isEntregado()){
             lbl_entregado.setText(LBL_ENTREGADO_TRUE);
         }else{
             lbl_entregado.setText(LBL_ENTREGADO_FALSE);

@@ -70,7 +70,7 @@
                <Font size="20.0" />
             </font>
          </Label>
-         <TextField fx:id="txt_notaAuto" alignment="CENTER" editable="false" layoutX="1000.0" layoutY="266.0" prefHeight="44.0" prefWidth="50.0" AnchorPane.rightAnchor="188.0" AnchorPane.topAnchor="266.0">
+         <TextField fx:id="txt_notaAuto" alignment="CENTER" layoutX="1000.0" layoutY="266.0" prefHeight="44.0" prefWidth="50.0" AnchorPane.rightAnchor="188.0" AnchorPane.topAnchor="266.0">
             <font>
                <Font size="20.0" />
             </font>

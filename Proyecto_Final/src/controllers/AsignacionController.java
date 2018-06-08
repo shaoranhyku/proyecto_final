@@ -1,5 +1,9 @@
 package controllers;
 
+import com.sun.deploy.uitoolkit.impl.fx.HostServicesFactory;
+import com.sun.javafx.application.HostServicesDelegate;
+import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
@@ -7,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import models.AsignacionAlumno;
 import models.CriterioEvaluacionAlumno;
 import models.Sesion;
@@ -17,7 +22,7 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 
-public class AsignacionController {
+public class AsignacionController extends Application {
     public Label lbl_nombreAsignatura;
     public Label lbl_tema;
     public Label lbl_nombreAsignacion;
@@ -31,6 +36,7 @@ public class AsignacionController {
     public TextField txt_notaEval;
     public Button btn_entregar;
     public VBox vbox_criteriosEvaluacion;
+    public PrincipalController callBack;
 
     public void setAsignacion(int codigoAsignacion) {
         ArrayList<String> temas = new ArrayList<>();
@@ -123,5 +129,15 @@ public class AsignacionController {
         }
 
         vbox_criteriosEvaluacion.getChildren().setAll(criteriosLista);
+    }
+
+    public void abrirNavegador(ActionEvent actionEvent) {
+        HostServicesDelegate hostServices = HostServicesFactory.getInstance(this);
+        hostServices.showDocument("https://github.com/shaoranhyku/proyecto_final/blob/master/Documentacion/Proyecto%20Final.pdf");
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+
     }
 }

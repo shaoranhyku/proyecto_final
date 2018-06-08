@@ -1,9 +1,12 @@
 package controllers;
 
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
+import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import models.AsignacionLista;
 
@@ -17,6 +20,7 @@ public class DiaController {
     public Label lbl_diaActual;
     public VBox vbox_asiginaciones;
     LocalDate diaActual;
+    public PrincipalController callBack;
 
     public void initialize() {
 
@@ -76,6 +80,9 @@ public class DiaController {
 
             ListItem_AsignacionDiaController controller = loader.getController();
             controller.setAsignacion(asignacionLista);
+            node.setOnMouseEntered(event -> vbox_asiginaciones.getScene().setCursor(Cursor.HAND));
+            node.setOnMouseExited(event -> vbox_asiginaciones.getScene().setCursor(Cursor.DEFAULT));
+            node.setOnMouseClicked(event -> callBack.setCenterAsignacion(asignacionLista.getCodigoAsignacion()));
 
             asignacionesItemList.add(node);
             sumarioHeight += controller.getHeight() + 20;

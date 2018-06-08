@@ -1,5 +1,6 @@
 package controllers;
 
+import javafx.scene.Cursor;
 import models.AsignacionUltimaLista;
 import models.ItemListAsignatura;
 import models.Sesion;
@@ -74,6 +75,8 @@ public class PrincipalController {
             }
         }));
 
+        listView_asignaturas.setOnMousePressed(event -> listView_asignaturas.getSelectionModel().clearSelection());
+
         listView_ultimasAsignaciones.setItems(observableList_ItemList_asignaciones);
 
         listView_ultimasAsignaciones.setCellFactory(param -> new CellUltimaAsignacion(mouseEvent -> {
@@ -81,6 +84,8 @@ public class PrincipalController {
                 setCenterAsignacion(Integer.parseInt(((Parent) mouseEvent.getSource()).getUserData().toString()));
             }
         }));
+
+        listView_ultimasAsignaciones.setOnMousePressed(event -> listView_ultimasAsignaciones.getSelectionModel().clearSelection());
 
         setCenterCalendario();
     }
@@ -117,6 +122,7 @@ public class PrincipalController {
         }
 
         DiaController controller = loader.getController();
+        controller.callBack = this;
         controller.setDiaActual(fechaDia);
         rootPane.setCenter(center);
     }
@@ -133,6 +139,7 @@ public class PrincipalController {
         }
 
         AsignacionController controller = loader.getController();
+        controller.callBack = this;
         rootPane.setCenter(center);
         controller.setAsignacion(codigoAsignacion);
     }
@@ -179,6 +186,8 @@ public class PrincipalController {
                 itemRoot.setOnMouseClicked(callback);
             }
             itemRoot.setUserData(itemListAsignatura);
+            itemRoot.setOnMouseEntered(event -> itemRoot.getScene().setCursor(Cursor.HAND));
+            itemRoot.setOnMouseExited(event -> itemRoot.getScene().setCursor(Cursor.DEFAULT));
             lbl_nombre.setText(itemListAsignatura.getNombreAsignatura());
             setGraphic(itemRoot);
         }
@@ -218,6 +227,8 @@ public class PrincipalController {
                 itemRoot.setOnMouseClicked(callback);
             }
             itemRoot.setUserData(asignacionUltimaLista.getCodAsignacion());
+            itemRoot.setOnMouseEntered(event -> itemRoot.getScene().setCursor(Cursor.HAND));
+            itemRoot.setOnMouseExited(event -> itemRoot.getScene().setCursor(Cursor.DEFAULT));
             lbl_fechaEntrega.setText(asignacionUltimaLista.getFechaEntrega().toString());
             lbl_nombreAsignatura.setText(asignacionUltimaLista.getNombreAsignatura());
             lbl_nombreAsignacion.setText(asignacionUltimaLista.getNombreAsignacion());

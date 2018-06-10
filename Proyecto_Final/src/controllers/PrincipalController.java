@@ -69,9 +69,7 @@ public class PrincipalController {
 
         listView_asignaturas.setCellFactory(param -> new CellAsignatura(mouseEvent -> {
             if (mouseEvent.getButton().equals(MouseButton.PRIMARY)) {
-                if (mouseEvent.getClickCount() == 2) {
-                    System.out.print(((Parent) mouseEvent.getSource()).getUserData().toString());
-                }
+                setCenterAsignatura(((Parent) mouseEvent.getSource()).getUserData().toString());
             }
         }));
 
@@ -124,6 +122,23 @@ public class PrincipalController {
         DiaController controller = loader.getController();
         controller.callBack = this;
         controller.setDiaActual(fechaDia);
+        rootPane.setCenter(center);
+    }
+
+    public void setCenterAsignatura(String codAsignatura) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ui/node_asignatura.fxml"));
+
+        Parent center = null;
+
+        try {
+            center = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        AsignaturaController controller = loader.getController();
+        controller.callBack = this;
+        controller.setAsignatura(codAsignatura);
         rootPane.setCenter(center);
     }
 
@@ -185,7 +200,7 @@ public class PrincipalController {
                 lbl_nombre = (Label) itemRoot.lookup("#lbl_nombre");
                 itemRoot.setOnMouseClicked(callback);
             }
-            itemRoot.setUserData(itemListAsignatura);
+            itemRoot.setUserData(itemListAsignatura.getCodigoAsignatura());
             itemRoot.setOnMouseEntered(event -> itemRoot.getScene().setCursor(Cursor.HAND));
             itemRoot.setOnMouseExited(event -> itemRoot.getScene().setCursor(Cursor.DEFAULT));
             lbl_nombre.setText(itemListAsignatura.getNombreAsignatura());

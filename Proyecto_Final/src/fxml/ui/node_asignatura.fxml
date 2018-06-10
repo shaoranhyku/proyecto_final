@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1240.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AsignaturaController">
+   <children>
+      <Label fx:id="lbl_nombreAsignatura" layoutX="14.0" layoutY="14.0" text="NOMBRE ASIGNATURA" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="16.0">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
+      <TabPane layoutY="77.0" prefHeight="643.0" prefWidth="1240.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="80.0">
+        <tabs>
+          <Tab text="Asignaciones">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ScrollPane fitToWidth="true" layoutY="11.0" pannable="true" prefHeight="587.0" prefWidth="1208.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="16.0">
+                           <content>
+                              <VBox fx:id="vbox_asiginaciones" minHeight="-Infinity" minWidth="860.0" prefHeight="579.0" prefWidth="1206.0" />
+                           </content>
+                        </ScrollPane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Temas">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ScrollPane fitToWidth="true" layoutX="19.0" layoutY="19.0" pannable="true" prefHeight="587.0" prefWidth="1208.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="16.0">
+                           <content>
+                              <VBox fx:id="vbox_temas" minHeight="-Infinity" minWidth="860.0" prefHeight="579.0" prefWidth="1206.0" />
+                           </content>
+                        </ScrollPane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

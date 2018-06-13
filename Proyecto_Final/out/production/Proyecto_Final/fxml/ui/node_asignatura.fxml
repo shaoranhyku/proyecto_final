@@ -21,9 +21,9 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <ScrollPane fitToWidth="true" layoutY="11.0" pannable="true" prefHeight="587.0" prefWidth="1208.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="16.0">
+                        <ScrollPane fitToWidth="true" layoutY="11.0" pannable="true" prefHeight="443.0" prefWidth="1208.0" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="16.0">
                            <content>
-                              <VBox fx:id="vbox_asiginaciones" minHeight="-Infinity" minWidth="860.0" prefHeight="579.0" prefWidth="1206.0" />
+                              <VBox fx:id="vbox_asiginaciones" minHeight="-Infinity" minWidth="860.0" prefHeight="207.0" prefWidth="1206.0" />
                            </content>
                         </ScrollPane>
                      </children></AnchorPane>
@@ -35,7 +35,7 @@
                      <children>
                         <ScrollPane fitToWidth="true" layoutX="19.0" layoutY="19.0" pannable="true" prefHeight="587.0" prefWidth="1208.0" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="16.0">
                            <content>
-                              <VBox fx:id="vbox_temas" minHeight="-Infinity" minWidth="860.0" prefHeight="579.0" prefWidth="1206.0" />
+                              <VBox fx:id="vbox_temas" minHeight="-Infinity" minWidth="860.0" prefHeight="571.0" prefWidth="1202.0" />
                            </content>
                         </ScrollPane>
                      </children></AnchorPane>

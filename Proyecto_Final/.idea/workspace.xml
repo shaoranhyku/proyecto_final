@@ -74,7 +74,56 @@
     <favorites_list name="JavaFxApplication" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="node_temario.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fxml/ui/node_temario.fxml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="89" column="22" lean-forward="false" selection-start-line="89" selection-start-column="22" selection-end-line="89" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="node_asignatura.fxml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/fxml/ui/node_asignatura.fxml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="598">
+              <caret line="37" column="49" lean-forward="false" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TemarioController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controllers/TemarioController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="483">
+              <caret line="22" column="2234" lean-forward="false" selection-start-line="22" selection-start-column="2234" selection-end-line="22" selection-end-column="2234" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PrincipalController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controllers/PrincipalController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="39" column="4" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -107,8 +156,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/calendario/CalendarioController.java" />
-        <option value="$PROJECT_DIR$/src/calendario/models/Usuario.java" />
         <option value="$PROJECT_DIR$/src/calendario/models/Sesion.java" />
         <option value="$PROJECT_DIR$/src/calendario/fxml/ui/principal.fxml" />
         <option value="$PROJECT_DIR$/src/calendario/controllers/CalendarioController.java" />
@@ -151,12 +198,14 @@
         <option value="$PROJECT_DIR$/src/controllers/LoginController.java" />
         <option value="$PROJECT_DIR$/src/models/CriterioEvaluacionAlumno.java" />
         <option value="$PROJECT_DIR$/src/controllers/ListItem_CriterioEvaluacion.java" />
-        <option value="$PROJECT_DIR$/src/fxml/ui/node_asignacion.fxml" />
         <option value="$PROJECT_DIR$/src/controllers/AsignacionController.java" />
         <option value="$PROJECT_DIR$/src/controllers/DiaController.java" />
         <option value="$PROJECT_DIR$/src/fxml/ui/scene_principal.fxml" />
         <option value="$PROJECT_DIR$/src/controllers/AsignaturaController.java" />
         <option value="$PROJECT_DIR$/src/controllers/PrincipalController.java" />
+        <option value="$PROJECT_DIR$/src/controllers/TemarioController.java" />
+        <option value="$PROJECT_DIR$/src/fxml/ui/node_temario.fxml" />
+        <option value="$PROJECT_DIR$/src/fxml/ui/node_asignacion.fxml" />
         <option value="$PROJECT_DIR$/src/fxml/ui/node_asignatura.fxml" />
       </list>
     </option>
@@ -198,6 +247,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -261,10 +311,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -289,9 +338,12 @@
     <property name="GenerateAntBuildDialog.outputFileNameProperty" value="proyecto_final" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="calendario.models" />
-      <recent name="sample" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\AndroidConFran\Desktop\Prueba_calendario\src\main\fxml\ui" />
+      <recent name="C:\Users\AndroidConFran\Desktop\Prueba_calendario\src\main" />
+      <recent name="C:\Users\AndroidConFran\Desktop\Prueba_calendario\src\main\fxml\item" />
+      <recent name="C:\Users\AndroidConFran\Desktop\Prueba_calendario\src\calendario\fxml\item" />
+      <recent name="C:\Users\AndroidConFran\Desktop\Prueba_calendario\src\calendario\fxml\ui" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\AndroidConFran\Desktop\proyecto_final\Proyecto_Final\src\fxml\ui" />
@@ -299,12 +351,9 @@
       <recent name="C:\Users\AndroidConFran\Desktop\Prueba_calendario\src\main\fxml\ui" />
       <recent name="C:\Users\AndroidConFran\Desktop\Prueba_calendario\src\sample" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\AndroidConFran\Desktop\Prueba_calendario\src\main\fxml\ui" />
-      <recent name="C:\Users\AndroidConFran\Desktop\Prueba_calendario\src\main" />
-      <recent name="C:\Users\AndroidConFran\Desktop\Prueba_calendario\src\main\fxml\item" />
-      <recent name="C:\Users\AndroidConFran\Desktop\Prueba_calendario\src\calendario\fxml\item" />
-      <recent name="C:\Users\AndroidConFran\Desktop\Prueba_calendario\src\calendario\fxml\ui" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="calendario.models" />
+      <recent name="sample" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -606,11 +655,13 @@
       <workItem from="1528478068157" duration="2406000" />
       <workItem from="1528537347530" duration="613000" />
       <workItem from="1528625241861" duration="3585000" />
+      <workItem from="1528824298196" duration="2755000" />
+      <workItem from="1528902924052" duration="8980000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119105000" />
+    <option name="totallyTimeSpent" value="130840000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -637,7 +688,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13859275" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.124200426" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -721,20 +772,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://B:/GoogleDrive/Segundo_Curso/Acceso_Datos/Librerias/mysql-connector-java-5.1.45-bin.jar!/com/mysql/jdbc/StatementImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="128" column="95" lean-forward="false" selection-start-line="128" selection-start-column="95" selection-end-line="128" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_151/javafx-src.zip!/javafx/stage/Window.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/calendarioejemplo/fullCalendar.fxml" />
     <entry file="file://$PROJECT_DIR$/src/calendario/fxml/item/center_prueba.fxml" />
     <entry file="file://$PROJECT_DIR$/src/calendarioejemplo/FXMLMain.java" />
@@ -986,17 +1023,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fxml/ui/node_asignacion.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="1479">
-          <caret line="87" column="174" lean-forward="false" selection-start-line="87" selection-start-column="174" selection-end-line="87" selection-end-column="174" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/models/CriterioEvaluacionAlumno.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1044,32 +1070,36 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fxml/ui/node_asignatura.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="37" column="49" lean-forward="false" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/PrincipalController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="71" column="96" lean-forward="true" selection-start-line="71" selection-start-column="96" selection-end-line="71" selection-end-column="96" />
-          <folding>
-            <element signature="e#5604#5605#0" expanded="true" />
-            <element signature="e#5641#5642#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/AsignaturaController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="27" lean-forward="true" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/DiaController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="20" column="35" lean-forward="true" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/PrincipalController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="39" column="4" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/TemarioController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="22" column="2234" lean-forward="false" selection-start-line="22" selection-start-column="2234" selection-end-line="22" selection-end-column="2234" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1087,12 +1117,37 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/DiaController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="20" column="35" lean-forward="true" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
+    <entry file="file://$PROJECT_DIR$/src/fxml/ui/node_asignacion.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="87" column="205" lean-forward="false" selection-start-line="87" selection-start-column="205" selection-end-line="87" selection-end-column="205" />
           <folding />
         </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fxml/ui/node_temario.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="89" column="22" lean-forward="false" selection-start-line="89" selection-start-column="22" selection-end-line="89" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fxml/ui/node_asignatura.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="37" column="49" lean-forward="false" selection-start-line="37" selection-start-column="49" selection-end-line="37" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
       </provider>
     </entry>
   </component>

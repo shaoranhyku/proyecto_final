@@ -109,7 +109,8 @@ public class PrincipalController {
     }
 
     public void setCenterDia(LocalDate fechaDia) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ui/node_dia.fxml"));
+//        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ui/node_dia.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ui/node_temario.fxml"));
 
         Parent center = null;
 
@@ -119,9 +120,11 @@ public class PrincipalController {
             e.printStackTrace();
         }
 
-        DiaController controller = loader.getController();
-        controller.callBack = this;
-        controller.setDiaActual(fechaDia);
+        //DiaController controller = loader.getController();
+        TemarioController controller = loader.getController();
+
+//        controller.callBack = this;
+//        controller.setDiaActual(fechaDia);
         rootPane.setCenter(center);
     }
 

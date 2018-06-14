@@ -47,6 +47,7 @@ public class LoginController {
             Node node = (Node) actionEvent.getSource();
             Stage stage = (Stage) node.getScene().getWindow();
             Parent root = FXMLLoader.load(getClass().getResource("/fxml/ui/profesor/scene_profesor.fxml"));/* Exception */
+            //Parent root = FXMLLoader.load(getClass().getResource("/fxml/ui/alumno/scene_principal.fxml"));/* Exception */
             Scene scene = new Scene(root, 800, 600);
             stage.setScene(scene);
             stage.show();

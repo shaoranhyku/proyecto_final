@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" fillWidth="false" prefHeight="600.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.profesor.TemaController">
+   <children>
+      <AnchorPane minHeight="400.0" minWidth="100.0" prefHeight="600.0" prefWidth="1280.0">
+         <children>
+            <Label layoutX="124.0" layoutY="18.0" text="Tema padre" AnchorPane.leftAnchor="124.0" AnchorPane.topAnchor="18.0">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="cmb_temasPadre" layoutX="128.0" layoutY="72.0" prefHeight="35.0" prefWidth="420.0" AnchorPane.leftAnchor="128.0" AnchorPane.topAnchor="72.0" />
+            <Label layoutX="698.0" layoutY="14.0" text="Número de tema" AnchorPane.rightAnchor="326.0" AnchorPane.topAnchor="14.0">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_numeroTema" layoutX="707.0" layoutY="68.0" prefHeight="35.0" prefWidth="97.0" AnchorPane.rightAnchor="476.0" AnchorPane.topAnchor="68.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <Label layoutX="124.0" layoutY="124.0" text="Nombre" AnchorPane.leftAnchor="124.0" AnchorPane.topAnchor="124.0">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_nombre" layoutX="128.0" layoutY="178.0" prefHeight="35.0" prefWidth="366.0" AnchorPane.leftAnchor="128.0" AnchorPane.topAnchor="178.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <Label layoutX="124.0" layoutY="230.0" text="Fecha" AnchorPane.leftAnchor="124.0" AnchorPane.topAnchor="230.0">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Label>
+            <DatePicker fx:id="datepck_fecha" layoutX="128.0" layoutY="284.0" prefHeight="35.0" prefWidth="225.0" AnchorPane.leftAnchor="128.0" AnchorPane.topAnchor="284.0" />
+            <Label layoutX="124.0" layoutY="338.0" text="Descripción" AnchorPane.leftAnchor="124.0" AnchorPane.topAnchor="338.0">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="txt_descripcion" layoutX="128.0" layoutY="392.0" prefHeight="190.0" prefWidth="420.0" AnchorPane.leftAnchor="128.0" AnchorPane.topAnchor="392.0" />
+            <Label layoutX="698.0" layoutY="147.0" text="Enlaces" AnchorPane.rightAnchor="472.0" AnchorPane.topAnchor="147.0">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Label>
+            <Button graphicTextGap="1.0" layoutX="860.0" layoutY="157.0" mnemonicParsing="false" onAction="#btnAñadirEnlaceClick" prefHeight="24.0" prefWidth="87.0" text="Añadir" AnchorPane.rightAnchor="333.0" AnchorPane.topAnchor="157.0">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button graphicTextGap="1.0" layoutX="964.0" layoutY="157.0" mnemonicParsing="false" onAction="#btnEliminarEnlaceClick" prefHeight="24.0" prefWidth="87.0" text="Eliminar" AnchorPane.rightAnchor="229.0" AnchorPane.topAnchor="157.0">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <ListView fx:id="lst_enlaces" layoutX="718.0" layoutY="228.0" prefHeight="279.0" prefWidth="340.0" AnchorPane.bottomAnchor="93.0" AnchorPane.rightAnchor="222.0" AnchorPane.topAnchor="228.0" />
+            <Button graphicTextGap="1.0" layoutX="971.0" layoutY="534.0" mnemonicParsing="false" onAction="#btnGuardarClick" prefHeight="24.0" prefWidth="87.0" text="Guardar" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="222.0">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button disable="true" graphicTextGap="1.0" layoutX="860.0" layoutY="534.0" mnemonicParsing="false" onAction="#btnEliminarClick" prefHeight="24.0" prefWidth="87.0" text="Eliminar" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="333.0">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

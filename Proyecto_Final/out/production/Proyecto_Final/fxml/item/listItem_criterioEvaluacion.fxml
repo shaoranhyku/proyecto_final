@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="57.0" prefWidth="384.0" fx:controller="controllers.ListItem_CriterioEvaluacion" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="57.0" prefWidth="384.0" fx:controller="controllers.alumno.ListItem_CriterioEvaluacion" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
 <children>
     <Label fx:id="lbl_nombreCriterio" prefHeight="59.0" prefWidth="171.0" text="Código comentado" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
         <font>

@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="parent" minHeight="-Infinity" minWidth="-Infinity" prefHeight="145.0" prefWidth="860.0" style="-fx-border-color: black; -fx-border-radius: 2px; -fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ListItem_AsignacionDiaController">
+<AnchorPane fx:id="parent" minHeight="-Infinity" minWidth="-Infinity" prefHeight="145.0" prefWidth="860.0" style="-fx-border-color: black; -fx-border-radius: 2px; -fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.alumno.ListItem_AsignacionDiaController">
    <children>
       <Label fx:id="lbl_asignatura" layoutX="14.0" layoutY="14.0" text="ASIGNATURA" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="16.0">
          <font>

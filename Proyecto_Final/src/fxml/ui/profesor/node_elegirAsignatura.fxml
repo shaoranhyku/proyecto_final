@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="720.0" prefWidth="1240.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.profesor.ElegirAsignaturaController">
+      <AnchorPane prefHeight="718.0" prefWidth="1238.0">
+      <children>
+         <VBox alignment="CENTER" fillWidth="false" prefHeight="713.0" prefWidth="1232.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+               <Label alignment="CENTER" prefHeight="71.0" prefWidth="999999.0" text="Seleccione una asignatura:" textAlignment="CENTER">
+                  <font>
+                     <Font size="49.0" />
+                  </font>
+                  <VBox.margin>
+                     <Insets bottom="28.0" />
+                  </VBox.margin>
+               </Label>
+               <ListView fx:id="lst_asignaturas" prefHeight="337.0" prefWidth="267.0" />
+               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="334.0">
+                  <VBox.margin>
+                     <Insets top="18.0" />
+                  </VBox.margin>
+                  <children>
+                     <Button fx:id="btn_seleccionar" disable="true" mnemonicParsing="false" onAction="#seleccionarAsignatura" text="Seleccionar">
+                        <font>
+                           <Font size="24.0" />
+                        </font>
+                     </Button>
+                  </children>
+               </HBox>
+            </children>
+         </VBox>
+      </children>
+      </AnchorPane>
+</ScrollPane>

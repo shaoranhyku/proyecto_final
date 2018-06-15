@@ -26,7 +26,7 @@ public class ProfesorController {
     }
 
     public void setCenterElegirAsignaturas(ActionEvent actionEvent) {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ui/profesor/node_evaluarAsignacion.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ui/profesor/node_elegirProfesorAsignatura.fxml"));
 
         Parent center = null;
 

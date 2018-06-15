@@ -82,7 +82,7 @@
                   <Font size="20.0" />
                </font>
             </TextField>
-            <ScrollPane layoutX="733.0" layoutY="154.0">
+            <ScrollPane layoutX="719.0" layoutY="154.0" prefHeight="423.0" prefWidth="415.0">
                <content>
                   <VBox prefHeight="421.0" prefWidth="399.0" />
                </content>

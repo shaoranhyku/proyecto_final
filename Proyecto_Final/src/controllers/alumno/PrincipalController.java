@@ -109,8 +109,7 @@ public class PrincipalController {
     }
 
     public void setCenterDia(LocalDate fechaDia) {
-//        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ui/node_dia.fxml"));
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ui/alumno/node_temario.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ui/alumno/node_dia.fxml"));
 
         Parent center = null;
 
@@ -120,11 +119,10 @@ public class PrincipalController {
             e.printStackTrace();
         }
 
-        //DiaController controller = loader.getController();
-        TemarioController controller = loader.getController();
+        DiaController controller = loader.getController();
 
-//        controller.callBack = this;
-//        controller.setDiaActual(fechaDia);
+        controller.callBack = this;
+        controller.setDiaActual(fechaDia);
         rootPane.setCenter(center);
     }
 
@@ -160,6 +158,23 @@ public class PrincipalController {
         controller.callBack = this;
         rootPane.setCenter(center);
         controller.setAsignacion(codigoAsignacion);
+    }
+
+    public void setCenterTema(String asignaturaClave, String clave) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ui/alumno/node_temario.fxml"));
+
+        Parent center = null;
+
+        try {
+            center = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        TemarioController controller = loader.getController();
+        controller.callBack = this;
+        rootPane.setCenter(center);
+        controller.setTema(asignaturaClave, clave);
     }
 
     public void cerrarSesion(ActionEvent actionEvent) {

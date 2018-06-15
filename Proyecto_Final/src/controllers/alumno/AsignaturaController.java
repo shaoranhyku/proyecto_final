@@ -7,6 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import models.AsignacionLista;
+import models.TemaLista;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -81,17 +82,67 @@ public class AsignaturaController {
             sumarioHeight += controller.getHeight() + 20;
         }
 
-        // TODO: Poner temas
-
         vbox_asiginaciones.getChildren().setAll(asignacionesItemList);
 
         for (Parent node : asignacionesItemList) {
             VBox.setMargin(node, new Insets(10, 10, 10, 10));
         }
 
-        int elementos = vbox_asiginaciones.getChildren().size();
-
         vbox_asiginaciones.setPrefHeight(sumarioHeight);
+
+        // TODO: Poner temas
+
+        ArrayList<TemaLista> temas = new ArrayList<>();
+        temas.add(new TemaLista(codigoAsignatura, "1", "Tema Primero"));
+        temas.add(new TemaLista(codigoAsignatura, "1.1", "Subtema Primero"));
+        temas.add(new TemaLista(codigoAsignatura, "2", "Tema 2"));
+        temas.add(new TemaLista(codigoAsignatura, "3", "Tema 3"));
+        temas.add(new TemaLista(codigoAsignatura, "3.1", "Tema 3 sub"));
+        temas.add(new TemaLista(codigoAsignatura, "3.2", "Tema 3 sub 2"));
+        temas.add(new TemaLista(codigoAsignatura, "4", "Tema Primero"));
+        temas.add(new TemaLista(codigoAsignatura, "5", "Tema Primero"));
+        temas.add(new TemaLista(codigoAsignatura, "5.1", "Tema Primero"));
+        temas.add(new TemaLista(codigoAsignatura, "5.2", "Tema Primero"));
+        temas.add(new TemaLista(codigoAsignatura, "5.3", "Tema Primero"));
+        temas.add(new TemaLista(codigoAsignatura, "5.2", "Tema Primero"));
+        temas.add(new TemaLista(codigoAsignatura, "5.3", "Tema Primero"));
+        temas.add(new TemaLista(codigoAsignatura, "5.2", "Tema Primero"));
+        temas.add(new TemaLista(codigoAsignatura, "5.3", "Tema Primero"));
+        temas.add(new TemaLista(codigoAsignatura, "5.2", "Tema Primero"));
+        temas.add(new TemaLista(codigoAsignatura, "5.3", "Tema Primero"));
+        temas.add(new TemaLista(codigoAsignatura, "5.2", "Tema Primero"));
+        temas.add(new TemaLista(codigoAsignatura, "5.3", "Tema Primero"));
+
+        ArrayList<Parent> temasItemList = new ArrayList<>();
+        sumarioHeight = 0;
+
+        for (TemaLista temaLista : temas) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/item/listItem_tema.fxml"));
+            Parent node = null;
+            try {
+                node = loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            ListItem_TemaController controller = loader.getController();
+            controller.setTema(temaLista);
+            node.setOnMouseEntered(event -> vbox_asiginaciones.getScene().setCursor(Cursor.HAND));
+            node.setOnMouseExited(event -> vbox_asiginaciones.getScene().setCursor(Cursor.DEFAULT));
+            node.setOnMouseClicked(event -> callBack.setCenterTema(temaLista.getAsignaturaClave(), temaLista.getClave()));
+
+            temasItemList.add(node);
+            // Altura del elemento + margen
+            sumarioHeight += 70 + 20;
+        }
+
+        vbox_temas.getChildren().setAll(temasItemList);
+
+        for (Parent node : temasItemList) {
+            VBox.setMargin(node, new Insets(10, 10, 10, 10));
+        }
+
+        vbox_temas.setPrefHeight(sumarioHeight);
     }
 
 }

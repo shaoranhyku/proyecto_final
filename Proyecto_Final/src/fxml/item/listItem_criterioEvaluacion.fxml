@@ -5,21 +5,21 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="57.0" prefWidth="384.0" fx:controller="controllers.alumno.ListItem_CriterioEvaluacion" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane minWidth="320.0" prefHeight="57.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.alumno.ListItem_CriterioEvaluacion">
 <children>
-    <Label fx:id="lbl_nombreCriterio" prefHeight="59.0" prefWidth="171.0" text="Código comentado" wrapText="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+    <Label fx:id="lbl_nombreCriterio" prefHeight="59.0" prefWidth="171.0" text="Lorem ipsum dolor sit amet orci aliquam. " wrapText="true" AnchorPane.leftAnchor="8.0" AnchorPane.topAnchor="0.0">
         <font>
-            <Font size="19.0" />
+            <Font size="17.0" />
         </font>
     </Label>
-    <TextField fx:id="txt_notaCriterioAuto" alignment="CENTER" layoutX="206.0" layoutY="8.0" prefHeight="44.0" prefWidth="50.0" AnchorPane.leftAnchor="206.0" AnchorPane.topAnchor="8.0">
+    <TextField fx:id="txt_notaCriterioAuto" alignment="CENTER" layoutX="185.0" layoutY="8.0" prefHeight="40.0" prefWidth="40.0" AnchorPane.leftAnchor="185.0" AnchorPane.topAnchor="8.0">
         <font>
-            <Font size="20.0" />
+            <Font size="17.0" />
         </font>
     </TextField>
-    <TextField fx:id="txt_notaCriterioEvaluacion" alignment="CENTER" layoutX="320.0" layoutY="8.0" prefHeight="44.0" prefWidth="50.0" AnchorPane.leftAnchor="320.0" AnchorPane.topAnchor="8.0">
+    <TextField fx:id="txt_notaCriterioEvaluacion" alignment="CENTER" editable="false" layoutX="256.0" layoutY="8.0" prefHeight="40.0" prefWidth="40.0" AnchorPane.leftAnchor="256.0" AnchorPane.topAnchor="8.0">
         <font>
-            <Font size="20.0" />
+            <Font size="17.0" />
         </font>
     </TextField>
 </children></AnchorPane>

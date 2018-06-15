@@ -1,5 +1,6 @@
 package controllers.alumno;
 
+import controllers.Utils;
 import javafx.scene.Cursor;
 import models.AsignacionUltimaLista;
 import models.ItemListAsignatura;
@@ -67,7 +68,7 @@ public class PrincipalController {
 
         listView_asignaturas.setItems(observableList_ItemList_asignaturas);
 
-        listView_asignaturas.setCellFactory(param -> new CellAsignatura(mouseEvent -> {
+        listView_asignaturas.setCellFactory(param -> new Utils.CellAsignatura(mouseEvent -> {
             if (mouseEvent.getButton().equals(MouseButton.PRIMARY)) {
                 setCenterAsignatura(((Parent) mouseEvent.getSource()).getUserData().toString());
             }
@@ -190,41 +191,16 @@ public class PrincipalController {
         Scene scene = new Scene(root, 800, 600);
         stage.setScene(scene);
         stage.show();
+        stage.setMinWidth(800);
+        stage.setMinHeight(600);
+        stage.setMaxWidth(800);
+        stage.setMaxHeight(600);
+        stage.setWidth(800);
+        stage.setHeight(600);
+        stage.centerOnScreen();
     }
 
-    private class CellAsignatura extends ListCell<ItemListAsignatura> {
-        private Parent itemRoot;
-        private Label lbl_nombre;
-        private EventHandler<MouseEvent> callback;
 
-        public CellAsignatura(EventHandler<MouseEvent> clickCallback) {
-            callback = clickCallback;
-        }
-
-        @Override
-        protected void updateItem(ItemListAsignatura itemListAsignatura, boolean empty) {
-            super.updateItem(itemListAsignatura, empty);
-            if (itemListAsignatura == null) {
-                setText(null);
-                setGraphic(null);
-                return;
-            }
-            if (null == itemRoot) {
-                try {
-                    itemRoot = FXMLLoader.load(getClass().getResource(("/fxml/item/listItem_asignatura.fxml")));
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-                lbl_nombre = (Label) itemRoot.lookup("#lbl_nombre");
-                itemRoot.setOnMouseClicked(callback);
-            }
-            itemRoot.setUserData(itemListAsignatura.getCodigoAsignatura());
-            itemRoot.setOnMouseEntered(event -> itemRoot.getScene().setCursor(Cursor.HAND));
-            itemRoot.setOnMouseExited(event -> itemRoot.getScene().setCursor(Cursor.DEFAULT));
-            lbl_nombre.setText(itemListAsignatura.getNombreAsignatura());
-            setGraphic(itemRoot);
-        }
-    }
 
     private class CellUltimaAsignacion extends ListCell<AsignacionUltimaLista> {
         private Parent itemRoot;

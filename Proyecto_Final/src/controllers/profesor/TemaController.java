@@ -10,6 +10,8 @@ public class TemaController {
     public DatePicker datepck_fecha;
     public TextArea txt_descripcion;
     public ListView lst_enlaces;
+    public ProfesorController callback;
+    private String temaActual;
 
     public void btnAñadirEnlaceClick(ActionEvent actionEvent) {
     }
@@ -21,5 +23,9 @@ public class TemaController {
     }
 
     public void btnEliminarClick(ActionEvent actionEvent) {
+    }
+
+    public void setTemaActual(String temaActual) {
+        this.temaActual = temaActual;
     }
 }

@@ -12,6 +12,8 @@ public class AsignacionController {
     public TextArea txt_descripcion;
     public ListView lst_criterios;
     public TextField txt_nombre;
+    public ProfesorController callback;
+    private String asignacionActual;
 
     public void btnAñadirCriterioClick(ActionEvent actionEvent) {
     }
@@ -23,5 +25,9 @@ public class AsignacionController {
     }
 
     public void btnEliminarClick(ActionEvent actionEvent) {
+    }
+
+    public void setAsignacionActual(String asignacionActual) {
+        this.asignacionActual = asignacionActual;
     }
 }

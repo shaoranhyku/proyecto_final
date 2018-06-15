@@ -22,6 +22,8 @@ public class Main extends Application {
         primaryStage.setTitle("Proyecto");
         primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.show();
+        primaryStage.setMaxWidth(800);
+        primaryStage.setMaxHeight(600);
 
         //Cargamos el Driver
         try {

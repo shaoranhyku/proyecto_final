@@ -8,6 +8,7 @@ public class SeleccionarAsignacionEvaluarController {
     public ListView lst_temas;
     public ChoiceBox cmb_temas;
     public ChoiceBox cmb_alumnos;
+    public ProfesorController callback;
 
     public void btnSeleccionarClick(ActionEvent actionEvent) {
     }

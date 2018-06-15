@@ -5,6 +5,7 @@ import com.sun.javafx.tk.Toolkit;
 import controllers.alumno.ListItem_AsignacionDiaController;
 import controllers.alumno.ListItem_TemaController;
 import controllers.alumno.PrincipalController;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Bounds;
 import javafx.geometry.Insets;
@@ -12,12 +13,15 @@ import javafx.geometry.Point2D;
 import javafx.scene.Cursor;
 import javafx.scene.Parent;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.OverrunStyle;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextBoundsType;
 import models.AsignacionLista;
+import models.ItemListAsignatura;
 import models.TemaLista;
 
 import java.io.IOException;
@@ -552,5 +556,39 @@ public class Utils {
         }
 
         internVbox.setPrefHeight(sumarioHeight);
+    }
+
+    public static class CellAsignatura extends ListCell<ItemListAsignatura> {
+        private Parent itemRoot;
+        private Label lbl_nombre;
+        private EventHandler<MouseEvent> callback;
+
+        public CellAsignatura(EventHandler<MouseEvent> clickCallback) {
+            callback = clickCallback;
+        }
+
+        @Override
+        protected void updateItem(ItemListAsignatura itemListAsignatura, boolean empty) {
+            super.updateItem(itemListAsignatura, empty);
+            if (itemListAsignatura == null) {
+                setText(null);
+                setGraphic(null);
+                return;
+            }
+            if (null == itemRoot) {
+                try {
+                    itemRoot = FXMLLoader.load(getClass().getResource(("/fxml/item/listItem_asignatura.fxml")));
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                lbl_nombre = (Label) itemRoot.lookup("#lbl_nombre");
+                itemRoot.setOnMouseClicked(callback);
+            }
+            itemRoot.setUserData(itemListAsignatura.getCodigoAsignatura());
+            itemRoot.setOnMouseEntered(event -> itemRoot.getScene().setCursor(Cursor.HAND));
+            itemRoot.setOnMouseExited(event -> itemRoot.getScene().setCursor(Cursor.DEFAULT));
+            lbl_nombre.setText(itemListAsignatura.getNombreAsignatura());
+            setGraphic(itemRoot);
+        }
     }
 }

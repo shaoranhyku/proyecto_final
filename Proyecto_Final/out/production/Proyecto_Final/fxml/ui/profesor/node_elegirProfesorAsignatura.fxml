@@ -29,7 +29,7 @@
                      <Insets top="18.0" />
                   </VBox.margin>
                   <children>
-                     <Button fx:id="btn_seleccionar" disable="true" mnemonicParsing="false" onAction="#seleccionarAsignatura" text="Seleccionar">
+                     <Button fx:id="btn_seleccionar" mnemonicParsing="false" onAction="#seleccionarAsignatura" text="Seleccionar">
                         <font>
                            <Font size="24.0" />
                         </font>

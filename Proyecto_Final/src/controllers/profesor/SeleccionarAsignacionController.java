@@ -7,6 +7,7 @@ import javafx.scene.control.ListView;
 public class SeleccionarAsignacionController {
     public ListView lst_temas;
     public ChoiceBox cmb_temas;
+    public ProfesorController callback;
 
     public void btnSeleccionarClick(ActionEvent actionEvent) {
     }

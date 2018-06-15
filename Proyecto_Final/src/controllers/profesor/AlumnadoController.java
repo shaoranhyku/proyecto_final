@@ -6,6 +6,7 @@ import javafx.scene.control.ListView;
 public class AlumnadoController {
     public ListView lst_tusAlumnos;
     public ListView lst_todosAlumnos;
+    public ProfesorController callback;
 
     public void btnAñadirClick(ActionEvent actionEvent) {
     }

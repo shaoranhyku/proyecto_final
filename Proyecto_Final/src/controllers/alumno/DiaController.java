@@ -13,6 +13,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
+import static controllers.Utils.setAsignacionesInVBox;
+
 public class DiaController {
 
     public Label lbl_diaActual;
@@ -64,37 +66,7 @@ public class DiaController {
                 "Descripcionc larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga",
                 LocalDateTime.of(2018, 7, 10, 23, 12), true));
 
-        ArrayList<Parent> asignacionesItemList = new ArrayList<>();
-        double sumarioHeight = 0;
-
-        for (AsignacionLista asignacionLista : asignaciones) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/item/listItem_asignacionDia.fxml"));
-            Parent node = null;
-            try {
-                node = loader.load();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            ListItem_AsignacionDiaController controller = loader.getController();
-            controller.setAsignacion(asignacionLista);
-            node.setOnMouseEntered(event -> vbox_asiginaciones.getScene().setCursor(Cursor.HAND));
-            node.setOnMouseExited(event -> vbox_asiginaciones.getScene().setCursor(Cursor.DEFAULT));
-            node.setOnMouseClicked(event -> callBack.setCenterAsignacion(asignacionLista.getCodigoAsignacion()));
-
-            asignacionesItemList.add(node);
-            sumarioHeight += controller.getHeight() + 20;
-        }
-
-        vbox_asiginaciones.getChildren().setAll(asignacionesItemList);
-
-        for (Parent node : asignacionesItemList) {
-            VBox.setMargin(node, new Insets(10, 10, 10, 10));
-        }
-
-        int elementos = vbox_asiginaciones.getChildren().size();
-
-        vbox_asiginaciones.setPrefHeight(sumarioHeight);
+        setAsignacionesInVBox(asignaciones, vbox_asiginaciones, callBack, getClass());
     }
 
 }

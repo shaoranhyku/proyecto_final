@@ -2,15 +2,27 @@ package controllers;
 
 import com.sun.javafx.scene.text.TextLayout;
 import com.sun.javafx.tk.Toolkit;
+import controllers.alumno.ListItem_AsignacionDiaController;
+import controllers.alumno.ListItem_TemaController;
+import controllers.alumno.PrincipalController;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Bounds;
+import javafx.geometry.Insets;
 import javafx.geometry.Point2D;
+import javafx.scene.Cursor;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
 import javafx.scene.control.OverrunStyle;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextBoundsType;
+import models.AsignacionLista;
+import models.TemaLista;
 
+import java.io.IOException;
 import java.text.Bidi;
+import java.util.ArrayList;
 
 import static javafx.scene.control.OverrunStyle.*;
 import static javafx.scene.control.OverrunStyle.CENTER_WORD_ELLIPSIS;
@@ -475,5 +487,70 @@ public class Utils {
                 default: return false;
             }
         }
+    }
+
+    public static void setAsignacionesInVBox(ArrayList<AsignacionLista> asignaciones, VBox internVbox, PrincipalController internCallback, Class internClass) {
+        ArrayList<Parent> asignacionesItemList = new ArrayList<>();
+        double sumarioHeight = 0;
+
+        for (AsignacionLista asignacionLista : asignaciones) {
+            FXMLLoader loader = new FXMLLoader(internClass.getResource("/fxml/item/listItem_asignacionDia.fxml"));
+            Parent node = null;
+            try {
+                node = loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            ListItem_AsignacionDiaController controller = loader.getController();
+            controller.setAsignacion(asignacionLista);
+            node.setOnMouseEntered(event -> internVbox.getScene().setCursor(Cursor.HAND));
+            node.setOnMouseExited(event -> internVbox.getScene().setCursor(Cursor.DEFAULT));
+            node.setOnMouseClicked(event -> internCallback.setCenterAsignacion(asignacionLista.getCodigoAsignacion()));
+
+            asignacionesItemList.add(node);
+            sumarioHeight += controller.getHeight() + 20;
+        }
+
+        internVbox.getChildren().setAll(asignacionesItemList);
+
+        for (Parent node : asignacionesItemList) {
+            VBox.setMargin(node, new Insets(10, 10, 10, 10));
+        }
+
+        internVbox.setPrefHeight(sumarioHeight);
+    }
+
+    public static void setTemasInVBox(ArrayList<TemaLista> temas, VBox internVbox, PrincipalController internCallback, Class internClass) {
+        ArrayList<Parent> temasItemList = new ArrayList<>();
+        double sumarioHeight = 0;
+
+        for (TemaLista temaLista : temas) {
+            FXMLLoader loader = new FXMLLoader(internClass.getResource("/fxml/item/listItem_tema.fxml"));
+            Parent node = null;
+            try {
+                node = loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            ListItem_TemaController controller = loader.getController();
+            controller.setTema(temaLista);
+            node.setOnMouseEntered(event -> internVbox.getScene().setCursor(Cursor.HAND));
+            node.setOnMouseExited(event -> internVbox.getScene().setCursor(Cursor.DEFAULT));
+            node.setOnMouseClicked(event -> internCallback.setCenterTema(temaLista.getAsignaturaClave(), temaLista.getClave()));
+
+            temasItemList.add(node);
+            // Altura del elemento + margen
+            sumarioHeight += 70 + 20;
+        }
+
+        internVbox.getChildren().setAll(temasItemList);
+
+        for (Parent node : temasItemList) {
+            VBox.setMargin(node, new Insets(10, 10, 10, 10));
+        }
+
+        internVbox.setPrefHeight(sumarioHeight);
     }
 }

@@ -26,4 +26,9 @@ public class ItemListAlumno {
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s %s", nombre, apellidos);
+    }
 }

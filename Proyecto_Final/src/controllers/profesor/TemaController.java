@@ -72,7 +72,7 @@ public class TemaController extends Application{
         }));
     }
 
-    public void btnAñadirEnlaceClick(ActionEvent actionEvent) {
+    public void btnAgregarEnlaceClick(ActionEvent actionEvent) {
         mostrarDialogoNuevoEnlace();
     }
 

@@ -36,22 +36,22 @@
                </font>
             </Label>
             <TextArea fx:id="txt_descripcion" layoutX="128.0" layoutY="392.0" prefHeight="190.0" prefWidth="420.0" AnchorPane.leftAnchor="128.0" AnchorPane.topAnchor="392.0" />
-            <Label layoutX="705.0" layoutY="149.0" text="Criterios" AnchorPane.rightAnchor="450.0" AnchorPane.topAnchor="149.0">
+            <Label layoutX="684.0" layoutY="18.0" text="Criterios" AnchorPane.rightAnchor="471.0" AnchorPane.topAnchor="18.0">
                <font>
                   <Font size="34.0" />
                </font>
             </Label>
-            <Button graphicTextGap="1.0" layoutX="860.0" layoutY="157.0" mnemonicParsing="false" onAction="#btnAñadirCriterioClick" prefHeight="24.0" prefWidth="87.0" text="Añadir" AnchorPane.rightAnchor="333.0" AnchorPane.topAnchor="157.0">
+            <Button graphicTextGap="1.0" layoutX="860.0" layoutY="27.0" mnemonicParsing="false" onAction="#btnAgregarCriterioClick" prefHeight="24.0" prefWidth="87.0" text="Añadir" AnchorPane.rightAnchor="333.0" AnchorPane.topAnchor="27.0">
                <font>
                   <Font size="17.0" />
                </font>
             </Button>
-            <Button graphicTextGap="1.0" layoutX="964.0" layoutY="157.0" mnemonicParsing="false" onAction="#btnEliminarCriterioClick" prefHeight="24.0" prefWidth="87.0" text="Eliminar" AnchorPane.rightAnchor="229.0" AnchorPane.topAnchor="157.0">
+            <Button graphicTextGap="1.0" layoutX="964.0" layoutY="27.0" mnemonicParsing="false" onAction="#btnEliminarCriterioClick" prefHeight="24.0" prefWidth="87.0" text="Eliminar" AnchorPane.rightAnchor="229.0" AnchorPane.topAnchor="27.0">
                <font>
                   <Font size="17.0" />
                </font>
             </Button>
-            <ListView fx:id="lst_criterios" layoutX="718.0" layoutY="228.0" prefHeight="279.0" prefWidth="340.0" AnchorPane.bottomAnchor="93.0" AnchorPane.rightAnchor="222.0" AnchorPane.topAnchor="228.0" />
+            <ListView fx:id="lst_criterios" layoutX="692.0" layoutY="68.0" prefHeight="190.0" prefWidth="390.0" AnchorPane.bottomAnchor="342.0" AnchorPane.rightAnchor="213.0" AnchorPane.topAnchor="68.0" />
             <Button graphicTextGap="1.0" layoutX="971.0" layoutY="534.0" mnemonicParsing="false" onAction="#btnGuardarClick" prefHeight="24.0" prefWidth="87.0" text="Guardar" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="222.0">
                <font>
                   <Font size="17.0" />
@@ -72,6 +72,22 @@
                   <Font size="15.0" />
                </font>
             </TextField>
+            <Label layoutX="684.0" layoutY="275.0" text="Temas" AnchorPane.rightAnchor="499.0" AnchorPane.topAnchor="275.0">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Label>
+            <Button graphicTextGap="1.0" layoutX="860.0" layoutY="283.0" mnemonicParsing="false" onAction="#btnAgregarTemaClick" prefHeight="24.0" prefWidth="87.0" text="Añadir" AnchorPane.rightAnchor="333.0" AnchorPane.topAnchor="283.0">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button graphicTextGap="1.0" layoutX="964.0" layoutY="281.0" mnemonicParsing="false" onAction="#btnEliminarTemaClick" prefHeight="24.0" prefWidth="87.0" text="Eliminar" AnchorPane.rightAnchor="229.0" AnchorPane.topAnchor="281.0">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <ListView fx:id="lst_temas" layoutX="677.0" layoutY="325.0" prefHeight="190.0" prefWidth="390.0" AnchorPane.bottomAnchor="85.0" AnchorPane.rightAnchor="213.0" AnchorPane.topAnchor="325.0" />
          </children>
       </AnchorPane>
    </children>

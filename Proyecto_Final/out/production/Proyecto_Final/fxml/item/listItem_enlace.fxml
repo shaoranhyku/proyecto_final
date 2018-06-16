@@ -8,17 +8,17 @@
 
 <VBox xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="lbl_descripcion" prefHeight="47.0" prefWidth="340.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi arcu libero, pellentesque at posuere. ">
+      <Label fx:id="lbl_descripcion" prefHeight="36.0" prefWidth="340.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi arcu libero, pellentesque at posuere. ">
          <font>
-            <Font size="23.0" />
+            <Font size="19.0" />
          </font>
          <padding>
             <Insets left="5.0" />
          </padding>
       </Label>
-      <Hyperlink fx:id="lbl_url" prefHeight="44.0" prefWidth="340.0" text="https://www.github.com/coso/otroscoso">
+      <Hyperlink fx:id="lbl_url" prefHeight="29.0" prefWidth="340.0" text="https://www.github.com/coso/otroscoso">
          <font>
-            <Font size="23.0" />
+            <Font size="18.0" />
          </font>
       </Hyperlink>
    </children>

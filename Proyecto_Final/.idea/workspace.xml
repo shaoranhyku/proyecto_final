@@ -75,11 +75,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="node_tema.fxml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/fxml/ui/profesor/node_tema.fxml">
+      <file leaf-file-name="node_evaluarAsignacion.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/fxml/ui/profesor/node_evaluarAsignacion.fxml">
           <provider editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+            <state relative-caret-position="541">
+              <caret line="79" column="38" lean-forward="false" selection-start-line="79" selection-start-column="38" selection-end-line="79" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -88,31 +88,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TemaController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/profesor/TemaController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="188" column="69" lean-forward="false" selection-start-line="188" selection-start-column="69" selection-end-line="188" selection-end-column="69" />
-              <folding>
-                <element signature="e#2944#2945#0" expanded="true" />
-                <element signature="e#2987#2988#0" expanded="true" />
-                <element signature="e#6388#6389#0" expanded="true" />
-                <element signature="e#6436#6437#0" expanded="true" />
-              </folding>
+      <file leaf-file-name="listItem_criterioEvaluacion.fxml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/fxml/item/listItem_criterioEvaluacion.fxml">
+          <provider editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="36" lean-forward="false" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+              <folding />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AlumnadoController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/profesor/AlumnadoController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="66" column="9" lean-forward="true" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
-              <folding>
-                <element signature="e#3185#3186#0" expanded="true" />
-                <element signature="e#3233#3234#0" expanded="true" />
-              </folding>
-            </state>
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+            <state />
           </provider>
         </entry>
       </file>
@@ -149,11 +134,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/fxml/ui/node_elegirAsignatura.fxml" />
-        <option value="$PROJECT_DIR$/src/controllers/PrincipalController.java" />
-        <option value="$PROJECT_DIR$/src/fxml/ui/scene_profesor.fxml" />
-        <option value="$PROJECT_DIR$/src/controllers/ElegirAsignaturaController.java" />
-        <option value="$PROJECT_DIR$/src/controllers/ProfesorController.java" />
         <option value="$PROJECT_DIR$/src/controllers/alumno/ListItem_UltimaAsignacionController.java" />
         <option value="$PROJECT_DIR$/src/controllers/alumno/ListItem_AsignacionDiaController.java" />
         <option value="$PROJECT_DIR$/src/fxml/ui/profesor/node_operaciones.fxml" />
@@ -165,7 +145,6 @@
         <option value="$PROJECT_DIR$/src/fxml/ui/profesor/node_seleccionarAsignacion.fxml" />
         <option value="$PROJECT_DIR$/src/fxml/ui/profesor/node_seleccionarAsignacionEvaluar.fxml" />
         <option value="$PROJECT_DIR$/src/controllers/DateTimePicker.java" />
-        <option value="$PROJECT_DIR$/src/fxml/ui/profesor/node_asignacion.fxml" />
         <option value="$PROJECT_DIR$/src/controllers/profesor/EvaluarAsignacionController.java" />
         <option value="$PROJECT_DIR$/src/fxml/ui/profesor/node_evaluarAsignacion.fxml" />
         <option value="$PROJECT_DIR$/src/fxml/ui/alumno/node_asignacion.fxml" />
@@ -182,24 +161,30 @@
         <option value="$PROJECT_DIR$/src/fxml/ui/profesor/scene_profesor.fxml" />
         <option value="$PROJECT_DIR$/src/controllers/profesor/OperacionesController.java" />
         <option value="$PROJECT_DIR$/src/controllers/profesor/SeleccionarTemaController.java" />
-        <option value="$PROJECT_DIR$/src/controllers/profesor/AsignacionController.java" />
         <option value="$PROJECT_DIR$/src/controllers/profesor/SeleccionarAsignacionController.java" />
         <option value="$PROJECT_DIR$/src/controllers/profesor/SeleccionarAsignacionEvaluarController.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/controllers/alumno/PrincipalController.java" />
         <option value="$PROJECT_DIR$/src/controllers/LoginController.java" />
         <option value="$PROJECT_DIR$/src/fxml/ui/profesor/node_alumnado.fxml" />
-        <option value="$PROJECT_DIR$/src/models/ItemListAlumno.java" />
         <option value="$PROJECT_DIR$/src/fxml/item/listItem_alumno.fxml" />
         <option value="$PROJECT_DIR$/src/controllers/profesor/AlumnadoController.java" />
-        <option value="$PROJECT_DIR$/src/controllers/profesor/ProfesorController.java" />
         <option value="$PROJECT_DIR$/src/models/TemaLista.java" />
         <option value="$PROJECT_DIR$/src/fxml/ui/alumno/node_temario.fxml" />
-        <option value="$PROJECT_DIR$/src/fxml/item/listItem_enlace.fxml" />
         <option value="$PROJECT_DIR$/src/models/ItemListEnace.java" />
         <option value="$PROJECT_DIR$/src/models/ItemListEnlace.java" />
-        <option value="$PROJECT_DIR$/src/controllers/profesor/TemaController.java" />
         <option value="$PROJECT_DIR$/src/fxml/ui/profesor/node_tema.fxml" />
+        <option value="$PROJECT_DIR$/src/fxml/item/listItem_enlace.fxml" />
+        <option value="$PROJECT_DIR$/src/controllers/profesor/TemaController.java" />
+        <option value="$PROJECT_DIR$/src/fxml/item/listItem_criterioTema.fxml" />
+        <option value="$PROJECT_DIR$/src/controllers/profesor/ProfesorController.java" />
+        <option value="$PROJECT_DIR$/src/models/CriterioEvaluacionProfesor.java" />
+        <option value="$PROJECT_DIR$/src/fxml/item/listItem_criterioProfesor.fxml" />
+        <option value="$PROJECT_DIR$/src/fxml/item/listItem_temaProfesor.fxml" />
+        <option value="$PROJECT_DIR$/src/fxml/ui/profesor/node_asignacion.fxml" />
+        <option value="$PROJECT_DIR$/src/controllers/profesor/AsignacionController.java" />
+        <option value="$PROJECT_DIR$/src/models/ItemListAlumno.java" />
+        <option value="$PROJECT_DIR$/src/fxml/item/listItem_criterioProfesorEvaluar.fxml" />
       </list>
     </option>
   </component>
@@ -222,6 +207,28 @@
     <option name="width" value="1382" />
     <option name="height" value="784" />
   </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>Probable bugsJava</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>SuspiciousMethodCalls</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -240,8 +247,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -326,6 +331,8 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -354,9 +361,12 @@
     <property name="extract.method.default.visibility" value="public" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="calendario.models" />
-      <recent name="sample" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\AndroidConFran\Desktop\proyecto_final\Proyecto_Final\src\fxml\ui\alumno" />
+      <recent name="C:\Users\AndroidConFran\Desktop\proyecto_final\Proyecto_Final\src\fxml\ui\profesor" />
+      <recent name="C:\Users\AndroidConFran\Desktop\Prueba_calendario\src\main\fxml\ui" />
+      <recent name="C:\Users\AndroidConFran\Desktop\Prueba_calendario\src\main" />
+      <recent name="C:\Users\AndroidConFran\Desktop\Prueba_calendario\src\main\fxml\item" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\AndroidConFran\Desktop\proyecto_final\Proyecto_Final\src\fxml\item" />
@@ -365,12 +375,9 @@
       <recent name="C:\Users\AndroidConFran\Desktop\Proyecto_Final\src\fxml\item" />
       <recent name="C:\Users\AndroidConFran\Desktop\Prueba_calendario\src\main\fxml\ui" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\AndroidConFran\Desktop\proyecto_final\Proyecto_Final\src\fxml\ui\alumno" />
-      <recent name="C:\Users\AndroidConFran\Desktop\proyecto_final\Proyecto_Final\src\fxml\ui\profesor" />
-      <recent name="C:\Users\AndroidConFran\Desktop\Prueba_calendario\src\main\fxml\ui" />
-      <recent name="C:\Users\AndroidConFran\Desktop\Prueba_calendario\src\main" />
-      <recent name="C:\Users\AndroidConFran\Desktop\Prueba_calendario\src\main\fxml\item" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="calendario.models" />
+      <recent name="sample" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -683,11 +690,12 @@
       <workItem from="1529086119783" duration="3545000" />
       <workItem from="1529142483579" duration="2627000" />
       <workItem from="1529146296225" duration="5741000" />
+      <workItem from="1529161176381" duration="4705000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="164845000" />
+    <option name="totallyTimeSpent" value="169550000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -714,7 +722,8 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14179105" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17217484" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -788,8 +797,14 @@
           <properties />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/controllers/profesor/AsignacionController.java</url>
+          <line>166</line>
+          <properties />
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="19" />
+      <option name="time" value="20" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -798,49 +813,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/controllers/alumno/CalendarioController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/alumno/ListItem_CriterioEvaluacion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/alumno/ListItem_UltimaAsignacionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="18" lean-forward="false" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fxml/ui/profesor/node_operaciones.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="26" lean-forward="false" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fxml/ui/profesor/node_seleccionarTema.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="15" column="28" lean-forward="false" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/fxml/ui/profesor/node_seleccionarAsignacion.fxml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -876,28 +848,6 @@
         <state relative-caret-position="85">
           <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fxml/ui/profesor/node_asignacion.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="56" column="38" lean-forward="false" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fxml/ui/profesor/node_evaluarAsignacion.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="1343">
-          <caret line="79" column="38" lean-forward="false" selection-start-line="79" selection-start-column="38" selection-end-line="79" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/profesor/EvaluarAsignacionController.java">
@@ -952,17 +902,6 @@
           <caret line="22" column="38" lean-forward="false" selection-start-line="22" selection-start-column="38" selection-end-line="22" selection-end-column="38" />
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fxml/item/listItem_criterioEvaluacion.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="36" lean-forward="false" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/alumno/ListItem_TemaController.java">
@@ -1045,16 +984,6 @@
         <state relative-caret-position="119">
           <caret line="9" column="38" lean-forward="false" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/profesor/AsignacionController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="29" column="62" lean-forward="false" selection-start-line="29" selection-start-column="62" selection-end-line="29" selection-end-column="62" />
-          <folding>
-            <element signature="e#919#920#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1152,23 +1081,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/ItemListAlumno.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="25" lean-forward="true" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
-          <folding>
-            <element signature="e#333#334#0" expanded="false" />
-            <element signature="e#358#359#0" expanded="false" />
-            <element signature="e#391#392#0" expanded="false" />
-            <element signature="e#420#421#0" expanded="false" />
-            <element signature="e#456#457#0" expanded="false" />
-            <element signature="e#488#489#0" expanded="false" />
-            <element signature="e#538#539#0" expanded="false" />
-            <element signature="e#580#581#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/alumno/AsignaturaController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="335">
@@ -1181,17 +1093,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="541">
           <caret line="108" column="48" lean-forward="true" selection-start-line="108" selection-start-column="48" selection-end-line="108" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fxml/item/listItem_tema.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -1215,39 +1116,20 @@
         <state relative-caret-position="102">
           <caret line="6" column="30" lean-forward="false" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
           <folding>
-            <element signature="e#318#319#0" expanded="true" />
-            <element signature="e#343#344#0" expanded="true" />
-            <element signature="e#379#380#0" expanded="true" />
-            <element signature="e#407#408#0" expanded="true" />
-            <element signature="e#437#438#0" expanded="true" />
-            <element signature="e#463#464#0" expanded="true" />
-            <element signature="e#501#502#0" expanded="true" />
-            <element signature="e#531#532#0" expanded="true" />
-            <element signature="e#569#570#0" expanded="true" />
-            <element signature="e#603#604#0" expanded="true" />
-            <element signature="e#657#658#0" expanded="true" />
-            <element signature="e#703#704#0" expanded="true" />
+            <element signature="e#318#319#0" expanded="false" />
+            <element signature="e#343#344#0" expanded="false" />
+            <element signature="e#379#380#0" expanded="false" />
+            <element signature="e#407#408#0" expanded="false" />
+            <element signature="e#437#438#0" expanded="false" />
+            <element signature="e#463#464#0" expanded="false" />
+            <element signature="e#501#502#0" expanded="false" />
+            <element signature="e#531#532#0" expanded="false" />
+            <element signature="e#569#570#0" expanded="false" />
+            <element signature="e#603#604#0" expanded="false" />
+            <element signature="e#657#658#0" expanded="false" />
+            <element signature="e#703#704#0" expanded="false" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/profesor/ProfesorController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="146" column="0" lean-forward="true" selection-start-line="146" selection-start-column="0" selection-end-line="146" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/fxml/item/listItem_enlace.fxml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/models/TemaLista.java">
@@ -1257,17 +1139,6 @@
           <folding>
             <element signature="e#839#840#0" expanded="false" />
             <element signature="e#899#900#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/profesor/AlumnadoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="66" column="9" lean-forward="true" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
-          <folding>
-            <element signature="e#3185#3186#0" expanded="true" />
-            <element signature="e#3233#3234#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1283,23 +1154,189 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/fxml/ui/profesor/node_tema.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fxml/item/listItem_enlace.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/CriterioEvaluacionAlumno.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/controllers/profesor/TemaController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="188" column="69" lean-forward="false" selection-start-line="188" selection-start-column="69" selection-end-line="188" selection-end-column="69" />
+        <state relative-caret-position="608">
+          <caret line="69" column="19" lean-forward="true" selection-start-line="69" selection-start-column="19" selection-end-line="71" selection-end-column="12" />
           <folding>
-            <element signature="e#2944#2945#0" expanded="true" />
-            <element signature="e#2987#2988#0" expanded="true" />
-            <element signature="e#6388#6389#0" expanded="true" />
-            <element signature="e#6436#6437#0" expanded="true" />
+            <element signature="e#2945#2946#0" expanded="false" />
+            <element signature="e#2988#2989#0" expanded="false" />
+            <element signature="e#6389#6390#0" expanded="false" />
+            <element signature="e#6437#6438#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/fxml/ui/profesor/node_tema.fxml">
+    <entry file="file://$PROJECT_DIR$/src/fxml/item/listItem_tema.fxml">
       <provider editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="8" column="29" lean-forward="false" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fxml/ui/profesor/node_asignacion.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="687">
+          <caret line="89" column="35" lean-forward="false" selection-start-line="89" selection-start-column="35" selection-end-line="89" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/profesor/AsignacionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="158" column="44" lean-forward="false" selection-start-line="158" selection-start-column="44" selection-end-line="158" selection-end-column="44" />
+          <folding>
+            <element signature="e#3045#3046#0" expanded="true" />
+            <element signature="e#3090#3091#0" expanded="true" />
+            <element signature="e#5763#5764#0" expanded="true" />
+            <element signature="e#5806#5807#0" expanded="true" />
+            <element signature="e#6320#6321#0" expanded="true" />
+            <element signature="e#6368#6369#0" expanded="true" />
+            <element signature="e#7241#7242#0" expanded="true" />
+            <element signature="e#7289#7290#0" expanded="true" />
+            <element signature="e#8876#8877#0" expanded="true" />
+            <element signature="e#8924#8925#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/ItemListAlumno.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
+          <caret line="29" column="13" lean-forward="true" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+          <folding>
+            <element signature="e#626#627#0" expanded="true" />
+            <element signature="e#690#691#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/profesor/ProfesorController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1632">
+          <caret line="155" column="61" lean-forward="false" selection-start-line="155" selection-start-column="61" selection-end-line="155" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fxml/item/listItem_temaProfesor.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/CriterioEvaluacionProfesor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding>
+            <element signature="e#390#391#0" expanded="true" />
+            <element signature="e#419#420#0" expanded="true" />
+            <element signature="e#463#464#0" expanded="true" />
+            <element signature="e#499#500#0" expanded="true" />
+            <element signature="e#533#534#0" expanded="true" />
+            <element signature="e#566#567#0" expanded="true" />
+            <element signature="e#615#616#0" expanded="true" />
+            <element signature="e#659#660#0" expanded="true" />
+            <element signature="e#697#698#0" expanded="true" />
+            <element signature="e#734#735#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
+            <element signature="e#843#844#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/profesor/AlumnadoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="66" column="9" lean-forward="false" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
+          <folding>
+            <element signature="e#3185#3186#0" expanded="false" />
+            <element signature="e#3233#3234#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fxml/ui/profesor/node_evaluarAsignacion.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="541">
+          <caret line="79" column="38" lean-forward="false" selection-start-line="79" selection-start-column="38" selection-end-line="79" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fxml/item/listItem_criterioProfesorCrear.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fxml/item/listItem_criterioProfesorEvaluar.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="79" lean-forward="false" selection-start-line="19" selection-start-column="79" selection-end-line="19" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/fxml/item/listItem_criterioEvaluacion.fxml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="36" lean-forward="false" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
           <folding />
         </state>
       </provider>

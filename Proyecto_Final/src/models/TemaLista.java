@@ -35,4 +35,9 @@ public class TemaLista {
     public void setAsignaturaClave(String asignaturaClave) {
         this.asignaturaClave = asignaturaClave;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s %s", clave, nombre);
+    }
 }

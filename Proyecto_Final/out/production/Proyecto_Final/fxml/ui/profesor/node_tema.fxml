@@ -52,8 +52,11 @@
                   <Font size="34.0" />
                </font>
             </Label>
-            <TextArea fx:id="txt_descripcion" layoutX="128.0" layoutY="392.0" prefHeight="190.0" prefWidth="420.0" AnchorPane.leftAnchor="128.0" AnchorPane.topAnchor="392.0" />
-            <Label layoutX="698.0" layoutY="147.0" text="Enlaces" AnchorPane.rightAnchor="472.0" AnchorPane.topAnchor="147.0">
+            <TextArea fx:id="txt_descripcion" layoutX="128.0" layoutY="392.0" prefHeight="190.0" prefWidth="420.0" wrapText="true" AnchorPane.leftAnchor="128.0" AnchorPane.topAnchor="392.0">
+               <font>
+                  <Font size="20.0" />
+               </font></TextArea>
+            <Label layoutX="707.0" layoutY="149.0" text="Enlaces" AnchorPane.rightAnchor="463.0" AnchorPane.topAnchor="149.0">
                <font>
                   <Font size="34.0" />
                </font>
@@ -63,18 +66,18 @@
                   <Font size="17.0" />
                </font>
             </Button>
-            <Button graphicTextGap="1.0" layoutX="964.0" layoutY="157.0" mnemonicParsing="false" onAction="#btnEliminarEnlaceClick" prefHeight="24.0" prefWidth="87.0" text="Eliminar" AnchorPane.rightAnchor="229.0" AnchorPane.topAnchor="157.0">
+            <Button graphicTextGap="1.0" layoutX="981.0" layoutY="157.0" mnemonicParsing="false" onAction="#btnEliminarEnlaceClick" prefHeight="24.0" prefWidth="87.0" text="Eliminar" AnchorPane.rightAnchor="212.0" AnchorPane.topAnchor="157.0">
                <font>
                   <Font size="17.0" />
                </font>
             </Button>
-            <ListView fx:id="lst_enlaces" layoutX="718.0" layoutY="228.0" prefHeight="279.0" prefWidth="340.0" AnchorPane.bottomAnchor="93.0" AnchorPane.rightAnchor="222.0" AnchorPane.topAnchor="228.0" />
+            <ListView fx:id="lst_enlaces" layoutX="718.0" layoutY="228.0" prefHeight="279.0" prefWidth="376.0" AnchorPane.bottomAnchor="93.0" AnchorPane.rightAnchor="205.0" AnchorPane.topAnchor="228.0" />
             <Button graphicTextGap="1.0" layoutX="971.0" layoutY="534.0" mnemonicParsing="false" onAction="#btnGuardarClick" prefHeight="24.0" prefWidth="87.0" text="Guardar" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="222.0">
                <font>
                   <Font size="17.0" />
                </font>
             </Button>
-            <Button disable="true" graphicTextGap="1.0" layoutX="860.0" layoutY="534.0" mnemonicParsing="false" onAction="#btnEliminarClick" prefHeight="24.0" prefWidth="87.0" text="Eliminar" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="333.0">
+            <Button fx:id="btn_Eliminar" disable="true" graphicTextGap="1.0" layoutX="860.0" layoutY="534.0" mnemonicParsing="false" onAction="#btnEliminarClick" prefHeight="24.0" prefWidth="87.0" text="Eliminar" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="333.0">
                <font>
                   <Font size="17.0" />
                </font>

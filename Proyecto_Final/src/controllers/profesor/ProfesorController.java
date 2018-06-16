@@ -120,7 +120,7 @@ public class ProfesorController {
 
         TemaController controller = loader.getController();
         controller.callback = this;
-        controller.setTemaActual("");
+        controller.setTemaActual(asignaturaSeleccionada, "");
         rootPane.setCenter(center);
     }
 

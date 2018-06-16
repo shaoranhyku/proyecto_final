@@ -52,7 +52,7 @@
                                        </VBox.margin>
                                     </Label>
                                     <Separator prefWidth="200.0" />
-                                    <Label text="- Teoría del Tema">
+                                    <Label text="- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi arcu libero, pellentesque at posuere. ">
                                        <font>
                                           <Font size="21.0" />
                                        </font>

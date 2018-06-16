@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minWidth="320.0" prefHeight="57.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.alumno.ListItem_CriterioEvaluacion">
+<children>
+    <Label fx:id="lbl_nombreCriterio" prefHeight="59.0" prefWidth="171.0" text="Lorem ipsum dolor sit amet orci aliquam. " wrapText="true" AnchorPane.leftAnchor="8.0" AnchorPane.topAnchor="0.0">
+        <font>
+            <Font size="17.0" />
+        </font>
+    </Label>
+    <TextField fx:id="txt_notaCriterioEvaluacion" alignment="CENTER" layoutX="185.0" layoutY="8.0" prefHeight="40.0" prefWidth="40.0" AnchorPane.leftAnchor="185.0" AnchorPane.topAnchor="8.0">
+        <font>
+            <Font size="17.0" />
+        </font>
+    </TextField>
+    <TextField fx:id="txt_notaCriterioAuto" alignment="CENTER" editable="false" layoutX="256.0" layoutY="8.0" prefHeight="40.0" prefWidth="40.0" AnchorPane.leftAnchor="256.0" AnchorPane.topAnchor="8.0">
+        <font>
+            <Font size="17.0" />
+        </font>
+    </TextField>
+</children></AnchorPane>

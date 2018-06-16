@@ -58,16 +58,23 @@ public class CalendarioController {
         }
 
         for (AnchorPane node : listDays) {
-            Label LabelDayNumber = (Label) node.lookup("#lbl_dayNumber");
-            LabelDayNumber.setText(String.valueOf(calendarDate.getDayOfMonth()));
-            LocalDate finalCalendarDate = calendarDate;
-            node.setOnMouseClicked(event -> {
-                if (event.getButton().equals(MouseButton.PRIMARY)) {
-                    if (event.getClickCount() == 2) {
-                        callBack.setCenterDia(finalCalendarDate);
+            if (calendarDate.getMonth().equals(currentYearMonth.getMonth())){
+                Label LabelDayNumber = (Label) node.lookup("#lbl_dayNumber");
+                LabelDayNumber.setText(String.valueOf(calendarDate.getDayOfMonth()));
+                LocalDate finalCalendarDate = calendarDate;
+                node.setOnMouseClicked(event -> {
+                    if (event.getButton().equals(MouseButton.PRIMARY)) {
+                        if (event.getClickCount() == 2) {
+                            callBack.setCenterDia(finalCalendarDate);
+                        }
                     }
-                }
-            });
+                });
+            }else{
+                Label LabelDayNumber = (Label) node.lookup("#lbl_dayNumber");
+                LabelDayNumber.setText("");
+                node.setOnMouseClicked(event -> {
+                });
+            }
             calendarDate = calendarDate.plusDays(1);
         }
 

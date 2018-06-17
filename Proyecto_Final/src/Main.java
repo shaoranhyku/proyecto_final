@@ -24,13 +24,6 @@ public class Main extends Application {
         primaryStage.show();
         primaryStage.setMaxWidth(800);
         primaryStage.setMaxHeight(600);
-
-        //Cargamos el Driver
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
     }
 
     public static void main(String[] args) {

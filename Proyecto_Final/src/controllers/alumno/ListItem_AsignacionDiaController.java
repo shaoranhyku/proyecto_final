@@ -75,11 +75,11 @@ public class ListItem_AsignacionDiaController {
 
         parent.setPrefHeight(parent.getPrefHeight() + sumatorio);
 
-        if(asignacionLista.isEntregado()){
-            lbl_entregado.setText(LBL_ENTREGADO_TRUE);
-        }else{
-            lbl_entregado.setText(LBL_ENTREGADO_FALSE);
-        }
+//        if(asignacionLista.isEntregado()){
+//            lbl_entregado.setText(LBL_ENTREGADO_TRUE);
+//        }else{
+//            lbl_entregado.setText(LBL_ENTREGADO_FALSE);
+//        }
     }
 
     public double getHeight() {

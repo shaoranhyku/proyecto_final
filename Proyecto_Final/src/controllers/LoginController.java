@@ -1,5 +1,7 @@
 package controllers;
 
+import io.reactivex.Observable;
+import models.ApiService;
 import models.Sesion;
 import models.Usuario;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +13,8 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import responses.LoginResponse;
+import retrofit2.HttpException;
 
 import java.io.IOException;
 import java.sql.*;
@@ -22,44 +26,48 @@ public class LoginController {
     public TextField txt_usuario;
     public PasswordField txt_clave;
 
-    public void login(MouseEvent actionEvent) throws IOException, SQLException {
+    public void loginClick(MouseEvent actionEvent) {
 
         String usuario = txt_usuario.getText();
         String clave = txt_clave.getText();
 
-        Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/proyecto_final?allowMultiQueries=true&useSSL=false"
-                , "proyecto"
-                , "proyecto12345");
+        ApiService.login(usuario, clave).subscribe(loginResponse -> {
+            login(loginResponse);
+        }, error -> {
+            int code = ((HttpException) error).code();
+            handleError(code);
+        });
+    }
 
-        //Creamos la sentencia que vamos a ejecutar
-        Statement instruccion = conexion.createStatement();
+    private void handleError(int code) {
+        lbl_mensaje.setText("Usuario o contraseña incorrecto.");
+    }
 
-        String consulta = String.format("SELECT * FROM usuario WHERE nombre_login = \"%s\" AND clave = \"%s\";", usuario, clave);
+    private void login(LoginResponse loginResponse) throws IOException {
 
-        ResultSet resultado = instruccion.executeQuery(consulta);
+        Sesion.crearSesion(loginResponse.getUsuario());
 
-        if (resultado.next()) {
-            String nombre = resultado.getString(2);
-            String apellidos = resultado.getString(3);
-            // TODO: Sacar usuario git
-            String nombreGit = "pruebausuariogit";
-            Sesion.crearSesion(new Usuario(usuario, clave, nombre, apellidos, nombreGit));
-            Node node = (Node) actionEvent.getSource();
-            Stage stage = (Stage) node.getScene().getWindow();
-            //Parent root = FXMLLoader.load(getClass().getResource("/fxml/ui/profesor/scene_profesor.fxml"));/* Exception */
-            Parent root = FXMLLoader.load(getClass().getResource("/fxml/ui/alumno/scene_principal.fxml"));/* Exception */
-            Scene scene = new Scene(root, 800, 600);
-            stage.setScene(scene);
-            stage.show();
-            stage.setMinWidth(1280);
-            stage.setMinHeight(740);
-            stage.setMaxWidth(Double.MAX_VALUE);
-            stage.setMaxHeight(Double.MAX_VALUE);
-            stage.setWidth(1280);
-            stage.setHeight(740);
-            stage.centerOnScreen();
-        } else {
-            lbl_mensaje.setText("Usuario o contraseña incorrecto.");
+        Stage stage = (Stage) lbl_mensaje.getScene().getWindow();
+        Parent root = null;
+
+        switch (loginResponse.getTipo()){
+            case "alumno":
+                root = FXMLLoader.load(getClass().getResource("/fxml/ui/alumno/scene_principal.fxml"));/* Exception */
+                break;
+            case "profesor":
+                root = FXMLLoader.load(getClass().getResource("/fxml/ui/profesor/scene_profesor.fxml"));/* Exception */
+                break;
         }
+
+        Scene scene = new Scene(root, 800, 600);
+        stage.setScene(scene);
+        stage.show();
+        stage.setMinWidth(1280);
+        stage.setMinHeight(740);
+        stage.setMaxWidth(Double.MAX_VALUE);
+        stage.setMaxHeight(Double.MAX_VALUE);
+        stage.setWidth(1280);
+        stage.setHeight(740);
+        stage.centerOnScreen();
     }
 }

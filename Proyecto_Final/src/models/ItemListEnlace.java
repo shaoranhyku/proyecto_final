@@ -2,22 +2,22 @@ package models;
 
 public class ItemListEnlace {
 
-    private String id;
+    private String codigoEnlace;
     private String url;
     private String descripcion;
 
-    public ItemListEnlace(String id, String url, String descripcion) {
-        this.id = id;
+    public ItemListEnlace(String codigoEnlace, String url, String descripcion) {
+        this.codigoEnlace = codigoEnlace;
         this.url = url;
         this.descripcion = descripcion;
     }
 
-    public String getId() {
-        return id;
+    public String getCodigoEnlace() {
+        return codigoEnlace;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setCodigoEnlace(String codigoEnlace) {
+        this.codigoEnlace = codigoEnlace;
     }
 
     public String getUrl() {

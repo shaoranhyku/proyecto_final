@@ -44,7 +44,7 @@ public class ListItem_AsignacionDiaController {
         lbl_descripcion.setText(asignacionLista.getDescripcion());
 
         // Creo la cadena que indica la hora del dia en la que se entrega
-        String horaEntrega = String.format("%s:%s - ", asignacionLista.getFechaEntrega().getHour(), asignacionLista.getFechaEntrega().getMinute());
+        String horaEntrega = String.format("%s/%s/%s %s:%s - ", asignacionLista.getFechaEntrega().getDayOfMonth(), asignacionLista.getFechaEntrega().getMonthValue(), asignacionLista.getFechaEntrega().getYear() ,asignacionLista.getFechaEntrega().getHour(), asignacionLista.getFechaEntrega().getMinute());
 
         // Obtengo los dias, horas y minutos restantes
         LocalDateTime actual = LocalDateTime.now();
@@ -75,11 +75,11 @@ public class ListItem_AsignacionDiaController {
 
         parent.setPrefHeight(parent.getPrefHeight() + sumatorio);
 
-//        if(asignacionLista.isEntregado()){
-//            lbl_entregado.setText(LBL_ENTREGADO_TRUE);
-//        }else{
-//            lbl_entregado.setText(LBL_ENTREGADO_FALSE);
-//        }
+        if(asignacionLista.isEntregado()){
+            lbl_entregado.setText(LBL_ENTREGADO_TRUE);
+        }else{
+            lbl_entregado.setText(LBL_ENTREGADO_FALSE);
+        }
     }
 
     public double getHeight() {

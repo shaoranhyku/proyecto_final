@@ -17,7 +17,7 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.util.Pair;
 import models.ItemListEnlace;
-import models.TemaLista;
+import models.ItemListTema;
 
 import java.io.IOException;
 import java.util.Optional;
@@ -33,31 +33,31 @@ public class TemaController extends Application{
     public Button btn_Eliminar;
     private String temaActual;
     private String asignaturaActual;
-    private ObservableList<TemaLista> observableList_temas;
+    private ObservableList<ItemListTema> observableList_temas;
     private ObservableList<ItemListEnlace> observableList_enlaces;
 
     public void initialize() {
 
         // TODO: Recibir asignaturas de la api
 
-        observableList_temas = FXCollections.observableArrayList(
-                new TemaLista(asignaturaActual, "", "- Sin padre -"),
-                new TemaLista(asignaturaActual, "1", "Tema Primero"),
-                new TemaLista(asignaturaActual, "1.1", "Subtema Primero"),
-                new TemaLista(asignaturaActual, "2", "Tema 2"),
-                new TemaLista(asignaturaActual, "3", "Tema 3"),
-                new TemaLista(asignaturaActual, "3.1", "Tema 3 sub"),
-                new TemaLista(asignaturaActual, "3.2", "Tema 3 sub 2"),
-                new TemaLista(asignaturaActual, "4", "Tema Primero"),
-                new TemaLista(asignaturaActual, "5", "Tema Primero"),
-                new TemaLista(asignaturaActual, "5.1", "Tema Primero"),
-                new TemaLista(asignaturaActual, "5.2", "Tema Primero"),
-                new TemaLista(asignaturaActual, "5.3", "Tema Primero"),
-                new TemaLista(asignaturaActual, "5.2", "Tema Primero"),
-                new TemaLista(asignaturaActual, "5.3", "Tema Primero"),
-                new TemaLista(asignaturaActual, "5.2", "Tema Primero"),
-                new TemaLista(asignaturaActual, "5.3", "Tema Primero")
-        );
+//        observableList_temas = FXCollections.observableArrayList(
+//                new ItemListTema(asignaturaActual, "", "- Sin padre -", descripcion, fechaComienzo, enlaces),
+//                new ItemListTema(asignaturaActual, "1", "Tema Primero", descripcion, fechaComienzo, enlaces),
+//                new ItemListTema(asignaturaActual, "1.1", "Subtema Primero", descripcion, fechaComienzo, enlaces),
+//                new ItemListTema(asignaturaActual, "2", "Tema 2", descripcion, fechaComienzo, enlaces),
+//                new ItemListTema(asignaturaActual, "3", "Tema 3", descripcion, fechaComienzo, enlaces),
+//                new ItemListTema(asignaturaActual, "3.1", "Tema 3 sub", descripcion, fechaComienzo, enlaces),
+//                new ItemListTema(asignaturaActual, "3.2", "Tema 3 sub 2", descripcion, fechaComienzo, enlaces),
+//                new ItemListTema(asignaturaActual, "4", "Tema Primero", descripcion, fechaComienzo, enlaces),
+//                new ItemListTema(asignaturaActual, "5", "Tema Primero", descripcion, fechaComienzo, enlaces),
+//                new ItemListTema(asignaturaActual, "5.1", "Tema Primero", descripcion, fechaComienzo, enlaces),
+//                new ItemListTema(asignaturaActual, "5.2", "Tema Primero", descripcion, fechaComienzo, enlaces),
+//                new ItemListTema(asignaturaActual, "5.3", "Tema Primero", descripcion, fechaComienzo, enlaces),
+//                new ItemListTema(asignaturaActual, "5.2", "Tema Primero", descripcion, fechaComienzo, enlaces),
+//                new ItemListTema(asignaturaActual, "5.3", "Tema Primero", descripcion, fechaComienzo, enlaces),
+//                new ItemListTema(asignaturaActual, "5.2", "Tema Primero", descripcion, fechaComienzo, enlaces),
+//                new ItemListTema(asignaturaActual, "5.3", "Tema Primero", descripcion, fechaComienzo, enlaces)
+//        );
 
         observableList_enlaces = FXCollections.observableArrayList();
 

@@ -1,6 +1,7 @@
 package models;
 
 import io.reactivex.Observable;
+import responses.AsignaturaAlumnoResponse;
 import responses.LoginResponse;
 import retrofit2.http.*;
 
@@ -17,5 +18,8 @@ public interface ApiInterface {
 
     @GET("ultimasAsignaciones/{alumno}/")
     Observable<List<AsignacionLista>> obtenerUltimasAsignacionesAlumno(@Path("alumno") String alumno);
+
+    @GET("asignaturaAlumno/{asignatura}/{alumno}/")
+    Observable<AsignaturaAlumnoResponse> obtenerAsignaturaAlumno(@Path("asignatura") String asignatura, @Path("alumno") String alumno);
 
 }

@@ -9,13 +9,15 @@ public class AsignacionLista {
     private String asignatura;
     private String descripcion;
     private LocalDateTime fechaEntrega;
+    private boolean entregado;
 
-    public AsignacionLista(int codigoAsignacion, String nombreAsignacion, String asignatura, String descripcion, LocalDateTime fechaEntrega) {
+    public AsignacionLista(int codigoAsignacion, String nombreAsignacion, String asignatura, String descripcion, LocalDateTime fechaEntrega, boolean entregado) {
         this.codigoAsignacion = codigoAsignacion;
         this.nombreAsignacion = nombreAsignacion;
         this.asignatura = asignatura;
         this.descripcion = descripcion;
         this.fechaEntrega = fechaEntrega;
+        this.entregado = entregado;
     }
 
     public String getNombreAsignacion() {
@@ -56,5 +58,13 @@ public class AsignacionLista {
 
     public void setCodigoAsignacion(int codigoAsignacion) {
         this.codigoAsignacion = codigoAsignacion;
+    }
+
+    public boolean isEntregado() {
+        return entregado;
+    }
+
+    public void setEntregado(boolean entregado) {
+        this.entregado = entregado;
     }
 }

@@ -15,7 +15,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.util.Pair;
 import models.CriterioEvaluacionProfesor;
-import models.TemaLista;
+import models.ItemListTema;
 import tornadofx.control.DateTimePicker;
 
 import java.io.IOException;
@@ -31,7 +31,7 @@ public class AsignacionController {
     public ListView lst_temas;
 
     private String asignacionActual;
-    private ObservableList<TemaLista> observableList_todosTemas;
+    private ObservableList<ItemListTema> observableList_todosTemas;
     private String asignaturaActual;
     private ObservableList<Object> observableList_criterios;
     private ObservableList<Object> observableList_temas;
@@ -40,23 +40,23 @@ public class AsignacionController {
 
         // TODO: Traer los temas de la API
 
-        observableList_todosTemas = FXCollections.observableArrayList(
-                new TemaLista(asignaturaActual, "1", "Tema Primero"),
-                new TemaLista(asignaturaActual, "1.1", "Subtema Primero"),
-                new TemaLista(asignaturaActual, "2", "Tema 2"),
-                new TemaLista(asignaturaActual, "3", "Tema 3"),
-                new TemaLista(asignaturaActual, "3.1", "Tema 3 sub"),
-                new TemaLista(asignaturaActual, "3.2", "Tema 3 sub 2"),
-                new TemaLista(asignaturaActual, "4", "Tema Primero"),
-                new TemaLista(asignaturaActual, "5", "Tema Primero"),
-                new TemaLista(asignaturaActual, "5.1", "Tema Primero"),
-                new TemaLista(asignaturaActual, "5.2", "Tema Primero"),
-                new TemaLista(asignaturaActual, "5.3", "Tema Primero"),
-                new TemaLista(asignaturaActual, "5.2", "Tema Primero"),
-                new TemaLista(asignaturaActual, "5.3", "Tema Primero"),
-                new TemaLista(asignaturaActual, "5.2", "Tema Primero"),
-                new TemaLista(asignaturaActual, "5.3", "Tema Primero")
-        );
+//        observableList_todosTemas = FXCollections.observableArrayList(
+//                new ItemListTema(asignaturaActual, "1", "Tema Primero", descripcion, fechaComienzo, enlaces),
+//                new ItemListTema(asignaturaActual, "1.1", "Subtema Primero", descripcion, fechaComienzo, enlaces),
+//                new ItemListTema(asignaturaActual, "2", "Tema 2", descripcion, fechaComienzo, enlaces),
+//                new ItemListTema(asignaturaActual, "3", "Tema 3", descripcion, fechaComienzo, enlaces),
+//                new ItemListTema(asignaturaActual, "3.1", "Tema 3 sub", descripcion, fechaComienzo, enlaces),
+//                new ItemListTema(asignaturaActual, "3.2", "Tema 3 sub 2", descripcion, fechaComienzo, enlaces),
+//                new ItemListTema(asignaturaActual, "4", "Tema Primero", descripcion, fechaComienzo, enlaces),
+//                new ItemListTema(asignaturaActual, "5", "Tema Primero", descripcion, fechaComienzo, enlaces),
+//                new ItemListTema(asignaturaActual, "5.1", "Tema Primero", descripcion, fechaComienzo, enlaces),
+//                new ItemListTema(asignaturaActual, "5.2", "Tema Primero", descripcion, fechaComienzo, enlaces),
+//                new ItemListTema(asignaturaActual, "5.3", "Tema Primero", descripcion, fechaComienzo, enlaces),
+//                new ItemListTema(asignaturaActual, "5.2", "Tema Primero", descripcion, fechaComienzo, enlaces),
+//                new ItemListTema(asignaturaActual, "5.3", "Tema Primero", descripcion, fechaComienzo, enlaces),
+//                new ItemListTema(asignaturaActual, "5.2", "Tema Primero", descripcion, fechaComienzo, enlaces),
+//                new ItemListTema(asignaturaActual, "5.3", "Tema Primero", descripcion, fechaComienzo, enlaces)
+//        );
 
         observableList_temas = FXCollections.observableArrayList();
 
@@ -152,18 +152,18 @@ public class AsignacionController {
 
     private void mostrarDialogoAgregarTema() {
 
-        ChoiceDialog<TemaLista> dialog = new ChoiceDialog<>(observableList_todosTemas.get(0), observableList_todosTemas);
+        ChoiceDialog<ItemListTema> dialog = new ChoiceDialog<>(observableList_todosTemas.get(0), observableList_todosTemas);
         dialog.setHeaderText(null);
         dialog.setGraphic(null);
         dialog.setTitle("Agregar tema");
         dialog.setContentText("Elige un tema:");
 
-        Optional<TemaLista> result = dialog.showAndWait();
+        Optional<ItemListTema> result = dialog.showAndWait();
 
         result.ifPresent(letter -> agregarNuevoTema(letter));
     }
 
-    private void agregarNuevoTema(TemaLista letter) {
+    private void agregarNuevoTema(ItemListTema letter) {
         observableList_temas.add(letter);
     }
 
@@ -221,7 +221,7 @@ public class AsignacionController {
         }
     }
 
-    public class CellTema extends ListCell<TemaLista> {
+    public class CellTema extends ListCell<ItemListTema> {
         private Parent itemRoot;
         private Label lbl_nombre;
         private EventHandler<MouseEvent> callback;
@@ -231,9 +231,9 @@ public class AsignacionController {
         }
 
         @Override
-        protected void updateItem(TemaLista temaLista, boolean empty) {
-            super.updateItem(temaLista, empty);
-            if (temaLista == null) {
+        protected void updateItem(ItemListTema itemListTema, boolean empty) {
+            super.updateItem(itemListTema, empty);
+            if (itemListTema == null) {
                 setText(null);
                 setGraphic(null);
                 return;
@@ -247,10 +247,10 @@ public class AsignacionController {
                 lbl_nombre = (Label) itemRoot.lookup("#lbl_nombreTema");
                 itemRoot.setOnMouseClicked(callback);
             }
-            itemRoot.setUserData(temaLista);
+            itemRoot.setUserData(itemListTema);
             itemRoot.setOnMouseEntered(event -> itemRoot.getScene().setCursor(Cursor.HAND));
             itemRoot.setOnMouseExited(event -> itemRoot.getScene().setCursor(Cursor.DEFAULT));
-            lbl_nombre.setText(String.format("%s %s", temaLista.getClave(), temaLista.getNombre()));
+            lbl_nombre.setText(String.format("%s %s", itemListTema.getCodigoTema(), itemListTema.getNombreTema()));
             setGraphic(itemRoot);
         }
     }

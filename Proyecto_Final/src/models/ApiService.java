@@ -2,6 +2,7 @@ package models;
 
 import com.google.gson.*;
 import io.reactivex.Observable;
+import responses.AsignaturaAlumnoResponse;
 import responses.LoginResponse;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
@@ -9,6 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 import java.lang.reflect.Type;
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
@@ -28,7 +30,12 @@ public class ApiService {
         Gson gson = new GsonBuilder().registerTypeAdapter(LocalDateTime.class, (JsonDeserializer<LocalDateTime>) (json, type, jsonDeserializationContext) -> {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
             return LocalDateTime.parse(json.getAsJsonPrimitive().getAsString(), formatter);
+        }).registerTypeAdapter(LocalDate.class, (JsonDeserializer<LocalDate>) (json, type, jsonDeserializationContext) -> {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+            return LocalDate.parse(json.getAsJsonPrimitive().getAsString(), formatter);
         }).create();
+
+
 
         retrofit = new Retrofit.Builder()
                 .baseUrl("http://localhost:8080/api/")
@@ -47,6 +54,10 @@ public class ApiService {
 
     public static Observable<List<AsignacionLista>> obtenerUltimasAsignacionesAlumno(String alumno){
         return getInstance().retrofit.obtenerUltimasAsignacionesAlumno(alumno);
+    }
+
+    public static Observable<AsignaturaAlumnoResponse> obtenerAsignaturaAlumno(String asignatura, String alumno){
+        return getInstance().retrofit.obtenerAsignaturaAlumno(asignatura, alumno);
     }
 
 }

@@ -22,11 +22,12 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextBoundsType;
 import models.AsignacionLista;
 import models.ItemListAsignatura;
-import models.TemaLista;
+import models.ItemListTema;
 
 import java.io.IOException;
 import java.text.Bidi;
 import java.util.ArrayList;
+import java.util.List;
 
 import static javafx.scene.control.OverrunStyle.*;
 import static javafx.scene.control.OverrunStyle.CENTER_WORD_ELLIPSIS;
@@ -493,7 +494,7 @@ public class Utils {
         }
     }
 
-    public static void setAsignacionesInVBox(ArrayList<AsignacionLista> asignaciones, VBox internVbox, PrincipalController internCallback, Class internClass) {
+    public static void setAsignacionesInVBox(List<AsignacionLista> asignaciones, VBox internVbox, PrincipalController internCallback, Class internClass) {
         ArrayList<Parent> asignacionesItemList = new ArrayList<>();
         double sumarioHeight = 0;
 
@@ -525,11 +526,11 @@ public class Utils {
         internVbox.setPrefHeight(sumarioHeight);
     }
 
-    public static void setTemasInVBox(ArrayList<TemaLista> temas, VBox internVbox, PrincipalController internCallback, Class internClass) {
+    public static void setTemasInVBox(List<ItemListTema> temas, VBox internVbox, PrincipalController internCallback, Class internClass) {
         ArrayList<Parent> temasItemList = new ArrayList<>();
         double sumarioHeight = 0;
 
-        for (TemaLista temaLista : temas) {
+        for (ItemListTema itemListTema : temas) {
             FXMLLoader loader = new FXMLLoader(internClass.getResource("/fxml/item/listItem_tema.fxml"));
             Parent node = null;
             try {
@@ -539,10 +540,10 @@ public class Utils {
             }
 
             ListItem_TemaController controller = loader.getController();
-            controller.setTema(temaLista);
+            controller.setTema(itemListTema);
             node.setOnMouseEntered(event -> internVbox.getScene().setCursor(Cursor.HAND));
             node.setOnMouseExited(event -> internVbox.getScene().setCursor(Cursor.DEFAULT));
-            node.setOnMouseClicked(event -> internCallback.setCenterTema(temaLista.getAsignaturaClave(), temaLista.getClave()));
+            node.setOnMouseClicked(event -> internCallback.setCenterTema(itemListTema.getCodigoAsignatura(), itemListTema.getCodigoTema()));
 
             temasItemList.add(node);
             // Altura del elemento + margen

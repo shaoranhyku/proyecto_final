@@ -4,6 +4,7 @@ import com.google.gson.*;
 import io.reactivex.Observable;
 import responses.AsignaturaAlumnoResponse;
 import responses.LoginResponse;
+import responses.TemaAlumnoResponse;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -35,8 +36,6 @@ public class ApiService {
             return LocalDate.parse(json.getAsJsonPrimitive().getAsString(), formatter);
         }).create();
 
-
-
         retrofit = new Retrofit.Builder()
                 .baseUrl("http://localhost:8080/api/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
@@ -58,6 +57,10 @@ public class ApiService {
 
     public static Observable<AsignaturaAlumnoResponse> obtenerAsignaturaAlumno(String asignatura, String alumno){
         return getInstance().retrofit.obtenerAsignaturaAlumno(asignatura, alumno);
+    }
+
+    public static Observable<TemaAlumnoResponse> obtenerTemaAlumno(String asignatura, String tema, String alumno){
+        return getInstance().retrofit.obtenerTemaAlumno(asignatura, tema, alumno);
     }
 
 }

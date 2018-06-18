@@ -10,14 +10,16 @@ public class AsignacionLista {
     private String descripcion;
     private LocalDateTime fechaEntrega;
     private boolean entregado;
+    private String nombreGit;
 
-    public AsignacionLista(int codigoAsignacion, String nombreAsignacion, String asignatura, String descripcion, LocalDateTime fechaEntrega, boolean entregado) {
+    public AsignacionLista(int codigoAsignacion, String nombreAsignacion, String asignatura, String descripcion, LocalDateTime fechaEntrega, boolean entregado, String nombreGit) {
         this.codigoAsignacion = codigoAsignacion;
         this.nombreAsignacion = nombreAsignacion;
         this.asignatura = asignatura;
         this.descripcion = descripcion;
         this.fechaEntrega = fechaEntrega;
         this.entregado = entregado;
+        this.nombreGit = nombreGit;
     }
 
     public String getNombreAsignacion() {
@@ -66,5 +68,13 @@ public class AsignacionLista {
 
     public void setEntregado(boolean entregado) {
         this.entregado = entregado;
+    }
+
+    public String getNombreGit() {
+        return nombreGit;
+    }
+
+    public void setNombreGit(String nombreGit) {
+        this.nombreGit = nombreGit;
     }
 }

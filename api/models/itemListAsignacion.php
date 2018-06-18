@@ -13,4 +13,5 @@ class itemListAsignacion
     public $asignatura;
     public $descripcion;
     public $fechaEntrega;
+    public $nombreGit;
 }

@@ -2,11 +2,13 @@ package models;
 
 public class CriterioEvaluacionProfesor {
 
+    private int codigoAsig;
     private int codigoCriterio;
     private String nombre;
     private int porcentaje;
 
-    public CriterioEvaluacionProfesor(int codigoCriterio, String nombre, int porcentaje) {
+    public CriterioEvaluacionProfesor(int codigoAsig, int codigoCriterio, String nombre, int porcentaje) {
+        this.codigoAsig = codigoAsig;
         this.codigoCriterio = codigoCriterio;
         this.nombre = nombre;
         this.porcentaje = porcentaje;
@@ -34,5 +36,13 @@ public class CriterioEvaluacionProfesor {
 
     public void setCodigoCriterio(int codigoCriterio) {
         this.codigoCriterio = codigoCriterio;
+    }
+
+    public int getCodigoAsig() {
+        return codigoAsig;
+    }
+
+    public void setCodigoAsig(int codigoAsig) {
+        this.codigoAsig = codigoAsig;
     }
 }

@@ -153,7 +153,7 @@ public class ProfesorController {
 
         AsignacionController controller = loader.getController();
         controller.callback = this;
-        controller.setAsignacionActual(asignaturaSeleccionada, "");
+        controller.setAsignacionActual(asignaturaSeleccionada, -1);
         rootPane.setCenter(center);
     }
 

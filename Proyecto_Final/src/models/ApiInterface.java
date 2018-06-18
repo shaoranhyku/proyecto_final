@@ -1,6 +1,7 @@
 package models;
 
 import io.reactivex.Observable;
+import responses.AsignacionAlumnoResponse;
 import responses.AsignaturaAlumnoResponse;
 import responses.LoginResponse;
 import responses.TemaAlumnoResponse;
@@ -26,4 +27,6 @@ public interface ApiInterface {
     @GET("temaAlumno/{asignatura}/{tema}/{alumno}/")
     Observable<TemaAlumnoResponse> obtenerTemaAlumno(@Path("asignatura") String asignatura, @Path("tema") String tema, @Path("alumno") String alumno);
 
+    @GET("asignacionAlumno/{asignacion}/{alumno}/")
+    Observable<AsignacionAlumnoResponse> obtenerAsignacionAlumno(@Path("asignacion") int asignacion, @Path("alumno") String alumno);
 }

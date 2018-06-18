@@ -2,6 +2,7 @@ package models;
 
 import com.google.gson.*;
 import io.reactivex.Observable;
+import responses.AsignacionAlumnoResponse;
 import responses.AsignaturaAlumnoResponse;
 import responses.LoginResponse;
 import responses.TemaAlumnoResponse;
@@ -63,4 +64,7 @@ public class ApiService {
         return getInstance().retrofit.obtenerTemaAlumno(asignatura, tema, alumno);
     }
 
+    public static Observable<AsignacionAlumnoResponse> obtenerAsignacionAlumno(int asignacion, String alumno){
+        return getInstance().retrofit.obtenerAsignacionAlumno(asignacion, alumno);
+    }
 }

@@ -2,37 +2,37 @@ package models;
 
 public class CriterioEvaluacionAlumno {
 
-    private String nombreCriterio;
-    private float notaAuto;
-    private float notaEvaluacion;
+    private CriterioEvaluacionProfesor criterio;
+    private int notaEval;
+    private int notaAuto;
 
-    public CriterioEvaluacionAlumno(String nombreCriterio, float notaAuto, float notaEvaluacion) {
-        this.nombreCriterio = nombreCriterio;
+    public CriterioEvaluacionAlumno(CriterioEvaluacionProfesor criterio, int notaAuto, int notaEval) {
+        this.criterio = criterio;
         this.notaAuto = notaAuto;
-        this.notaEvaluacion = notaEvaluacion;
+        this.notaEval = notaEval;
     }
 
-    public String getNombreCriterio() {
-        return nombreCriterio;
+    public CriterioEvaluacionProfesor getCriterio() {
+        return criterio;
     }
 
-    public void setNombreCriterio(String nombreCriterio) {
-        this.nombreCriterio = nombreCriterio;
+    public void setCriterio(CriterioEvaluacionProfesor criterio) {
+        this.criterio = criterio;
     }
 
-    public float getNotaAuto() {
+    public int getNotaAuto() {
         return notaAuto;
     }
 
-    public void setNotaAuto(float notaAuto) {
+    public void setNotaAuto(int notaAuto) {
         this.notaAuto = notaAuto;
     }
 
-    public float getNotaEvaluacion() {
-        return notaEvaluacion;
+    public int getNotaEval() {
+        return notaEval;
     }
 
-    public void setNotaEvaluacion(float notaEvaluacion) {
-        this.notaEvaluacion = notaEvaluacion;
+    public void setNotaEval(int notaEval) {
+        this.notaEval = notaEval;
     }
 }

@@ -12,7 +12,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import models.AsignacionAlumno;
+import models.ApiService;
 import models.CriterioEvaluacionAlumno;
 import models.Sesion;
 import models.Usuario;
@@ -24,12 +24,10 @@ import java.util.ArrayList;
 
 public class AsignacionController extends Application {
     public Label lbl_nombreAsignatura;
-    public Label lbl_tema;
     public Label lbl_nombreAsignacion;
     public Label lbl_descripcion;
     public Label lbl_fechaEntrega;
     public Label lbl_urlEjemplo;
-    public TextField txt_urlGitHub;
     public TextArea txt_comentario;
     public Label lbl_notaTotal;
     public TextField txt_notaAuto;
@@ -38,102 +36,75 @@ public class AsignacionController extends Application {
     public VBox vbox_criteriosEvaluacion;
     public PrincipalController callBack;
 
+    private boolean editar;
+
     public void setAsignacion(int codigoAsignacion) {
-        ArrayList<String> temas = new ArrayList<>();
-        temas.add("Tema 1");
-        temas.add("Tema 4");
-        ArrayList<CriterioEvaluacionAlumno> criterios = new ArrayList<>();
-        criterios.add(new CriterioEvaluacionAlumno("3FN", -1, -1));
-        criterios.add(new CriterioEvaluacionAlumno("Entidades creadas correctamente", -1, -1));
-        criterios.add(new CriterioEvaluacionAlumno("Paso a tabla", -1, -1));
-        AsignacionAlumno asignacion = new AsignacionAlumno("Base de Datos", temas, "Trabajo Final Base de Datos", "Entregar el examen final de Base de Datos junto con el diagrama entidad relación.", LocalDateTime.of(2018, 10, 23, 11, 30), LocalDateTime.now(), "finaBaseDatos", null, null, -1, -1, criterios);
 
-        lbl_nombreAsignatura.setText(asignacion.getNombreAsignatura());
+        ApiService.obtenerAsignacionAlumno(codigoAsignacion, Sesion.getInstance().getUsuario().getNombreLogin()).subscribe(asignacionAlumnoResponse -> {
+            lbl_nombreAsignatura.setText(asignacionAlumnoResponse.getAsignacion().getAsignatura());
+            lbl_nombreAsignacion.setText(asignacionAlumnoResponse.getAsignacion().getNombreAsignacion());
+            lbl_descripcion.setText(asignacionAlumnoResponse.getAsignacion().getDescripcion());
 
-        String temasString = asignacion.getTemas().get(0);
-        for (String tema : asignacion.getTemas().subList(1, asignacion.getTemas().size())) {
-            temasString = temasString.concat(String.format(", %s", tema));
-        }
+            // Creo la cadena que indica la hora y el dia en la que se entrega
+            String horaEntrega = String.format("Entrega: %s/%s/%s %s:%s - ", asignacionAlumnoResponse.getAsignacion().getFechaEntrega().getDayOfMonth(),
+                    asignacionAlumnoResponse.getAsignacion().getFechaEntrega().getMonthValue(),
+                    asignacionAlumnoResponse.getAsignacion().getFechaEntrega().getYear(),
+                    asignacionAlumnoResponse.getAsignacion().getFechaEntrega().getHour(),
+                    asignacionAlumnoResponse.getAsignacion().getFechaEntrega().getMinute());
 
-        lbl_tema.setText(temasString);
+            // Obtengo los dias, horas y minutos restantes
+            LocalDateTime actual = LocalDateTime.now();
+            LocalDateTime tempDateTime = LocalDateTime.from(actual);
+            long diasRestantes = tempDateTime.until(asignacionAlumnoResponse.getAsignacion().getFechaEntrega(), ChronoUnit.DAYS);
+            tempDateTime = tempDateTime.plusDays(diasRestantes);
+            long horasRestanttes = tempDateTime.until(asignacionAlumnoResponse.getAsignacion().getFechaEntrega(), ChronoUnit.HOURS);
+            tempDateTime = tempDateTime.plusHours(horasRestanttes);
+            long minutosRestantes = tempDateTime.until(asignacionAlumnoResponse.getAsignacion().getFechaEntrega(), ChronoUnit.MINUTES);
 
-        lbl_nombreAsignacion.setText(asignacion.getNombreAsignacion());
+            // Creo cadenas para las hora, dias y minutos restantes si son mayores que 1
+            if (diasRestantes > 1) {
+                horaEntrega = horaEntrega.concat(String.format("%d dias ", diasRestantes));
+            }
+            if (horasRestanttes > 1) {
+                horaEntrega = horaEntrega.concat(String.format("%d horas ", horasRestanttes));
+            }
+            if (minutosRestantes > 1) {
+                horaEntrega = horaEntrega.concat(String.format("%d minutos ", minutosRestantes));
+            }
+            horaEntrega = horaEntrega.concat("restantes.");
+            lbl_fechaEntrega.setText(horaEntrega);
 
-        lbl_descripcion.setText(asignacion.getDescripcion());
+            lbl_urlEjemplo.setText(String.format("URL: https://github.com/%s/%s", Sesion.getInstance().getUsuario().getNombreGit(), asignacionAlumnoResponse.getAsignacion().getNombreGit()));
 
-        // Creo la cadena que indica la hora y el dia en la que se entrega
-        String horaEntrega = String.format("Entrega: %s/%s/%s %s:%s - ", asignacion.getFechaEntrega().getDayOfMonth(),
-                asignacion.getFechaEntrega().getMonthValue(),
-                asignacion.getFechaEntrega().getYear(),
-                asignacion.getFechaEntrega().getHour(),
-                asignacion.getFechaEntrega().getMinute());
+            editar = asignacionAlumnoResponse.getEntrega() != null;
 
-        // Obtengo los dias, horas y minutos restantes
-        LocalDateTime actual = LocalDateTime.now();
-        LocalDateTime tempDateTime = LocalDateTime.from(actual);
-        long diasRestantes = tempDateTime.until(asignacion.getFechaEntrega(), ChronoUnit.DAYS);
-        tempDateTime = tempDateTime.plusDays(diasRestantes);
-        long horasRestanttes = tempDateTime.until(asignacion.getFechaEntrega(), ChronoUnit.HOURS);
-        tempDateTime = tempDateTime.plusHours(horasRestanttes);
-        long minutosRestantes = tempDateTime.until(asignacion.getFechaEntrega(), ChronoUnit.MINUTES);
+            if (editar) {
+                btn_entregar.setText("Volver a entregar");
 
-        // Creo cadenas para las hora, dias y minutos restantes si son mayores que 1
-        if (diasRestantes > 1) {
-            horaEntrega = horaEntrega.concat(String.format("%d dias ", diasRestantes));
-        }
-        if (horasRestanttes > 1) {
-            horaEntrega = horaEntrega.concat(String.format("%d horas ", horasRestanttes));
-        }
-        if (minutosRestantes > 1) {
-            horaEntrega = horaEntrega.concat(String.format("%d minutos ", minutosRestantes));
-        }
-        horaEntrega = horaEntrega.concat("restantes.");
-        lbl_fechaEntrega.setText(horaEntrega);
-
-        Usuario usuario = Sesion.getInstance().getUsuario();
-
-        lbl_urlEjemplo.setText(String.format("URL: https://github.com/%s/%s", usuario.getNombreGit(), asignacion.getNombreGit()));
-
-        // TODO: Comprobar si la consuta (haga como la haga) devolvera null o vacio.
-        if(asignacion.getEnlaceGit() != null){
-            txt_urlGitHub.setText(asignacion.getEnlaceGit());
-        }
-
-        if(asignacion.getComentario() != null){
-            txt_comentario.setText(asignacion.getComentario());
-        }
-
-        if(asignacion.getNotaAuto() >= 0){
-            txt_notaAuto.setText(String.valueOf(asignacion.getNotaAuto()));
-        }
-
-        if(asignacion.getNotaEvaluacion() >= 0){
-            txt_notaEval.setText(String.valueOf(asignacion.getNotaEvaluacion()));
-        }
-
-        ArrayList<Parent> criteriosLista = new ArrayList<>();
-
-        for(CriterioEvaluacionAlumno criterio : criterios){
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/item/listItem_criterioEvaluacion.fxml"));
-            Parent node = null;
-            try {
-                node = loader.load();
-            } catch (IOException e) {
-                e.printStackTrace();
+                txt_comentario.setText(asignacionAlumnoResponse.getEntrega().getComentario());
+                txt_notaEval.setText(asignacionAlumnoResponse.getEntrega().getNotaEval() == -1 ? "" : String.valueOf(asignacionAlumnoResponse.getEntrega().getNotaEval()));
+                txt_notaAuto.setText(asignacionAlumnoResponse.getEntrega().getNotaAuto() == -1 ? "" : String.valueOf(asignacionAlumnoResponse.getEntrega().getNotaAuto()));
             }
 
-            ListItem_CriterioEvaluacion controller = loader.getController();
-            controller.setCriterio(criterio);
+            ArrayList<Parent> criteriosLista = new ArrayList<>();
 
-            criteriosLista.add(node);
-        }
+            for (CriterioEvaluacionAlumno criterio : asignacionAlumnoResponse.getCriteriosNota()) {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/item/listItem_criterioEvaluacion.fxml"));
+                Parent node = null;
+                try {
+                    node = loader.load();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
 
-        vbox_criteriosEvaluacion.getChildren().setAll(criteriosLista);
-    }
+                ListItem_CriterioEvaluacion controller = loader.getController();
+                controller.setCriterio(criterio);
 
-    public void abrirNavegador(ActionEvent actionEvent) {
-        HostServicesDelegate hostServices = HostServicesFactory.getInstance(this);
-        hostServices.showDocument("https://github.com/shaoranhyku/proyecto_final/blob/master/Documentacion/Proyecto%20Final.pdf");
+                criteriosLista.add(node);
+            }
+
+            vbox_criteriosEvaluacion.getChildren().setAll(criteriosLista);
+        });
     }
 
     @Override

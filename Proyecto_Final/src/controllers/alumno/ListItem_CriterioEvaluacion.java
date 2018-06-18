@@ -15,14 +15,14 @@ public class ListItem_CriterioEvaluacion {
     private TextField txt_notaCriterioEvaluacion;
 
     public void setCriterio(CriterioEvaluacionAlumno criterio) {
-        lbl_nombreCriterio.setText(criterio.getNombreCriterio());
+        lbl_nombreCriterio.setText(criterio.getCriterio().getNombre());
 
         if (criterio.getNotaAuto() >= 0) {
             txt_notaCriterioAuto.setText(String.valueOf(criterio.getNotaAuto()));
         }
 
-        if (criterio.getNotaEvaluacion() >= 0) {
-            txt_notaCriterioEvaluacion.setText(String.valueOf(criterio.getNotaEvaluacion()));
+        if (criterio.getNotaEval() >= 0) {
+            txt_notaCriterioEvaluacion.setText(String.valueOf(criterio.getNotaEval()));
         }
 
     }

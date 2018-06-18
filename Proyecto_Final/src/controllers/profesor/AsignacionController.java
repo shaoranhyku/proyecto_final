@@ -30,7 +30,7 @@ public class AsignacionController {
     public ProfesorController callback;
     public ListView lst_temas;
 
-    private String asignacionActual;
+    private int asignacionActual;
     private ObservableList<ItemListTema> observableList_todosTemas;
     private String asignaturaActual;
     private ObservableList<Object> observableList_criterios;
@@ -137,7 +137,7 @@ public class AsignacionController {
     }
 
     private void crearNuevoCriterio(String key, String value) {
-        observableList_criterios.add(new CriterioEvaluacionProfesor(-1, key, Integer.parseInt(value)));
+        observableList_criterios.add(new CriterioEvaluacionProfesor(asignacionActual, -1, key, Integer.parseInt(value)));
     }
 
     public void btnEliminarCriterioClick(ActionEvent actionEvent) {
@@ -179,7 +179,7 @@ public class AsignacionController {
     public void btnEliminarClick(ActionEvent actionEvent) {
     }
 
-    public void setAsignacionActual(String asignaturaActual, String asignacionActual) {
+    public void setAsignacionActual(String asignaturaActual, int asignacionActual) {
         this.asignaturaActual = asignaturaActual;
         this.asignacionActual = asignacionActual;
     }

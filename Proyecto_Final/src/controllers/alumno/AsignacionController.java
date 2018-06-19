@@ -1,26 +1,25 @@
 package controllers.alumno;
 
-import com.sun.deploy.uitoolkit.impl.fx.HostServicesFactory;
-import com.sun.javafx.application.HostServicesDelegate;
 import javafx.application.Application;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import models.ApiService;
 import models.CriterioEvaluacionAlumno;
+import models.EntregaAsignacion;
 import models.Sesion;
-import models.Usuario;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.List;
 
 public class AsignacionController extends Application {
     public Label lbl_nombreAsignatura;
@@ -37,8 +36,13 @@ public class AsignacionController extends Application {
     public PrincipalController callBack;
 
     private boolean editar;
+    private List<CriterioEvaluacionAlumno> listaCriterios;
+    private int codigoAsignacion;
+    private int contador;
 
     public void setAsignacion(int codigoAsignacion) {
+
+        this.codigoAsignacion = codigoAsignacion;
 
         ApiService.obtenerAsignacionAlumno(codigoAsignacion, Sesion.getInstance().getUsuario().getNombreLogin()).subscribe(asignacionAlumnoResponse -> {
             lbl_nombreAsignatura.setText(asignacionAlumnoResponse.getAsignacion().getAsignatura());
@@ -74,7 +78,7 @@ public class AsignacionController extends Application {
             horaEntrega = horaEntrega.concat("restantes.");
             lbl_fechaEntrega.setText(horaEntrega);
 
-            lbl_urlEjemplo.setText(String.format("URL: https://github.com/%s/%s", Sesion.getInstance().getUsuario().getNombreGit(), asignacionAlumnoResponse.getAsignacion().getNombreGit()));
+            lbl_urlEjemplo.setText(String.format("https://github.com/%s/%s", Sesion.getInstance().getUsuario().getNombreGit(), asignacionAlumnoResponse.getAsignacion().getNombreGit()));
 
             editar = asignacionAlumnoResponse.getEntrega() != null;
 
@@ -87,6 +91,7 @@ public class AsignacionController extends Application {
             }
 
             ArrayList<Parent> criteriosLista = new ArrayList<>();
+            listaCriterios = asignacionAlumnoResponse.getCriteriosNota();
 
             for (CriterioEvaluacionAlumno criterio : asignacionAlumnoResponse.getCriteriosNota()) {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/item/listItem_criterioEvaluacion.fxml"));
@@ -110,5 +115,79 @@ public class AsignacionController extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
+    }
+
+    public void entregarAsignacionClick(ActionEvent actionEvent) {
+
+        // Se recogen los valores de la entrega y se validan
+        String comentario;
+        String ruta = lbl_urlEjemplo.getText();
+
+        // Si existe un comentario
+        if (txt_comentario.getText() != null) {
+            if (txt_comentario.getText().length() > 255) {
+                mostrarDialogoDatoNoValido("Comentario demasiado largo.", "El tamaño del comentario supera los 255 caracteres.");
+                return;
+            } else {
+                comentario = txt_comentario.getText();
+            }
+        } else {
+            comentario = "";
+        }
+
+        ObservableList<Node> listaCriteriosNode = vbox_criteriosEvaluacion.getChildren();
+
+        for (int i = 0; i < listaCriteriosNode.size(); i++){
+            Node criterioNode = listaCriteriosNode.get(i);
+
+            int notaAuto;
+
+            try{
+                notaAuto = Integer.parseInt(((TextField)criterioNode.lookup("#txt_notaCriterioAuto")).getText());
+            }catch (NumberFormatException nfe){
+                mostrarDialogoDatoNoValido("Nota criterio incorrecta.", "La nota de los criterios ha de ser un número entre 0 y 10.");
+                return;
+            }
+
+            if(notaAuto < 0 || notaAuto > 10){
+                mostrarDialogoDatoNoValido("Nota criterio incorrecta.", "La nota de los criterios ha de ser un número entre 0 y 10.");
+                return;
+            }
+
+            listaCriterios.get(i).setNotaAuto(notaAuto);
+        }
+
+        // Una vez obtenido todos los valores, se envia a servicio de la web api correspondiente
+        // si estamos editando una entrega o haciendo una nueva
+
+        if (editar) {
+
+        } else {
+            // Primero, por cuestiones de como se calcula la nota total en el servidor, debemos insertar los criterios
+
+            contador = 0;
+
+            for(CriterioEvaluacionAlumno criterio : listaCriterios){
+                ApiService.entregarCriterio(codigoAsignacion, criterio.getCriterio().getCodCriterio(), Sesion.getInstance().getUsuario().getNombreLogin(), Sesion.getInstance().getUsuario().getClave(), criterio.getNotaAuto()).subscribe(() -> {
+                    if (contador < listaCriterios.size()-1){
+                        contador++;
+                    }else{
+                        ApiService.entregarAsignacion(codigoAsignacion, Sesion.getInstance().getUsuario().getNombreLogin(), Sesion.getInstance().getUsuario().getClave(), ruta, comentario)
+                                .subscribe(() -> {
+                                    callBack.setCenterAsignacion(codigoAsignacion);
+                                });
+                    }
+                });
+            }
+        }
+    }
+
+    public void mostrarDialogoDatoNoValido(String titulo, String mensaje) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(titulo);
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje);
+
+        alert.showAndWait();
     }
 }

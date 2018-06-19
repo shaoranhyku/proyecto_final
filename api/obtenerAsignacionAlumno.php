@@ -52,8 +52,23 @@ where a.cod_alumno = \"%s\" and a.cod_asignacion = %d and a.cod_criterio = %d;";
             $entregaAsignacion = new entregaAsignacion();
 
             $entregaAsignacion->comentario = $row['comentario'];
-            $entregaAsignacion->notaEval = $row['nota_evaluacion'];
-            $entregaAsignacion->notaAuto = $row['nota_autoevaluacion'];
+
+            // Si alguna nota no ha sido puesta, se devolvera -1 como valor para que el cliente sepa que no tiene
+            // valor asignado. Si dejamos el campo vacio, el cliente le pondra 0 automaticamente al decodificar el JSON
+            // y no podremos saber si su valor era 0 o vacio
+
+            $notaEval = $row['nota_evaluacion'];
+            if ($notaEval == ""){
+                $notaEval = -1;
+            }
+            $entregaAsignacion->notaEval = $notaEval;
+
+            $notaAuto = $row['nota_autoevaluacion'];
+            if ($notaAuto == ""){
+                $notaAuto = -1;
+            }
+            $entregaAsignacion->notaAuto = $notaAuto;
+
             $entregaAsignacion->rutaArchivo = $row['ruta_archivo'];
 
             $asignacionAlumnoResponse->entrega = $entregaAsignacion;
@@ -85,8 +100,17 @@ where a.cod_alumno = \"%s\" and a.cod_asignacion = %d and a.cod_criterio = %d;";
 
                     $row2 = $result2->fetch_assoc();
 
-                    $criterioNota->notaEval = $row2["nota_evaluacion"];
-                    $criterioNota->notaAuto = $row2["nota_autoevaluacion"];
+                    $notaEval = $row2['nota_evaluacion'];
+                    if ($notaEval == ""){
+                        $notaEval = -1;
+                    }
+                    $criterioNota->notaEval = $notaEval;
+
+                    $notaAuto = $row2['nota_autoevaluacion'];
+                    if ($notaAuto == ""){
+                        $notaAuto = -1;
+                    }
+                    $criterioNota->notaAuto = $notaAuto;
 
                 }else{
                     // Pongo -1 de valor para que no de problemas con los null y detectar que no ha sido puntuado

@@ -73,7 +73,7 @@
                   <Font size="17.0" />
                </font>
             </TextField>
-            <Button fx:id="btn_entregar" layoutX="622.0" layoutY="577.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="166.0" text="Entregar" AnchorPane.leftAnchor="622.0" AnchorPane.topAnchor="577.0">
+            <Button fx:id="btn_entregar" layoutX="622.0" layoutY="577.0" mnemonicParsing="false" onAction="#entregarAsignacionClick" prefHeight="39.0" prefWidth="166.0" text="Entregar" AnchorPane.leftAnchor="622.0" AnchorPane.topAnchor="577.0">
                <font>
                   <Font size="18.0" />
                </font>

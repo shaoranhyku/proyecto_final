@@ -1,6 +1,7 @@
 package models;
 
 import com.google.gson.*;
+import io.reactivex.Completable;
 import io.reactivex.Observable;
 import responses.AsignacionAlumnoResponse;
 import responses.AsignaturaAlumnoResponse;
@@ -66,5 +67,13 @@ public class ApiService {
 
     public static Observable<AsignacionAlumnoResponse> obtenerAsignacionAlumno(int asignacion, String alumno){
         return getInstance().retrofit.obtenerAsignacionAlumno(asignacion, alumno);
+    }
+
+    public static Completable entregarAsignacion(int codigoAsignacion, String alumno, String clave, String ruta, String comentario) {
+        return getInstance().retrofit.entregarAsignacion(codigoAsignacion, alumno, clave, ruta, comentario);
+    }
+
+    public static Completable entregarCriterio(int codigoAsignacion, int codigoCriterio, String alumno, String clave, int notaAuto){
+        return getInstance().retrofit.entregarCriterio(codigoAsignacion, codigoCriterio, alumno, clave, notaAuto);
     }
 }

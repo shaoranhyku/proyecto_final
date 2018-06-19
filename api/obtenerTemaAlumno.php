@@ -12,7 +12,7 @@ if (isset($match['params']['asignatura']) && isset($match['params']['tema']) && 
 
     $datosTemaQuery = sprintf("select t.cod_asignatura, t.cod_temario, t.nombre, t.descripcion, t.fecha_comienzo from tema t where t.cod_asignatura = \"%s\" and t.cod_temario=\"%s\";", $codAsignatura, $codTema);
     $datosEnlacesQuery = sprintf("select e.cod_enlace, e.url, e.descripcion from enlace e where e.cod_asignatura = \"%s\" and e.cod_temario = \"%s\";", $codAsignatura, $codTema);
-    $datosSubtemasQuery = sprintf("select t.cod_asignatura, t.cod_temario, t.nombre, t.descripcion, t.fecha_comienzo from tema t where t.cod_temario like \"%s.%%\";", $codTema);
+    $datosSubtemasQuery = sprintf("select t.cod_asignatura, t.cod_temario, t.nombre, t.descripcion, t.fecha_comienzo from tema t where t.cod_temario like \"%s-%%\";", $codTema);
     $datosAsignacionesQuery = sprintf("select asig.cod_asignacion, asig.nombre, asig2.nombre nombre_asignatura, asig.descripcion, asig.fecha_entrega from asignacion asig
 join asignacion_tema asigt on asig.cod_asignacion = asigt.cod_asignacion
 join tema t on asigt.cod_temario = t.cod_temario and asigt.cod_asignatura = t.cod_asignatura

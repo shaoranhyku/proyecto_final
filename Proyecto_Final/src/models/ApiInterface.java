@@ -38,5 +38,4 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("entregarCriterio/{asignacion}/{criterio}/")
     Completable entregarCriterio(@Path("asignacion") int asignacion, @Path("criterio") int criterio, @Field("alumno") String alumno , @Field("clave") String clave, @Field("notaAuto") int notaAuto);
-
 }

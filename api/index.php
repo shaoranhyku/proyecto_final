@@ -21,7 +21,7 @@ try {
 } catch (Exception $e){}
 
 try {
-    $router->map('GET', '/api/temaAlumno/[a:asignatura]/[a:tema]/[a:alumno]/', 'obtenerTemaAlumno.php');
+    $router->map('GET', '/api/temaAlumno/[a:asignatura]/[:tema]/[a:alumno]/', 'obtenerTemaAlumno.php');
 } catch (Exception $e){}
 
 try {

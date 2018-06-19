@@ -30,7 +30,16 @@ where alcri.cod_asignacion = %d and alcri.cod_alumno = \"%s\";", $codAsignacion,
                 $notaAutoTotal = $notaAutoTotal + ($notaAutoCriterio * ($porcentaje / 100) );
             }
 
-            $sql = sprintf("insert into alumno_asignacion (cod_alumno, cod_asignacion, ruta_archivo, comentario, nota_autoevaluacion) values (\"%s\", %d, \"%s\", \"%s\", %d);", $alumno, $codAsignacion, $rutaArchivo, $comentario, (int)$notaAutoTotal);
+            // Comprobamos si la asignacion ya ha sido entregada para saber si insertarla o actualizarla
+
+            $result = $conn->query(sprintf("select * from alumno_asignacion a where a.cod_alumno = \"%s\" and a.cod_asignacion = \"%s\"", $alumno, $codAsignacion));
+
+            if($result->num_rows > 0){
+                $sql = sprintf("update alumno_asignacion a set a.ruta_archivo = \"%s\", a.comentario = \"%s\", a.nota_autoevaluacion = %d
+where a.cod_alumno = \"%s\" and a.cod_asignacion = %d;", $rutaArchivo, $comentario, (int)$notaAutoTotal, $alumno, $codAsignacion);
+            }else{
+                $sql = sprintf("insert into alumno_asignacion (cod_alumno, cod_asignacion, ruta_archivo, comentario, nota_autoevaluacion) values (\"%s\", %d, \"%s\", \"%s\", %d);", $alumno, $codAsignacion, $rutaArchivo, $comentario, (int)$notaAutoTotal);
+            }
 
             if ($conn->query($sql) === TRUE) {
 

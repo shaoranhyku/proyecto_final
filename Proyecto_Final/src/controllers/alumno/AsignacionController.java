@@ -137,48 +137,40 @@ public class AsignacionController extends Application {
 
         ObservableList<Node> listaCriteriosNode = vbox_criteriosEvaluacion.getChildren();
 
-        for (int i = 0; i < listaCriteriosNode.size(); i++){
+        for (int i = 0; i < listaCriteriosNode.size(); i++) {
             Node criterioNode = listaCriteriosNode.get(i);
 
             int notaAuto;
 
-            try{
-                notaAuto = Integer.parseInt(((TextField)criterioNode.lookup("#txt_notaCriterioAuto")).getText());
-            }catch (NumberFormatException nfe){
+            try {
+                notaAuto = Integer.parseInt(((TextField) criterioNode.lookup("#txt_notaCriterioAuto")).getText());
+            } catch (NumberFormatException nfe) {
                 mostrarDialogoDatoNoValido("Nota criterio incorrecta.", "La nota de los criterios ha de ser un número entre 0 y 10.");
                 return;
             }
 
-            if(notaAuto < 0 || notaAuto > 10){
+            if (notaAuto < 0 || notaAuto > 10) {
                 mostrarDialogoDatoNoValido("Nota criterio incorrecta.", "La nota de los criterios ha de ser un número entre 0 y 10.");
                 return;
             }
 
             listaCriterios.get(i).setNotaAuto(notaAuto);
         }
+        // Primero, por cuestiones de como se calcula la nota total en el servidor, debemos insertar los criterios
 
-        // Una vez obtenido todos los valores, se envia a servicio de la web api correspondiente
-        // si estamos editando una entrega o haciendo una nueva
+        contador = 0;
 
-        if (editar) {
-
-        } else {
-            // Primero, por cuestiones de como se calcula la nota total en el servidor, debemos insertar los criterios
-
-            contador = 0;
-
-            for(CriterioEvaluacionAlumno criterio : listaCriterios){
-                ApiService.entregarCriterio(codigoAsignacion, criterio.getCriterio().getCodCriterio(), Sesion.getInstance().getUsuario().getNombreLogin(), Sesion.getInstance().getUsuario().getClave(), criterio.getNotaAuto()).subscribe(() -> {
-                    if (contador < listaCriterios.size()-1){
-                        contador++;
-                    }else{
-                        ApiService.entregarAsignacion(codigoAsignacion, Sesion.getInstance().getUsuario().getNombreLogin(), Sesion.getInstance().getUsuario().getClave(), ruta, comentario)
-                                .subscribe(() -> {
-                                    callBack.setCenterAsignacion(codigoAsignacion);
-                                });
-                    }
-                });
-            }
+        for (CriterioEvaluacionAlumno criterio : listaCriterios) {
+            ApiService.entregarCriterio(codigoAsignacion, criterio.getCriterio().getCodCriterio(), Sesion.getInstance().getUsuario().getNombreLogin(), Sesion.getInstance().getUsuario().getClave(), criterio.getNotaAuto()).subscribe(() -> {
+                if (contador < listaCriterios.size() - 1) {
+                    contador++;
+                } else {
+                    ApiService.entregarAsignacion(codigoAsignacion, Sesion.getInstance().getUsuario().getNombreLogin(), Sesion.getInstance().getUsuario().getClave(), ruta, comentario)
+                            .subscribe(() -> {
+                                callBack.setCenterAsignacion(codigoAsignacion);
+                            });
+                }
+            });
         }
     }
 

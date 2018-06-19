@@ -24,9 +24,6 @@ public class AsignaturaController {
     private List<ItemListTema> temas;
 
     public void setAsignatura(String codigoAsignatura) {
-
-
-
         ApiService.obtenerAsignaturaAlumno(codigoAsignatura, Sesion.getInstance().getUsuario().getNombreLogin()).subscribe(asignaturaAlumnoResponse -> {
             lbl_nombreAsignatura.setText(asignaturaAlumnoResponse.getNombreAsignatura());
             asignaciones = asignaturaAlumnoResponse.getAsignaciones();

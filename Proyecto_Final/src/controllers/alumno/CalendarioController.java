@@ -1,11 +1,14 @@
 package controllers.alumno;
 
+import controllers.profesor.SeleccionarAsignacionEvaluarController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import models.ApiService;
+import models.Sesion;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -59,8 +62,17 @@ public class CalendarioController {
 
         for (AnchorPane node : listDays) {
             if (calendarDate.getMonth().equals(currentYearMonth.getMonth())){
-                Label LabelDayNumber = (Label) node.lookup("#lbl_dayNumber");
-                LabelDayNumber.setText(String.valueOf(calendarDate.getDayOfMonth()));
+                Label labelDayNumber = (Label) node.lookup("#lbl_dayNumber");
+                Label labeDayNumAsig = (Label) node.lookup("#lbl_numAsig");
+                labelDayNumber.setText(String.valueOf(calendarDate.getDayOfMonth()));
+                // XX Asig.
+                ApiService.obtenerNumAsignacionesDia(calendarDate, Sesion.getInstance().getUsuario().getNombreLogin()).subscribe(numero -> {
+                    if(numero>0){
+                        labeDayNumAsig.setText(String.format("%d Asig.", numero));
+                    }else{
+                        labeDayNumAsig.setText("");
+                    }
+                });
                 LocalDate finalCalendarDate = calendarDate;
                 node.setOnMouseClicked(event -> {
                     if (event.getButton().equals(MouseButton.PRIMARY)) {

@@ -80,4 +80,8 @@ public class ApiService {
     public static Observable<List<AsignacionLista>> obtenerAsignacionesDia(LocalDate fecha, String alumno){
         return getInstance().retrofit.obtenerAsignacionesDia(fecha, alumno);
     }
+
+    public static Observable<Integer> obtenerNumAsignacionesDia(LocalDate fecha, String alumno){
+        return getInstance().retrofit.obtenerNumAsignacionesDia(fecha, alumno);
+    }
 }

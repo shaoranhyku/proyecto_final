@@ -43,4 +43,7 @@ public interface ApiInterface {
     @GET("asignacionesDia/{fecha}/{alumno}/")
     Observable<List<AsignacionLista>> obtenerAsignacionesDia(@Path("fecha") LocalDate fecha, @Path("alumno") String alumno);
 
+    @GET("numAsignacionesDia/{fecha}/{alumno}/")
+    Observable<Integer> obtenerNumAsignacionesDia(@Path("fecha") LocalDate fecha, @Path("alumno") String alumno);
+
 }

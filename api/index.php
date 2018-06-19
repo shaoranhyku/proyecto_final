@@ -36,6 +36,10 @@ try {
     $router->map('POST', '/api/entregarCriterio/[a:asignacion]/[a:criterio]/', 'entregarCriterio.php');
 } catch (Exception $e){}
 
+try {
+    $router->map('GET', '/api/asignacionesDia/[:fecha]/[a:alumno]/', 'obtenerAsignacionesDiaAlumno.php');
+} catch (Exception $e){}
+
 /* Match the current request */
 $match = $router->match();
 if($match) {

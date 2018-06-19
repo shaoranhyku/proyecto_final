@@ -8,6 +8,7 @@ import responses.LoginResponse;
 import responses.TemaAlumnoResponse;
 import retrofit2.http.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface ApiInterface {
@@ -38,4 +39,8 @@ public interface ApiInterface {
     @FormUrlEncoded
     @POST("entregarCriterio/{asignacion}/{criterio}/")
     Completable entregarCriterio(@Path("asignacion") int asignacion, @Path("criterio") int criterio, @Field("alumno") String alumno , @Field("clave") String clave, @Field("notaAuto") int notaAuto);
+
+    @GET("asignacionesDia/{fecha}/{alumno}/")
+    Observable<List<AsignacionLista>> obtenerAsignacionesDia(@Path("fecha") LocalDate fecha, @Path("alumno") String alumno);
+
 }

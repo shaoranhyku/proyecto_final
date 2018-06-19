@@ -76,4 +76,8 @@ public class ApiService {
     public static Completable entregarCriterio(int codigoAsignacion, int codigoCriterio, String alumno, String clave, int notaAuto){
         return getInstance().retrofit.entregarCriterio(codigoAsignacion, codigoCriterio, alumno, clave, notaAuto);
     }
+
+    public static Observable<List<AsignacionLista>> obtenerAsignacionesDia(LocalDate fecha, String alumno){
+        return getInstance().retrofit.obtenerAsignacionesDia(fecha, alumno);
+    }
 }

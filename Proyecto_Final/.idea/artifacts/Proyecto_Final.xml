@@ -4,6 +4,7 @@
     <properties id="javafx-properties">
       <options>
         <option name="appClass" value="Main" />
+        <option name="convertCss2Bin" value="true" />
         <option name="description" value="" />
         <option name="htmlPlaceholderId" value="" />
         <option name="title" value="Prueba Build Proyecto" />
@@ -14,6 +15,12 @@
     <root id="root">
       <element id="archive" name="Proyecto_Final.jar">
         <element id="module-output" name="Proyecto_Final" />
+      </element>
+      <element id="directory" name="libs">
+        <element id="library" level="project" name="com.squareup.retrofit2:converter-gson:2.4.0" />
+        <element id="library" level="project" name="com.squareup.retrofit2:adapter-rxjava2:2.4.0" />
+        <element id="library" level="project" name="io.reactivex.rxjava2:rxjava:2.1.14" />
+        <element id="library" level="project" name="no.tornado:tornadofx-controls:1.0.6" />
       </element>
     </root>
   </artifact>

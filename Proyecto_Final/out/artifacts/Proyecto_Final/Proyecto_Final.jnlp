@@ -8,7 +8,17 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Proyecto_Final.jar" size="41267" download="eager" />
+    <jar href="Proyecto_Final.jar" size="102554" download="eager" />
+    <jar href="libs\adapter-rxjava2-2.4.0.jar" size="15797" download="eager" />
+    <jar href="libs\converter-gson-2.4.0.jar" size="6202" download="eager" />
+    <jar href="libs\gson-2.8.2.jar" size="232932" download="eager" />
+    <jar href="libs\okhttp-3.10.0.jar" size="412117" download="eager" />
+    <jar href="libs\okio-1.14.0.jar" size="85756" download="eager" />
+    <jar href="libs\reactive-streams-1.0.2.jar" size="2097" download="eager" />
+    <jar href="libs\retrofit-2.4.0.jar" size="91002" download="eager" />
+    <jar href="libs\rxjava-2.0.0.jar" size="1926817" download="eager" />
+    <jar href="libs\rxjava-2.1.14.jar" size="2297465" download="eager" />
+    <jar href="libs\tornadofx-controls-1.0.6.jar" size="71859" download="eager" />
   </resources>
   <jfx:javafx-desc  width="600" height="400" main-class="Main"  name="Proyecto_Final" />
   <update check="background"/>

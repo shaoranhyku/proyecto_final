@@ -10,6 +10,8 @@ import javafx.scene.control.ListView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import models.ItemListAsignatura;
+import models.ProfesorApiService;
+import models.Sesion;
 
 public class ElegirAsignaturaController {
     public ListView lst_asignaturas;
@@ -18,13 +20,13 @@ public class ElegirAsignaturaController {
     private ObservableList<ItemListAsignatura> observableList_ItemList_asignaturas;
 
     public void initialize() {
-        observableList_ItemList_asignaturas = FXCollections.observableArrayList(
-                new ItemListAsignatura("ItemListAsignatura 1", "ASG1"),
-                new ItemListAsignatura("ItemListAsignatura 2", "ASG2"),
-                new ItemListAsignatura("ItemListAsignatura 3", "ASG3"),
-                new ItemListAsignatura("ItemListAsignatura 4", "ASG4"));
+        observableList_ItemList_asignaturas = FXCollections.observableArrayList();
 
-        lst_asignaturas.setItems(observableList_ItemList_asignaturas);
+        ProfesorApiService.obtenerAsignaturasProfesor(Sesion.getInstance().getUsuario().getNombreLogin()).subscribe(asignaturas -> {
+            observableList_ItemList_asignaturas.addAll(asignaturas);
+
+            lst_asignaturas.setItems(observableList_ItemList_asignaturas);
+        });
 
         lst_asignaturas.setCellFactory(param -> new Utils.CellAsignatura(mouseEvent -> {
             if (mouseEvent.getButton().equals(MouseButton.PRIMARY)) {

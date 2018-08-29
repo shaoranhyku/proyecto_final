@@ -1,4 +1,9 @@
 <?php
+//$servername = "iessaladillo.000webhostapp.com/localhost";
+//$username = "id6248946_iessaladilloroot";
+//$password = "iessaladilloroot12345";
+//$dbname = "id6248946_planificador";
+
 $servername = "localhost";
 $username = "proyecto";
 $password = "proyecto12345";

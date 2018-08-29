@@ -1,22 +1,17 @@
 package controllers.alumno;
 
 import controllers.Utils;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
-import javafx.scene.web.HTMLEditor;
-import javafx.scene.web.WebView;
-import models.ApiService;
+import models.AlumnoApiService;
 import models.ItemListEnlace;
 import models.Sesion;
 
 import java.io.IOException;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.List;
 
 public class TemarioController {
 
@@ -31,7 +26,7 @@ public class TemarioController {
 
     public void setTema(String asignaturaClave, String clave) {
 
-        ApiService.obtenerTemaAlumno(asignaturaClave, clave, Sesion.getInstance().getUsuario().getNombreLogin()).subscribe(temaAlumnoResponse -> {
+        AlumnoApiService.obtenerTemaAlumno(asignaturaClave, clave, Sesion.getInstance().getUsuario().getNombreLogin()).subscribe(temaAlumnoResponse -> {
             lbl_nombreTemario.setText(temaAlumnoResponse.getTema().getNombreTema());
             lbl_fechaInicio.setText(String.format("Fecha comienzo: %s", temaAlumnoResponse.getTema().getFechaComienzo().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))));
             lbl_descripcion.setText(temaAlumnoResponse.getTema().getDescripcion());

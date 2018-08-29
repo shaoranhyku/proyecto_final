@@ -2,12 +2,11 @@ package controllers.alumno;
 
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
-import models.ApiService;
+import models.AlumnoApiService;
 import models.AsignacionLista;
 import models.Sesion;
 import models.ItemListTema;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static controllers.Utils.setAsignacionesInVBox;
@@ -24,7 +23,7 @@ public class AsignaturaController {
     private List<ItemListTema> temas;
 
     public void setAsignatura(String codigoAsignatura) {
-        ApiService.obtenerAsignaturaAlumno(codigoAsignatura, Sesion.getInstance().getUsuario().getNombreLogin()).subscribe(asignaturaAlumnoResponse -> {
+        AlumnoApiService.obtenerAsignaturaAlumno(codigoAsignatura, Sesion.getInstance().getUsuario().getNombreLogin()).subscribe(asignaturaAlumnoResponse -> {
             lbl_nombreAsignatura.setText(asignaturaAlumnoResponse.getNombreAsignatura());
             asignaciones = asignaturaAlumnoResponse.getAsignaciones();
             temas = asignaturaAlumnoResponse.getTemas();

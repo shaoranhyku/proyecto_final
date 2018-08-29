@@ -11,24 +11,21 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-import java.lang.reflect.Type;
-import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-public class ApiService {
+public class AlumnoApiService {
 
-    private static ApiService ourInstance = new ApiService();
-    private ApiInterface retrofit;
+    private static AlumnoApiService ourInstance = new AlumnoApiService();
+    private AlumnoApiInterface retrofit;
 
-    private static ApiService getInstance() {
+    private static AlumnoApiService getInstance() {
         return ourInstance;
     }
 
-    private ApiService() {
+    private AlumnoApiService() {
 
         Gson gson = new GsonBuilder().registerTypeAdapter(LocalDateTime.class, (JsonDeserializer<LocalDateTime>) (json, type, jsonDeserializationContext) -> {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
@@ -39,10 +36,11 @@ public class ApiService {
         }).create();
 
         retrofit = new Retrofit.Builder()
+//                .baseUrl("https://iessaladillo.000webhostapp.com/api/")
                 .baseUrl("http://localhost:8080/api/")
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .build().create(ApiInterface.class);
+                .build().create(AlumnoApiInterface.class);
     }
 
     public static Observable<LoginResponse> login(String usuario, String clave){

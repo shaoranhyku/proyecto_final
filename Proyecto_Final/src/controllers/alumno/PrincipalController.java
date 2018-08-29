@@ -2,7 +2,7 @@ package controllers.alumno;
 
 import controllers.Utils;
 import javafx.scene.Cursor;
-import models.ApiService;
+import models.AlumnoApiService;
 import models.AsignacionLista;
 import models.ItemListAsignatura;
 import models.Sesion;
@@ -45,11 +45,11 @@ public class PrincipalController {
 
         observableList_ItemList_asignaturas = FXCollections.observableArrayList();
 
-        ApiService.obtenerAsignaturasAlumno(Sesion.getInstance().getUsuario().getNombreLogin()).subscribe(asignaturas -> observableList_ItemList_asignaturas.addAll(asignaturas));
+        AlumnoApiService.obtenerAsignaturasAlumno(Sesion.getInstance().getUsuario().getNombreLogin()).subscribe(asignaturas -> observableList_ItemList_asignaturas.addAll(asignaturas));
 
         observableList_ItemList_asignaciones = FXCollections.observableArrayList();
 
-        ApiService.obtenerUltimasAsignacionesAlumno(Sesion.getInstance().getUsuario().getNombreLogin()).subscribe(asignaciones -> observableList_ItemList_asignaciones.addAll(asignaciones));
+        AlumnoApiService.obtenerUltimasAsignacionesAlumno(Sesion.getInstance().getUsuario().getNombreLogin()).subscribe(asignaciones -> observableList_ItemList_asignaciones.addAll(asignaciones));
 
         listView_asignaturas.setItems(observableList_ItemList_asignaturas);
 

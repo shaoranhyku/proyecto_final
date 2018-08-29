@@ -8,11 +8,9 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import models.ApiService;
+import models.AlumnoApiService;
 import models.CriterioEvaluacionAlumno;
-import models.EntregaAsignacion;
 import models.Sesion;
 
 import java.io.IOException;
@@ -44,7 +42,7 @@ public class AsignacionController extends Application {
 
         this.codigoAsignacion = codigoAsignacion;
 
-        ApiService.obtenerAsignacionAlumno(codigoAsignacion, Sesion.getInstance().getUsuario().getNombreLogin()).subscribe(asignacionAlumnoResponse -> {
+        AlumnoApiService.obtenerAsignacionAlumno(codigoAsignacion, Sesion.getInstance().getUsuario().getNombreLogin()).subscribe(asignacionAlumnoResponse -> {
             lbl_nombreAsignatura.setText(asignacionAlumnoResponse.getAsignacion().getAsignatura());
             lbl_nombreAsignacion.setText(asignacionAlumnoResponse.getAsignacion().getNombreAsignacion());
             lbl_descripcion.setText(asignacionAlumnoResponse.getAsignacion().getDescripcion());
@@ -161,11 +159,11 @@ public class AsignacionController extends Application {
         contador = 0;
 
         for (CriterioEvaluacionAlumno criterio : listaCriterios) {
-            ApiService.entregarCriterio(codigoAsignacion, criterio.getCriterio().getCodCriterio(), Sesion.getInstance().getUsuario().getNombreLogin(), Sesion.getInstance().getUsuario().getClave(), criterio.getNotaAuto()).subscribe(() -> {
+            AlumnoApiService.entregarCriterio(codigoAsignacion, criterio.getCriterio().getCodCriterio(), Sesion.getInstance().getUsuario().getNombreLogin(), Sesion.getInstance().getUsuario().getClave(), criterio.getNotaAuto()).subscribe(() -> {
                 if (contador < listaCriterios.size() - 1) {
                     contador++;
                 } else {
-                    ApiService.entregarAsignacion(codigoAsignacion, Sesion.getInstance().getUsuario().getNombreLogin(), Sesion.getInstance().getUsuario().getClave(), ruta, comentario)
+                    AlumnoApiService.entregarAsignacion(codigoAsignacion, Sesion.getInstance().getUsuario().getNombreLogin(), Sesion.getInstance().getUsuario().getClave(), ruta, comentario)
                             .subscribe(() -> {
                                 callBack.setCenterAsignacion(codigoAsignacion);
                             });

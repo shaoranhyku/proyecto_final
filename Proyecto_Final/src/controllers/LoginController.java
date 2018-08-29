@@ -1,11 +1,8 @@
 package controllers;
 
-import io.reactivex.Observable;
-import models.ApiService;
+import models.AlumnoApiService;
 import models.Sesion;
-import models.Usuario;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -17,7 +14,6 @@ import responses.LoginResponse;
 import retrofit2.HttpException;
 
 import java.io.IOException;
-import java.sql.*;
 
 public class LoginController {
 
@@ -31,7 +27,7 @@ public class LoginController {
         String usuario = txt_usuario.getText();
         String clave = txt_clave.getText();
 
-        ApiService.login(usuario, clave).subscribe(loginResponse -> {
+        AlumnoApiService.login(usuario, clave).subscribe(loginResponse -> {
             login(loginResponse);
         }, error -> {
             int code = ((HttpException) error).code();

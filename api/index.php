@@ -40,6 +40,15 @@ try {
     $router->map('GET', '/api/asignacionesDia/[:fecha]/[a:alumno]/', 'obtenerAsignacionesDiaAlumno.php');
 } catch (Exception $e){}
 
+try {
+    $router->map('GET', '/api/numAsignacionesDia/[:fecha]/[a:alumno]/', 'obtenerNumeroAsignacionesDiaAlumno.php');
+} catch (Exception $e){}
+
+try {
+    $router->map('GET', '/api/asignaturasProfesor/[a:profesor]/', 'obtenerAsignaturasProfesor.php');
+} catch (Exception $e){}
+
+
 /* Match the current request */
 $match = $router->match();
 if($match) {

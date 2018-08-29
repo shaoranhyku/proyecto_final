@@ -1,13 +1,12 @@
 package controllers.alumno;
 
-import controllers.profesor.SeleccionarAsignacionEvaluarController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import models.ApiService;
+import models.AlumnoApiService;
 import models.Sesion;
 
 import java.io.IOException;
@@ -66,7 +65,7 @@ public class CalendarioController {
                 Label labeDayNumAsig = (Label) node.lookup("#lbl_numAsig");
                 labelDayNumber.setText(String.valueOf(calendarDate.getDayOfMonth()));
                 // XX Asig.
-                ApiService.obtenerNumAsignacionesDia(calendarDate, Sesion.getInstance().getUsuario().getNombreLogin()).subscribe(numero -> {
+                AlumnoApiService.obtenerNumAsignacionesDia(calendarDate, Sesion.getInstance().getUsuario().getNombreLogin()).subscribe(numero -> {
                     if(numero>0){
                         labeDayNumAsig.setText(String.format("%d Asig.", numero));
                     }else{

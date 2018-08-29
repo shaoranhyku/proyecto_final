@@ -11,7 +11,7 @@ import retrofit2.http.*;
 import java.time.LocalDate;
 import java.util.List;
 
-public interface ApiInterface {
+public interface AlumnoApiInterface {
 
     @FormUrlEncoded
     @POST("login/")

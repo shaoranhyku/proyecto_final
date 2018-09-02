@@ -14,21 +14,67 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+            <state relative-caret-position="901">
+              <caret line="53" column="82" lean-forward="false" selection-start-line="53" selection-start-column="82" selection-end-line="53" selection-end-column="82" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="obtenerAsignaturasProfesor.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/obtenerAsignaturasProfesor.php">
+      <file leaf-file-name="obtenerAsignaturasProfesor.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/endpoints/profesor/obtenerAsignaturasProfesor.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="42" lean-forward="false" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+            <state relative-caret-position="493">
+              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="31" selection-end-column="1" />
               <folding>
                 <marker date="1535566533012" expanded="true" signature="188:410" ph="select s.cod... profesor_asignatura" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="obtenerAlumnos.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/endpoints/profesor/obtenerAlumnos.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+              <folding>
+                <marker date="1535882375146" expanded="true" signature="92:200" ph="select u.nom... usuario" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="obtenerAlumnosPorAsignatura.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/endpoints/profesor/obtenerAlumnosPorAsignatura.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding>
+                <marker date="1535883297077" expanded="true" signature="192:411" ph="select u.nom... usuario" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="usuario.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/usuario.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="1" />
+              <folding>
+                <element signature="e#6#91#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="itemListAlumno.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/itemListAlumno.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="1" lean-forward="false" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -79,8 +125,11 @@
         <option value="$PROJECT_DIR$/obtenerAsignacionesDiaAlumno.php" />
         <option value="$PROJECT_DIR$/obtenerNumeroAsignacionesDiaAlumno.php" />
         <option value="$PROJECT_DIR$/conect.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/obtenerAsignaturasProfesor.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/models/itemListAlumno.php" />
+        <option value="$PROJECT_DIR$/endpoints/profesor/obtenerAlumnos.php" />
+        <option value="$PROJECT_DIR$/endpoints/profesor/obtenerAlumnosPorAsignatura.php" />
       </list>
     </option>
   </component>
@@ -111,6 +160,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -118,6 +169,23 @@
             <path>
               <item name="api" type="b2602c69:ProjectViewProjectNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="endpoints" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="endpoints" type="462c0819:PsiDirectoryNode" />
+              <item name="alumno" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="api" type="b2602c69:ProjectViewProjectNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="endpoints" type="462c0819:PsiDirectoryNode" />
+              <item name="profesor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="api" type="b2602c69:ProjectViewProjectNode" />
@@ -134,8 +202,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -146,11 +212,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\api" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\api\endpoints\profesor" />
+      <recent name="C:\xampp\htdocs\api\endpoints\alumno" />
+      <recent name="C:\xampp\htdocs\api\endpoints" />
       <recent name="C:\xampp\htdocs\api\responses" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\api\endpoints\profesor" />
+      <recent name="C:\xampp\htdocs\api" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -392,12 +462,14 @@
       <workItem from="1529590728084" duration="253000" />
       <workItem from="1529660693616" duration="1483000" />
       <workItem from="1534180128068" duration="633000" />
-      <workItem from="1535565528295" duration="1604000" />
+      <workItem from="1535565528295" duration="1680000" />
+      <workItem from="1535881190367" duration="2701000" />
+      <workItem from="1535885714017" duration="52000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47255000" />
+    <option name="totallyTimeSpent" value="50084000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -415,9 +487,8 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13539445" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1881663" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -429,6 +500,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,27 +516,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/obtenerTemaAlumno.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="92" lean-forward="true" selection-start-line="17" selection-start-column="92" selection-end-line="17" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/tema.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/enlace.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/responses/temaAlumnoResponse.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -480,7 +531,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/obtenerAsignaturaAlumno.php">
+    <entry file="file://$PROJECT_DIR$/endpoints/alumno/obtenerAsignaturaAlumno.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1003">
           <caret line="59" column="76" lean-forward="false" selection-start-line="59" selection-start-column="76" selection-end-line="59" selection-end-column="76" />
@@ -502,7 +553,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/login.php">
+    <entry file="file://$PROJECT_DIR$/endpoints/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="40" column="0" lean-forward="true" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
@@ -544,7 +595,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/obtenerUltimasAsignacionesAlumno.php">
+    <entry file="file://$PROJECT_DIR$/endpoints/alumno/obtenerUltimasAsignacionesAlumno.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="28" column="53" lean-forward="false" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
@@ -564,7 +615,7 @@
     <entry file="file://$PROJECT_DIR$/.htaccess.txt" />
     <entry file="file://$PROJECT_DIR$/students/getAllStudents.php" />
     <entry file="file://$PROJECT_DIR$/decirAlgo.php" />
-    <entry file="file://$PROJECT_DIR$/obtenerAsignaturasAlumno.php">
+    <entry file="file://$PROJECT_DIR$/endpoints/alumno/obtenerAsignaturasAlumno.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
           <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
@@ -575,13 +626,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/usuario.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="14" column="21" lean-forward="false" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -613,13 +657,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/responses/temaAlumnoResponse.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/tema.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -648,13 +685,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/criterioNota.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -670,7 +700,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/reentregarCriterio.php" />
-    <entry file="file://$PROJECT_DIR$/entregarCriterio.php">
+    <entry file="file://$PROJECT_DIR$/endpoints/alumno/entregarCriterio.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="93" lean-forward="false" selection-start-line="17" selection-start-column="93" selection-end-line="17" selection-end-column="99" />
@@ -678,58 +708,38 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/reentregarAsignacion.php" />
-    <entry file="file://$PROJECT_DIR$/obtenerAsignaturaAlumno.php">
+    <entry file="file://$PROJECT_DIR$/endpoints/alumno/obtenerAsignaturaAlumno.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="32" column="25" lean-forward="false" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/obtenerAsignacionAlumno.php">
+    <entry file="file://$PROJECT_DIR$/endpoints/alumno/obtenerAsignacionAlumno.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="81" lean-forward="false" selection-start-line="8" selection-start-column="81" selection-end-line="8" selection-end-column="81" />
-          <folding>
-            <marker date="1529416198572" expanded="true" signature="444:851" ph="select asig.... asignacion" />
-            <marker date="1529416198572" expanded="true" signature="906:1097" ph="select alasi... alumno_asignacion" />
-            <marker date="1529416198572" expanded="true" signature="1167:1301" ph="select cri.c... criterio_evaluacion" />
-            <marker date="1529416198572" expanded="true" signature="1353:1499" ph="select a.not... alumno_criterio" />
-            <marker date="1529416198572" expanded="true" signature="1353:1501" ph="select a.not... alumno_criterio" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/obtenerTemaAlumno.php">
+    <entry file="file://$PROJECT_DIR$/endpoints/alumno/obtenerTemaAlumno.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="32" column="32" lean-forward="false" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
-          <folding>
-            <marker date="1529417890010" expanded="true" signature="461:611" ph="select t.cod... tema" />
-            <marker date="1529417890010" expanded="true" signature="676:790" ph="select e.cod... enlace" />
-            <marker date="1529417890010" expanded="true" signature="856:984" ph="select t.cod... tema" />
-            <marker date="1529417890010" expanded="true" signature="1038:1486" ph="select asig.... asignacion" />
-            <marker date="1529417890010" expanded="true" signature="1552:1654" ph="select * fro... alumno_asignacion" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/obtenerAsignacionesDiaAlumno.php">
+    <entry file="file://$PROJECT_DIR$/endpoints/alumno/obtenerAsignacionesDiaAlumno.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="14" column="93" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="14" selection-end-column="93" />
-          <folding>
-            <marker date="1529425642824" expanded="true" signature="257:826" ph="select asig.... asignacion" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/obtenerNumeroAsignacionesDiaAlumno.php">
+    <entry file="file://$PROJECT_DIR$/endpoints/alumno/obtenerNumeroAsignacionesDiaAlumno.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <marker date="1529426465954" expanded="true" signature="257:705" ph="select count... asignacion" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -737,27 +747,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/obtenerUltimasAsignacionesAlumno.php">
+    <entry file="file://$PROJECT_DIR$/endpoints/alumno/obtenerUltimasAsignacionesAlumno.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="46" lean-forward="false" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
-          <folding>
-            <marker date="1529259089148" expanded="true" signature="180:726" ph="select asig.... asignacion" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conect.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-          <folding>
-            <element signature="e#6#65#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -765,40 +761,92 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="10" lean-forward="false" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/endpoints/alumno/entregarAsignacion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="20" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/responses/temaAlumnoResponse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/endpoints/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
           <folding>
-            <marker date="1529409823639" expanded="true" signature="103:171" ph="SELECT * FRO... usuario" />
-            <marker date="1529409823639" expanded="true" signature="222:270" ph="SELECT * FRO... alumno" />
+            <element signature="e#6#65#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/entregarAsignacion.php">
+    <entry file="file://$PROJECT_DIR$/models/usuario.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="20" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="15" selection-end-column="1" />
           <folding>
-            <marker date="1529417435593" expanded="true" signature="578:831" ph="select alcri... alumno_criterio" />
-            <marker date="1529417435593" expanded="true" signature="1404:1495" ph="select * fro... alumno_asignacion" />
-            <marker date="1529417435593" expanded="true" signature="1597:1756" ph="update alumno_asignacion... " />
-            <marker date="1529417435593" expanded="true" signature="1885:2030" ph="insert into alumno_asignacion... " />
+            <element signature="e#6#91#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/itemListAlumno.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="1" lean-forward="false" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/endpoints/profesor/obtenerAlumnos.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <marker date="1535882375146" expanded="true" signature="92:200" ph="select u.nom... usuario" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/endpoints/profesor/obtenerAsignaturasProfesor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="31" selection-end-column="1" />
+          <folding>
+            <marker date="1535566533012" expanded="true" signature="188:410" ph="select s.cod... profesor_asignatura" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        <state relative-caret-position="901">
+          <caret line="53" column="82" lean-forward="false" selection-start-line="53" selection-start-column="82" selection-end-line="53" selection-end-column="82" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/obtenerAsignaturasProfesor.php">
+    <entry file="file://$PROJECT_DIR$/endpoints/profesor/obtenerAlumnosPorAsignatura.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="42" lean-forward="false" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+        <state relative-caret-position="221">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
-            <marker date="1535566533012" expanded="true" signature="188:410" ph="select s.cod... profesor_asignatura" />
+            <marker date="1535883297077" expanded="true" signature="192:411" ph="select u.nom... usuario" />
           </folding>
         </state>
       </provider>

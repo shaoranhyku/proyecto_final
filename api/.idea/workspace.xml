@@ -11,41 +11,58 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="53" column="82" lean-forward="false" selection-start-line="53" selection-start-column="82" selection-end-line="53" selection-end-column="82" />
+            <state relative-caret-position="300">
+              <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="obtenerAsignaturasProfesor.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/endpoints/profesor/obtenerAsignaturasProfesor.php">
+      <file leaf-file-name="eliminarAlumnoAsignatura.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/endpoints/profesor/eliminarAlumnoAsignatura.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="31" selection-end-column="1" />
+            <state relative-caret-position="85">
+              <caret line="5" column="40" lean-forward="false" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
               <folding>
-                <marker date="1535566533012" expanded="true" signature="188:410" ph="select s.cod... profesor_asignatura" />
+                <marker date="1536776443967" expanded="true" signature="234:331" ph="SELECT * FRO... alumno_asignatura" />
+                <marker date="1536776443967" expanded="true" signature="469:548" ph="DELETE FROM alumno_asignatura... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="obtenerAlumnos.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/endpoints/profesor/obtenerAlumnos.php">
+      <file leaf-file-name="agregarAlumnoAsignatura.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/endpoints/profesor/agregarAlumnoAsignatura.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="51">
+              <caret line="3" column="78" lean-forward="false" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="78" />
               <folding>
-                <marker date="1535882375146" expanded="true" signature="92:200" ph="select u.nom... usuario" />
+                <marker date="1536776444007" expanded="true" signature="234:331" ph="SELECT * FRO... alumno_asignatura" />
+                <marker date="1536776444007" expanded="true" signature="528:597" ph="INSERT INTO alumno_asignatura... " />
+                <marker date="1536776444007" expanded="true" signature="528:609" ph="INSERT INTO alumno_asignatura... " />
+                <marker date="1536776444007" expanded="true" signature="528:610" ph="INSERT INTO alumno_asignatura... " />
+                <marker date="1536776444007" expanded="true" signature="528:611" ph="INSERT INTO alumno_asignatura... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="obtenerAlumnosPorAsignatura.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="entregarCriterio.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/endpoints/alumno/entregarCriterio.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="107" lean-forward="false" selection-start-line="4" selection-start-column="84" selection-end-line="4" selection-end-column="107" />
+              <folding>
+                <marker date="1529417435641" expanded="true" signature="660:777" ph="select * fro... alumno_criterio" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="obtenerAlumnosPorAsignatura.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/endpoints/profesor/obtenerAlumnosPorAsignatura.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
@@ -126,10 +143,12 @@
         <option value="$PROJECT_DIR$/obtenerNumeroAsignacionesDiaAlumno.php" />
         <option value="$PROJECT_DIR$/conect.php" />
         <option value="$PROJECT_DIR$/obtenerAsignaturasProfesor.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/models/itemListAlumno.php" />
         <option value="$PROJECT_DIR$/endpoints/profesor/obtenerAlumnos.php" />
         <option value="$PROJECT_DIR$/endpoints/profesor/obtenerAlumnosPorAsignatura.php" />
+        <option value="$PROJECT_DIR$/endpoints/profesor/agregarAlumnoAsignatura.php" />
+        <option value="$PROJECT_DIR$/endpoints/profesor/eliminarAlumnoAsignatura.php" />
+        <option value="$PROJECT_DIR$/index.php" />
       </list>
     </option>
   </component>
@@ -161,8 +180,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -201,7 +218,9 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -212,15 +231,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\api\endpoints\profesor" />
+      <recent name="C:\xampp\htdocs\api" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\api\endpoints\profesor" />
       <recent name="C:\xampp\htdocs\api\endpoints\alumno" />
       <recent name="C:\xampp\htdocs\api\endpoints" />
       <recent name="C:\xampp\htdocs\api\responses" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\api\endpoints\profesor" />
-      <recent name="C:\xampp\htdocs\api" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -464,16 +483,16 @@
       <workItem from="1534180128068" duration="633000" />
       <workItem from="1535565528295" duration="1680000" />
       <workItem from="1535881190367" duration="2701000" />
-      <workItem from="1535885714017" duration="52000" />
+      <workItem from="1535885714017" duration="69000" />
+      <workItem from="1536773696666" duration="2850000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50084000" />
+    <option name="totallyTimeSpent" value="52951000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -487,7 +506,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1881663" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19029851" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -516,21 +535,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/responses/temaAlumnoResponse.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/endpoints/alumno/obtenerAsignaturaAlumno.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1003">
@@ -700,13 +704,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/reentregarCriterio.php" />
-    <entry file="file://$PROJECT_DIR$/endpoints/alumno/entregarCriterio.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="93" lean-forward="false" selection-start-line="17" selection-start-column="93" selection-end-line="17" selection-end-column="99" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reentregarAsignacion.php" />
     <entry file="file://$PROJECT_DIR$/endpoints/alumno/obtenerAsignaturaAlumno.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -785,16 +782,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conect.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
-          <folding>
-            <element signature="e#6#65#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/usuario.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -813,16 +800,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/endpoints/profesor/obtenerAlumnos.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <marker date="1535882375146" expanded="true" signature="92:200" ph="select u.nom... usuario" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/endpoints/profesor/obtenerAsignaturasProfesor.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -833,11 +810,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/endpoints/profesor/obtenerAlumnos.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="82" lean-forward="false" selection-start-line="53" selection-start-column="82" selection-end-line="53" selection-end-column="82" />
-          <folding />
+        <state relative-caret-position="374">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <marker date="1535882375146" expanded="true" signature="92:200" ph="select u.nom... usuario" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/endpoints/alumno/entregarCriterio.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="107" lean-forward="false" selection-start-line="4" selection-start-column="84" selection-end-line="4" selection-end-column="107" />
+          <folding>
+            <marker date="1529417435641" expanded="true" signature="660:777" ph="select * fro... alumno_criterio" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -848,6 +837,49 @@
           <folding>
             <marker date="1535883297077" expanded="true" signature="192:411" ph="select u.nom... usuario" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          <folding>
+            <element signature="e#6#65#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/endpoints/profesor/agregarAlumnoAsignatura.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="78" lean-forward="false" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="78" />
+          <folding>
+            <marker date="1536776444007" expanded="true" signature="234:331" ph="SELECT * FRO... alumno_asignatura" />
+            <marker date="1536776444007" expanded="true" signature="528:597" ph="INSERT INTO alumno_asignatura... " />
+            <marker date="1536776444007" expanded="true" signature="528:609" ph="INSERT INTO alumno_asignatura... " />
+            <marker date="1536776444007" expanded="true" signature="528:610" ph="INSERT INTO alumno_asignatura... " />
+            <marker date="1536776444007" expanded="true" signature="528:611" ph="INSERT INTO alumno_asignatura... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/endpoints/profesor/eliminarAlumnoAsignatura.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="40" lean-forward="false" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
+          <folding>
+            <marker date="1536776443967" expanded="true" signature="234:331" ph="SELECT * FRO... alumno_asignatura" />
+            <marker date="1536776443967" expanded="true" signature="469:548" ph="DELETE FROM alumno_asignatura... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

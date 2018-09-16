@@ -41,7 +41,7 @@
                         <Font size="45.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" text="Guardar">
+                  <Button mnemonicParsing="false" onAction="#btnGuardarClick" text="Guardar">
                      <VBox.margin>
                         <Insets top="100.0" />
                      </VBox.margin>

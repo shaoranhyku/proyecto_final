@@ -31,4 +31,15 @@ public class ItemListAlumno {
     public String toString() {
         return String.format("%s %s", nombre, apellidos);
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        boolean isEqual = false;
+
+        if(obj instanceof ItemListAlumno){
+            isEqual = id.equals(((ItemListAlumno)obj).id);
+        }
+
+        return isEqual;
+    }
 }

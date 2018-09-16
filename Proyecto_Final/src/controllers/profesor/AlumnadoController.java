@@ -13,32 +13,31 @@ import javafx.scene.control.ListView;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import models.ItemListAlumno;
+import models.ProfesorApiService;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AlumnadoController {
     public ListView lst_tusAlumnos;
     public ListView lst_todosAlumnos;
     public ProfesorController callback;
+    private List<ItemListAlumno> alumnosTodosOriginal;
+    private List<ItemListAlumno> alumnosAsignaturaTodosOriginal;
     private ObservableList<ItemListAlumno> observableList_ItemList_alumnosTodos;
     private ObservableList<ItemListAlumno> observableList_ItemList_alumnosTuyos;
 
     public void initialize() {
 
-        // TODO: Buscar alumnos en api
+        // Se inicializan las listas vacías
 
-        observableList_ItemList_alumnosTodos = FXCollections.observableArrayList(
-                new ItemListAlumno("usu1", "Baldomero", "Llegate Ligero"),
-                new ItemListAlumno("usu2", "Germán", "Ginés"),
-                new ItemListAlumno("usu4", "Otro", "Tio"),
-                new ItemListAlumno("usu5", "Lorem ipsum dolor sit", "amet viverra fusce.")
-        );
+        observableList_ItemList_alumnosTodos = FXCollections.observableArrayList();
 
-        observableList_ItemList_alumnosTuyos = FXCollections.observableArrayList(
-                new ItemListAlumno("usu3", "Dolores", "Fuertes")
-        );
+        observableList_ItemList_alumnosTuyos = FXCollections.observableArrayList();
 
-        lst_todosAlumnos.setItems(observableList_ItemList_alumnosTodos);
+        // Se indica el tipo de elementos que mostrará y sus funciones
+
 
         lst_todosAlumnos.setCellFactory(param -> new CellAlumno(mouseEvent -> {
             if (mouseEvent.getButton().equals(MouseButton.PRIMARY)) {
@@ -48,8 +47,6 @@ public class AlumnadoController {
             }
         }));
 
-        lst_tusAlumnos.setItems(observableList_ItemList_alumnosTuyos);
-
         lst_tusAlumnos.setCellFactory(param -> new CellAlumno(mouseEvent -> {
             if (mouseEvent.getButton().equals(MouseButton.PRIMARY)) {
                 if(mouseEvent.getClickCount() == 2){
@@ -57,6 +54,26 @@ public class AlumnadoController {
                 }
             }
         }));
+
+        lst_todosAlumnos.setItems(observableList_ItemList_alumnosTodos);
+        lst_tusAlumnos.setItems(observableList_ItemList_alumnosTuyos);
+    }
+
+    public void setCallback(ProfesorController callback){
+
+        this.callback = callback;
+
+        // Se accede a la API para obtener los alumnos globales y de la asignatura
+
+        ProfesorApiService.obtenerAlumnosPorAsignatura(callback.asignaturaSeleccionada).subscribe(alumnosAsignatura -> {
+            alumnosAsignaturaTodosOriginal = alumnosAsignatura;
+            observableList_ItemList_alumnosTuyos.addAll(alumnosAsignatura);
+            ProfesorApiService.obtenerAlumnos().subscribe(alumnosTodos -> {
+                alumnosTodosOriginal = alumnosTodos;
+                alumnosTodosOriginal.removeAll(alumnosAsignaturaTodosOriginal);
+                observableList_ItemList_alumnosTodos.addAll(alumnosTodos);
+            });
+        });
     }
 
     public void btnAñadirClick(ActionEvent actionEvent) {
@@ -73,6 +90,38 @@ public class AlumnadoController {
             observableList_ItemList_alumnosTuyos.remove(item);
             observableList_ItemList_alumnosTodos.add(item);
         }
+    }
+
+    public void btnGuardarClick(ActionEvent actionEvent) {
+
+        // Primero se borran los alumnos que ya no están en la lista de tus alumnos
+
+        // Obtengo una copia de la lista original de alumnos tuyos
+        List<ItemListAlumno> alumnosBorrar = new ArrayList<>(alumnosAsignaturaTodosOriginal);
+        // Borro los que siguen en la lista al final de las operaciones
+        alumnosBorrar.removeAll(observableList_ItemList_alumnosTuyos);
+        // Los elementos que quedan ya no están en la lista despues de las operaciones, así que han sido borrados
+        for (ItemListAlumno alumnoBorrar : alumnosBorrar) {
+            ProfesorApiService.eliminarAlumnosAsignatura(callback.asignaturaSeleccionada, alumnoBorrar.getId()).subscribe();
+        }
+
+        // Luego, se añaden los alumnos que están nuevos en la lista de tus alumnos
+
+        // Obtengo una copia de la lista de tus alumnos tras las operaciones
+        List<ItemListAlumno> alumnosAgregar = new ArrayList<>(observableList_ItemList_alumnosTuyos);
+        // Borro los que ya estaban en la lista de tus alumnos
+        alumnosAgregar.removeAll(alumnosAsignaturaTodosOriginal);
+        // Los elementos que quedan son elementos nuevos que necesitan ser agregados
+        for (ItemListAlumno alumnoAgregar : alumnosAgregar) {
+            ProfesorApiService.agregarAlumnosAsignatura(callback.asignaturaSeleccionada, alumnoAgregar.getId()).subscribe();
+        }
+
+        // Como desspués de las operaciones se sigue en la misma pantalla, las listas de elementos originales son las listas actuales
+        alumnosTodosOriginal.clear();
+        alumnosTodosOriginal.addAll(observableList_ItemList_alumnosTodos);
+
+        alumnosAsignaturaTodosOriginal.clear();
+        alumnosAsignaturaTodosOriginal.addAll(observableList_ItemList_alumnosTuyos);
     }
 
     public static class CellAlumno extends ListCell<ItemListAlumno> {

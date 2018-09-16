@@ -5,7 +5,7 @@ $router = new AltoRouter();
 
 // map homepage
 try {
-    $router->map('POST', '/api/login/', 'login.php');
+    $router->map('POST', '/api/login/', 'endpoints/login.php');
 } catch (Exception $e){}
 
 try {

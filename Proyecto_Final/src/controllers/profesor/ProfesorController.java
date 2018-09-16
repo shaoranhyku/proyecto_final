@@ -21,7 +21,7 @@ public class ProfesorController {
     public Button btn_elegirAsignatura;
     public Button btn_elegirOperacion;
     public Label lbl_asignatura;
-    private String asignaturaSeleccionada;
+    public String asignaturaSeleccionada;
 
     public void initialize() {
         lbl_bienvenidaUsuario.setText(String.format("Bienvenido/a %s %s", Sesion.getInstance().getUsuario().getNombre(), Sesion.getInstance().getUsuario().getApellidos()));
@@ -103,7 +103,7 @@ public class ProfesorController {
         }
 
         AlumnadoController controller = loader.getController();
-        controller.callback = this;
+        controller.setCallback(this);
         rootPane.setCenter(center);
     }
 

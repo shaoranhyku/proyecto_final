@@ -66,6 +66,10 @@ try {
     $router->map('DELETE', '/api/alumnos/[a:asignatura]/[a:alumno]/', 'endpoints/profesor/eliminarAlumnoAsignatura.php');
 } catch (Exception $e){}
 
+try {
+    $router->map('GET', '/api/temas/[a:asignatura]/', 'endpoints/profesor/obtenerTemasAsignatura.php');
+} catch (Exception $e){}
+
 
 /* Match the current request */
 $match = $router->match();

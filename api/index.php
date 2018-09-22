@@ -70,6 +70,10 @@ try {
     $router->map('GET', '/api/temas/[a:asignatura]/', 'endpoints/profesor/obtenerTemasAsignatura.php');
 } catch (Exception $e){}
 
+try {
+    $router->map('POST', '/api/temas/', 'endpoints/profesor/crearTema.php');
+} catch (Exception $e){}
+
 
 /* Match the current request */
 $match = $router->match();

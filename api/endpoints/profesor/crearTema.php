@@ -1,8 +1,8 @@
 <?php
 require 'conect.php';
 
-if (isset($_POST['asignatura']) && isset($_POST['codTemario']) && isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['fechaComienzo'])) {
-    $asignatura = $_POST['asignatura'];
+if (isset($match['params']['asignatura']) && isset($_POST['codTemario']) && isset($_POST['nombre']) && isset($_POST['descripcion']) && isset($_POST['fechaComienzo'])) {
+    $asignatura = $match['params']['asignatura'];
     $codTemario = $_POST['codTemario'];
     $nombre = $_POST['nombre'];
     $descripcion = $_POST['descripcion'];

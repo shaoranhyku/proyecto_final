@@ -71,7 +71,11 @@ try {
 } catch (Exception $e){}
 
 try {
-    $router->map('POST', '/api/temas/', 'endpoints/profesor/crearTema.php');
+    $router->map('POST', '/api/temas/[a:asignatura]/', 'endpoints/profesor/crearTema.php');
+} catch (Exception $e){}
+
+try {
+    $router->map('POST', '/api/temas/[a:asignatura]/[:tema]/', 'endpoints/profesor/crearEnlace.php');
 } catch (Exception $e){}
 
 

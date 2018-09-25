@@ -54,11 +54,29 @@ public class ProfesorApiService {
     }
 
     public static Completable agregarAlumnosAsignatura(String asignatura, String alumno) {
-        System.out.printf("%s %s", asignatura, alumno);
         return getInstance().retrofit.agregarAlumnoAsignatura(asignatura, alumno);
     }
 
     public static Completable eliminarAlumnosAsignatura(String asignatura, String alumno) {
         return getInstance().retrofit.eliminarAlumnoAsignatura(asignatura, alumno);
+    }
+
+    public static Observable<List<ItemListTema>> obtenerTemasAsignatura(String asignatura){
+        return getInstance().retrofit.obtenerTemasAsignatura(asignatura);
+    }
+
+    public static Completable crearTema(String asignatura,
+                                        String codTemario,
+                                        String nombre,
+                                        String descripcion,
+                                        String fechaComienzo) {
+        return getInstance().retrofit.crearTema(asignatura, codTemario, nombre, descripcion, fechaComienzo);
+    }
+
+    public static Completable crearEnlaceTema(String asignatura,
+                                              String tema,
+                                              String url,
+                                              String descripcion) {
+        return getInstance().retrofit.crearEnlaceTema(asignatura, tema, url, descripcion);
     }
 }

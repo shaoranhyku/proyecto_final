@@ -88,7 +88,6 @@ public class ProfesorController {
     public void setAsignaturaSeleccionada(String claveAsignaturaSeleccionada) {
         this.asignaturaSeleccionada = claveAsignaturaSeleccionada;
         lbl_asignatura.setText(claveAsignaturaSeleccionada);
-        System.out.println(claveAsignaturaSeleccionada);
     }
 
     public void setCenterAlumnos() {

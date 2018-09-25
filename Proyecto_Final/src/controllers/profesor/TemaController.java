@@ -18,8 +18,11 @@ import javafx.stage.Stage;
 import javafx.util.Pair;
 import models.ItemListEnlace;
 import models.ItemListTema;
+import models.ProfesorApiService;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
 
 public class TemaController extends Application{
@@ -31,6 +34,7 @@ public class TemaController extends Application{
     public ListView lst_enlaces;
     public ProfesorController callback;
     public Button btn_Eliminar;
+
     private String temaActual;
     private String asignaturaActual;
     private ObservableList<ItemListTema> observableList_temas;
@@ -38,33 +42,12 @@ public class TemaController extends Application{
 
     public void initialize() {
 
-        // TODO: Recibir asignaturas de la api
-
-//        observableList_temas = FXCollections.observableArrayList(
-//                new ItemListTema(asignaturaActual, "", "- Sin padre -", descripcion, fechaComienzo, enlaces),
-//                new ItemListTema(asignaturaActual, "1", "Tema Primero", descripcion, fechaComienzo, enlaces),
-//                new ItemListTema(asignaturaActual, "1.1", "Subtema Primero", descripcion, fechaComienzo, enlaces),
-//                new ItemListTema(asignaturaActual, "2", "Tema 2", descripcion, fechaComienzo, enlaces),
-//                new ItemListTema(asignaturaActual, "3", "Tema 3", descripcion, fechaComienzo, enlaces),
-//                new ItemListTema(asignaturaActual, "3.1", "Tema 3 sub", descripcion, fechaComienzo, enlaces),
-//                new ItemListTema(asignaturaActual, "3.2", "Tema 3 sub 2", descripcion, fechaComienzo, enlaces),
-//                new ItemListTema(asignaturaActual, "4", "Tema Primero", descripcion, fechaComienzo, enlaces),
-//                new ItemListTema(asignaturaActual, "5", "Tema Primero", descripcion, fechaComienzo, enlaces),
-//                new ItemListTema(asignaturaActual, "5.1", "Tema Primero", descripcion, fechaComienzo, enlaces),
-//                new ItemListTema(asignaturaActual, "5.2", "Tema Primero", descripcion, fechaComienzo, enlaces),
-//                new ItemListTema(asignaturaActual, "5.3", "Tema Primero", descripcion, fechaComienzo, enlaces),
-//                new ItemListTema(asignaturaActual, "5.2", "Tema Primero", descripcion, fechaComienzo, enlaces),
-//                new ItemListTema(asignaturaActual, "5.3", "Tema Primero", descripcion, fechaComienzo, enlaces),
-//                new ItemListTema(asignaturaActual, "5.2", "Tema Primero", descripcion, fechaComienzo, enlaces),
-//                new ItemListTema(asignaturaActual, "5.3", "Tema Primero", descripcion, fechaComienzo, enlaces)
-//        );
-
+        // Creamos las listas vacías
+        observableList_temas = FXCollections.observableArrayList();
         observableList_enlaces = FXCollections.observableArrayList();
 
+        // Asignamos las listas a sus respectivos objetos
         cmb_temasPadre.setItems(observableList_temas);
-
-        cmb_temasPadre.getSelectionModel().selectFirst();
-
         lst_enlaces.setItems(observableList_enlaces);
 
         lst_enlaces.setCellFactory(param -> new CellEnlace(mouseEvent -> {
@@ -83,6 +66,84 @@ public class TemaController extends Application{
     }
 
     public void btnGuardarClick(ActionEvent actionEvent) {
+        String codigoTemaPadre = ((ItemListTema)cmb_temasPadre.getSelectionModel().getSelectedItem()).getCodigoTema();
+        String numeroTemaString = txt_numeroTema.getText();
+        int numeroTema = 0;
+        String nombreTema = txt_nombre.getText();
+        String descripcionTema = txt_descripcion.getText();
+        LocalDate fechaTemaDate = datepck_fecha.getValue();
+        String fechaTema = null;
+        List<ItemListEnlace> enlaces = observableList_enlaces;
+        Boolean datosCorrectos = true;
+
+        // Verificamos que cada valor es correcto.
+
+        // Verificación tema padre
+        if(codigoTemaPadre.isEmpty()){
+            datosCorrectos = false;
+        }
+
+        // Verificación numero tema
+        try{
+            numeroTema = Integer.parseInt(numeroTemaString);
+        } catch (NumberFormatException e){
+            datosCorrectos = false;
+        }
+        if(numeroTema > 99 || numeroTema < 1){
+            datosCorrectos = false;
+        }
+
+        // Verificación nombre tema
+        if(nombreTema.isEmpty() || nombreTema.length() > 45){
+            datosCorrectos = false;
+        }
+
+        // Verificación descripción tema
+        if(descripcionTema.isEmpty() || descripcionTema.length() > 400){
+            datosCorrectos = false;
+        }
+
+        // Verificación fecha
+        if(fechaTemaDate != null){
+            fechaTema = fechaTemaDate.toString();
+            if(fechaTema.isEmpty()){
+                datosCorrectos = false;
+            }
+        }else{
+            datosCorrectos = false;
+        }
+
+
+
+        for (ItemListEnlace enlace : enlaces) {
+            String url = enlace.getUrl();
+            String descripcionEnlace = enlace.getDescripcion();
+
+            // Verificación url
+            if(url.isEmpty() || url.length() > 100){
+                datosCorrectos = false;
+            }
+
+            // Verificación descripcion enlace
+            if(descripcionEnlace.isEmpty() || descripcionEnlace.length() > 100){
+                datosCorrectos = false;
+            }
+        }
+
+        if(datosCorrectos){
+            // Si los datos son correctos, se envían a la API
+
+            String codNuevoTema = String.format("%s-%s", codigoTemaPadre, numeroTema);
+
+            ProfesorApiService.crearTema(asignaturaActual, codNuevoTema, nombreTema, descripcionTema, fechaTema).subscribe(() -> {
+                // Una vez creado el tema, se crean sus enlaces
+                for (ItemListEnlace enlace : enlaces) {
+                    ProfesorApiService.crearEnlaceTema(asignaturaActual, codNuevoTema, enlace.getUrl(), enlace.getDescripcion()).subscribe();
+                }
+            });
+        }else{
+            System.out.println("Datos Incorrectos.");
+        }
     }
 
     public void btnEliminarClick(ActionEvent actionEvent) {
@@ -94,6 +155,12 @@ public class TemaController extends Application{
         btn_Eliminar.setDisable(temaActual.isEmpty());
         if (!temaActual.isEmpty()) {
             // TODO: Rellenar datos con lo recogido de la web api
+        }else{
+            // Obtenemos los temas de la API y seleccionamos el primero por defecto
+            ProfesorApiService.obtenerTemasAsignatura(asignaturaActual).subscribe(temas -> {
+                observableList_temas.addAll(temas);
+                cmb_temasPadre.getSelectionModel().selectFirst();
+            });
         }
     }
 

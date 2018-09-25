@@ -22,4 +22,22 @@ public interface ProfesorApiInterface {
 
     @DELETE("alumnos/{asignatura}/{alumno}/")
     Completable eliminarAlumnoAsignatura(@Path("asignatura") String asignatura, @Path("alumno") String alumno);
+
+    @GET("temas/{asignatura}/")
+    Observable<List<ItemListTema>> obtenerTemasAsignatura(@Path("asignatura") String asignatura);
+
+    @FormUrlEncoded
+    @POST("temas/{asignatura}/")
+    Completable crearTema(@Path("asignatura") String asignatura,
+                          @Field("codTemario") String codTemario,
+                          @Field("nombre") String nombre,
+                          @Field("descripcion") String descripcion,
+                          @Field("fechaComienzo") String fechaComienzo);
+
+    @FormUrlEncoded
+    @POST("temas/{asignatura}/{tema}/")
+    Completable crearEnlaceTema(@Path("asignatura") String asignatura,
+                          @Path("tema") String tema,
+                          @Field("url") String url,
+                          @Field("descripcion") String descripcion);
 }

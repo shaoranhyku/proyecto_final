@@ -78,6 +78,21 @@ try {
     $router->map('POST', '/api/temas/[a:asignatura]/[:tema]/', 'endpoints/profesor/crearEnlace.php');
 } catch (Exception $e){}
 
+try {
+    $router->map('DELETE', '/api/temas/[a:asignatura]/[:tema]/', 'endpoints/profesor/borrarTema.php');
+} catch (Exception $e){}
+
+try {
+    $router->map('DELETE', '/api/temas/[a:asignatura]/[:tema]/[i:enlace]/', 'endpoints/profesor/borrarEnlace.php');
+} catch (Exception $e){}
+
+try {
+    $router->map('GET', '/api/temas/[a:asignatura]/[:tema]/', 'endpoints/profesor/obtenerTemaProfesor.php');
+} catch (Exception $e){}
+
+try {
+    $router->map('POST', '/api/temas/[a:asignatura]/[:tema]/editar/', 'endpoints/profesor/editarTema.php');
+} catch (Exception $e){}
 
 /* Match the current request */
 $match = $router->match();

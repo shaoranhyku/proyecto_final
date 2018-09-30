@@ -1,5 +1,7 @@
 package models;
 
+import java.util.Objects;
+
 public class ItemListEnlace {
 
     private String codigoEnlace;
@@ -35,4 +37,14 @@ public class ItemListEnlace {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ItemListEnlace that = (ItemListEnlace) o;
+        return Objects.equals(url, that.url) &&
+                Objects.equals(descripcion, that.descripcion);
+    }
+
 }

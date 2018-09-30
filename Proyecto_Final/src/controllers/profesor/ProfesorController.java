@@ -9,11 +9,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import models.CallbackTema;
 import models.Sesion;
 
 import java.io.IOException;
 
-public class ProfesorController {
+public class ProfesorController implements CallbackTema{
 
     public BorderPane rootPane;
     public Label lbl_bienvenidaUsuario;
@@ -136,6 +137,7 @@ public class ProfesorController {
 
         SeleccionarTemaController controller = loader.getController();
         controller.callback = this;
+        controller.buscarTemas();
         rootPane.setCenter(center);
     }
 
@@ -185,6 +187,24 @@ public class ProfesorController {
 
         SeleccionarAsignacionEvaluarController controller = loader.getController();
         controller.callback = this;
+        rootPane.setCenter(center);
+    }
+
+    @Override
+    public void setCenterTema(String asignaturaClave, String clave) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ui/profesor/node_tema.fxml"));
+
+        Parent center = null;
+
+        try {
+            center = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        TemaController controller = loader.getController();
+        controller.callback = this;
+        controller.setTemaActual(asignaturaClave, clave);
         rootPane.setCenter(center);
     }
 }

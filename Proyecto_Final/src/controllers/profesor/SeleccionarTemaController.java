@@ -1,13 +1,17 @@
 package controllers.profesor;
 
-import javafx.event.ActionEvent;
-import javafx.scene.control.ListView;
+import controllers.Utils;
+import javafx.scene.layout.VBox;
+import models.ProfesorApiService;
 
 public class SeleccionarTemaController {
-    public ListView lst_temas;
     public ProfesorController callback;
+    public VBox vbox_temas;
 
-    public void btnSeleccionarClick(ActionEvent actionEvent) {
-
+    public void buscarTemas() {
+        // Se buscan los temas en la base de datos
+        ProfesorApiService.obtenerTemasAsignatura(callback.asignaturaSeleccionada).subscribe(temas -> {
+            Utils.setTemasInVBox(temas, vbox_temas, callback, getClass());
+        });
     }
 }

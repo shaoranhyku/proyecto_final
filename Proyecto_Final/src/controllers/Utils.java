@@ -21,6 +21,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextBoundsType;
 import models.AsignacionLista;
+import models.CallbackTema;
 import models.ItemListAsignatura;
 import models.ItemListTema;
 
@@ -526,7 +527,7 @@ public class Utils {
         internVbox.setPrefHeight(sumarioHeight);
     }
 
-    public static void setTemasInVBox(List<ItemListTema> temas, VBox internVbox, PrincipalController internCallback, Class internClass) {
+    public static void setTemasInVBox(List<ItemListTema> temas, VBox internVbox, CallbackTema internCallback, Class internClass) {
         ArrayList<Parent> temasItemList = new ArrayList<>();
         double sumarioHeight = 0;
 

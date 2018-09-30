@@ -5,7 +5,7 @@ require 'models/tema.php';
 if (isset($match['params']['asignatura'])) {
     $asignatura = $match['params']['asignatura'];
 
-    $profesorQuery = sprintf("SELECT t.cod_temario, t.nombre FROM tema t where t.cod_asignatura = \"%s\";;", $asignatura);
+    $profesorQuery = sprintf("SELECT t.cod_asignatura, t.cod_temario, t.nombre FROM tema t where t.cod_asignatura = \"%s\";;", $asignatura);
 
     $result = $conn->query($profesorQuery);
 
@@ -14,8 +14,9 @@ if (isset($match['params']['asignatura'])) {
     while ($row = $result->fetch_assoc()) {
         $nuevoTema = new tema();
 
-        $nuevoTema->nombreTema = $row["nombre"];
+        $nuevoTema->codigoAsignatura = $row["cod_asignatura"];
         $nuevoTema->codigoTema = $row["cod_temario"];
+        $nuevoTema->nombreTema = $row["nombre"];
         array_push($temas, $nuevoTema);
     }
 

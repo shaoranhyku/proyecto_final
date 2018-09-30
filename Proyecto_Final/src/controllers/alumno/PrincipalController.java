@@ -2,10 +2,7 @@ package controllers.alumno;
 
 import controllers.Utils;
 import javafx.scene.Cursor;
-import models.AlumnoApiService;
-import models.AsignacionLista;
-import models.ItemListAsignatura;
-import models.Sesion;
+import models.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -27,7 +24,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class PrincipalController {
+public class PrincipalController implements CallbackTema{
 
     @FXML
     private Label lbl_bienvenidaUsuario;

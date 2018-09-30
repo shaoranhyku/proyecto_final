@@ -42,7 +42,7 @@ public class AlumnadoController {
         lst_todosAlumnos.setCellFactory(param -> new CellAlumno(mouseEvent -> {
             if (mouseEvent.getButton().equals(MouseButton.PRIMARY)) {
                 if(mouseEvent.getClickCount() == 2){
-                    btnAñadirClick(null);
+                    btnAgregarClick(null);
                 }
             }
         }));
@@ -76,7 +76,7 @@ public class AlumnadoController {
         });
     }
 
-    public void btnAñadirClick(ActionEvent actionEvent) {
+    public void btnAgregarClick(ActionEvent actionEvent) {
         if(lst_todosAlumnos.getSelectionModel().getSelectedItem() != null){
             ItemListAlumno item = (ItemListAlumno) lst_todosAlumnos.getSelectionModel().getSelectedItem();
             observableList_ItemList_alumnosTodos.remove(item);

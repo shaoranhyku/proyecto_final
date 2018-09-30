@@ -79,4 +79,25 @@ public class ProfesorApiService {
                                               String descripcion) {
         return getInstance().retrofit.crearEnlaceTema(asignatura, tema, url, descripcion);
     }
+
+    public static Completable eliminarTema(String asignatura, String tema){
+        return getInstance().retrofit.eliminarTema(asignatura, tema);
+    }
+
+    public static Completable eliminarEnlace(String asignatura, String tema, String enlace){
+        return getInstance().retrofit.eliminarEnlace(asignatura, tema, enlace);
+    }
+
+    public static Observable<ItemListTema> obtenerTema(String asignatura, String tema){
+        return getInstance().retrofit.obtenerTema(asignatura, tema);
+    }
+
+    public static Completable editarTema(String asignatura,
+                                         String tema,
+                                         String nuevoCodTemario,
+                                         String nombre,
+                                         String descripcion,
+                                         String fechaComienzo){
+        return getInstance().retrofit.editarTema(asignatura, tema, nuevoCodTemario, nombre, descripcion, fechaComienzo);
+    }
 }

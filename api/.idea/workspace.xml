@@ -14,18 +14,30 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1564">
-              <caret line="92" column="5" lean-forward="false" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
+            <state relative-caret-position="328">
+              <caret line="77" column="25" lean-forward="true" selection-start-line="77" selection-start-column="25" selection-end-line="77" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editarTema.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="obtenerTemasAsignatura.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/endpoints/profesor/obtenerTemasAsignatura.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="53" lean-forward="true" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
+              <folding>
+                <marker date="1538309022431" expanded="true" signature="182:274" ph="SELECT t.cod... tema" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editarTema.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/endpoints/profesor/editarTema.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="41" lean-forward="false" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+            <state relative-caret-position="323">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding>
                 <marker date="1538076023036" expanded="true" signature="544:621" ph="SELECT * FRO... tema" />
                 <marker date="1538076023036" expanded="true" signature="875:1018" ph="UPDATE tema... " />
@@ -85,7 +97,6 @@
         <option value="$PROJECT_DIR$/endpoints/profesor/obtenerAlumnosPorAsignatura.php" />
         <option value="$PROJECT_DIR$/endpoints/profesor/eliminarAlumnoAsignatura.php" />
         <option value="$PROJECT_DIR$/endpoints/alumno/obtenerTemaAlumno.php" />
-        <option value="$PROJECT_DIR$/endpoints/profesor/obtenerTemasAsignatura.php" />
         <option value="$PROJECT_DIR$/endpoints/profesor/agregarAlumnoAsignatura.php" />
         <option value="$PROJECT_DIR$/endpoints/profesor/crearTema.php" />
         <option value="$PROJECT_DIR$/endpoints/profesor/crearEnlace.php" />
@@ -95,6 +106,7 @@
         <option value="$PROJECT_DIR$/endpoints/profesor/obtenerTemaProfesor.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/endpoints/profesor/editarTema.php" />
+        <option value="$PROJECT_DIR$/endpoints/profesor/obtenerTemasAsignatura.php" />
       </list>
     </option>
   </component>
@@ -106,8 +118,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="width" value="974" />
+    <option name="x" value="854" />
+    <option name="width" value="1073" />
     <option name="height" value="1087" />
   </component>
   <component name="ProjectView">
@@ -125,9 +137,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -167,6 +177,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -439,14 +451,16 @@
       <workItem from="1537900854587" duration="1496000" />
       <workItem from="1538071818059" duration="4240000" />
       <workItem from="1538076100991" duration="12000" />
+      <workItem from="1538301396234" duration="2543000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66764000" />
+    <option name="totallyTimeSpent" value="69307000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -460,7 +474,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15351813" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15511727" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -686,13 +700,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/endpoints/profesor/obtenerTemasAsignatura.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="48" lean-forward="false" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/endpoints/alumno/entregarCriterio.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -704,12 +711,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="2" column="20" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-          <folding>
-            <marker date="1529417435593" expanded="true" signature="578:831" ph="select alcri... alumno_criterio" />
-            <marker date="1529417435593" expanded="true" signature="1404:1495" ph="select * fro... alumno_asignacion" />
-            <marker date="1529417435593" expanded="true" signature="1597:1756" ph="update alumno_asignacion... " />
-            <marker date="1529417435593" expanded="true" signature="1885:2030" ph="insert into alumno_asignacion... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -717,10 +718,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="18" column="135" lean-forward="false" selection-start-line="18" selection-start-column="129" selection-end-line="18" selection-end-column="135" />
-          <folding>
-            <marker date="1537610761273" expanded="true" signature="450:527" ph="SELECT * FRO... tema" />
-            <marker date="1537610761273" expanded="true" signature="742:873" ph="INSERT INTO tema... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -728,10 +725,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="114" lean-forward="false" selection-start-line="9" selection-start-column="108" selection-end-line="9" selection-end-column="114" />
-          <folding>
-            <marker date="1537611178649" expanded="true" signature="361:373" ph="INSERT INTO tema... " />
-            <marker date="1537611178649" expanded="true" signature="361:467" ph="INSERT INTO enlace... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -739,12 +732,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="32" column="25" lean-forward="false" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-          <folding>
-            <marker date="1529346454249" expanded="true" signature="362:433" ph="select a.cod... asignatura" />
-            <marker date="1529346454249" expanded="true" signature="485:610" ph="select t.cod... tema" />
-            <marker date="1529346454249" expanded="true" signature="668:909" ph="select asig.... asignacion" />
-            <marker date="1529346454249" expanded="true" signature="965:1067" ph="select * fro... alumno_asignacion" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -752,10 +739,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="41" lean-forward="false" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="41" />
-          <folding>
-            <marker date="1537608759716" expanded="true" signature="234:331" ph="SELECT * FRO... alumno_asignatura" />
-            <marker date="1537608759716" expanded="true" signature="528:610" ph="INSERT INTO alumno_asignatura... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -763,9 +746,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="32" lean-forward="true" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-          <folding>
-            <marker date="1538074006657" expanded="true" signature="391:484" ph="DELETE FROM enlace... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -773,7 +753,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -781,9 +760,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="70" lean-forward="false" selection-start-line="7" selection-start-column="70" selection-end-line="7" selection-end-column="70" />
-          <folding>
-            <marker date="1538072895390" expanded="true" signature="309:376" ph="DELETE FROM tema... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -799,7 +775,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -807,7 +782,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -815,13 +789,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="7" lean-forward="false" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
-          <folding>
-            <marker date="1537381884844" expanded="true" signature="461:611" ph="select t.cod... tema" />
-            <marker date="1537381884844" expanded="true" signature="676:790" ph="select e.cod... enlace" />
-            <marker date="1537381884844" expanded="true" signature="856:984" ph="select t.cod... tema" />
-            <marker date="1537381884844" expanded="true" signature="1038:1486" ph="select asig.... asignacion" />
-            <marker date="1537381884844" expanded="true" signature="1552:1654" ph="select * fro... alumno_asignacion" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -829,28 +796,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/endpoints/profesor/editarTema.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
-            <marker date="1538074842243" expanded="true" signature="291:441" ph="select t.cod... tema" />
-            <marker date="1538074842243" expanded="true" signature="506:620" ph="select e.cod... enlace" />
+            <marker date="1538076023036" expanded="true" signature="544:621" ph="SELECT * FRO... tema" />
+            <marker date="1538076023036" expanded="true" signature="875:1018" ph="UPDATE tema... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1564">
-          <caret line="92" column="5" lean-forward="false" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
+        <state relative-caret-position="328">
+          <caret line="77" column="25" lean-forward="true" selection-start-line="77" selection-start-column="25" selection-end-line="77" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/endpoints/profesor/editarTema.php">
+    <entry file="file://$PROJECT_DIR$/endpoints/profesor/obtenerTemasAsignatura.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="41" lean-forward="false" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+        <state relative-caret-position="289">
+          <caret line="17" column="53" lean-forward="true" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
           <folding>
-            <marker date="1538076023036" expanded="true" signature="544:621" ph="SELECT * FRO... tema" />
-            <marker date="1538076023036" expanded="true" signature="875:1018" ph="UPDATE tema... " />
+            <marker date="1538309022431" expanded="true" signature="182:274" ph="SELECT t.cod... tema" />
           </folding>
         </state>
       </provider>

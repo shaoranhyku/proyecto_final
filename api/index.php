@@ -99,7 +99,11 @@ try {
 } catch (Exception $e){}
 
 try {
-    $router->map('POST', '/api/asignaciones/[a:asignacion]/', 'endpoints/profesor/asignarTemaAsignacion.php');
+    $router->map('POST', '/api/asignaciones/[a:asignacion]/tema/', 'endpoints/profesor/asignarTemaAsignacion.php');
+} catch (Exception $e){}
+
+try {
+    $router->map('POST', '/api/asignaciones/[a:asignacion]/criterio/', 'endpoints/profesor/crearCriterio.php');
 } catch (Exception $e){}
 
 /* Match the current request */

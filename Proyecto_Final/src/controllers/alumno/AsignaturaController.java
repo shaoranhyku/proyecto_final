@@ -3,7 +3,7 @@ package controllers.alumno;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import models.AlumnoApiService;
-import models.AsignacionLista;
+import models.AsignacionAlumnoLista;
 import models.Sesion;
 import models.ItemListTema;
 
@@ -19,7 +19,7 @@ public class AsignaturaController {
     public VBox vbox_temas;
     public PrincipalController callBack;
 
-    private List<AsignacionLista> asignaciones;
+    private List<AsignacionAlumnoLista> asignaciones;
     private List<ItemListTema> temas;
 
     public void setAsignatura(String codigoAsignatura) {

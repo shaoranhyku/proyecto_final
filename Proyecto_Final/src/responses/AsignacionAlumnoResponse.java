@@ -1,6 +1,6 @@
 package responses;
 
-import models.AsignacionLista;
+import models.AsignacionAlumnoLista;
 import models.CriterioEvaluacionAlumno;
 import models.EntregaAsignacion;
 
@@ -8,21 +8,21 @@ import java.util.List;
 
 public class AsignacionAlumnoResponse {
 
-    private AsignacionLista asignacion;
+    private AsignacionAlumnoLista asignacion;
     private EntregaAsignacion entrega;
     private List<CriterioEvaluacionAlumno> criteriosNota;
 
-    public AsignacionAlumnoResponse(AsignacionLista asignacion, EntregaAsignacion entrega, List<CriterioEvaluacionAlumno> criteriosNota) {
+    public AsignacionAlumnoResponse(AsignacionAlumnoLista asignacion, EntregaAsignacion entrega, List<CriterioEvaluacionAlumno> criteriosNota) {
         this.asignacion = asignacion;
         this.entrega = entrega;
         this.criteriosNota = criteriosNota;
     }
 
-    public AsignacionLista getAsignacion() {
+    public AsignacionAlumnoLista getAsignacion() {
         return asignacion;
     }
 
-    public void setAsignacion(AsignacionLista asignacion) {
+    public void setAsignacion(AsignacionAlumnoLista asignacion) {
         this.asignacion = asignacion;
     }
 

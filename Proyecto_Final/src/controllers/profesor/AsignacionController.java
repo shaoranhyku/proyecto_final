@@ -16,9 +16,13 @@ import javafx.scene.layout.GridPane;
 import javafx.util.Pair;
 import models.CriterioEvaluacionProfesor;
 import models.ItemListTema;
+import models.ProfesorApiService;
 import tornadofx.control.DateTimePicker;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
 public class AsignacionController {
@@ -29,41 +33,23 @@ public class AsignacionController {
     public TextField txt_nombre;
     public ProfesorController callback;
     public ListView lst_temas;
+    public Button btn_eliminar;
 
     private int asignacionActual;
-    private ObservableList<ItemListTema> observableList_todosTemas;
     private String asignaturaActual;
-    private ObservableList<Object> observableList_criterios;
-    private ObservableList<Object> observableList_temas;
+    private ObservableList<ItemListTema> observableList_todosTemas;
+    private ObservableList<ItemListTema> observableList_temas;
+    private ObservableList<CriterioEvaluacionProfesor> observableList_criterios;
 
     public void initialize() {
 
-        // TODO: Traer los temas de la API
-
-        observableList_todosTemas = FXCollections.observableArrayList(
-                new ItemListTema(asignaturaActual, "1", "Tema Primero", "", null, null),
-                new ItemListTema(asignaturaActual, "1.1", "Subtema Primero", "", null, null),
-                new ItemListTema(asignaturaActual, "2", "Tema 2", "", null, null),
-                new ItemListTema(asignaturaActual, "3", "Tema 3", "", null, null),
-                new ItemListTema(asignaturaActual, "3.1", "Tema 3 sub", "", null, null),
-                new ItemListTema(asignaturaActual, "3.2", "Tema 3 sub 2", "", null, null),
-                new ItemListTema(asignaturaActual, "4", "Tema Primero", "", null, null),
-                new ItemListTema(asignaturaActual, "5", "Tema Primero", "", null, null),
-                new ItemListTema(asignaturaActual, "5.1", "Tema Primero", "", null, null),
-                new ItemListTema(asignaturaActual, "5.2", "Tema Primero", "", null, null),
-                new ItemListTema(asignaturaActual, "5.3", "Tema Primero", "", null, null),
-                new ItemListTema(asignaturaActual, "5.2", "Tema Primero", "", null, null),
-                new ItemListTema(asignaturaActual, "5.3", "Tema Primero", "", null, null),
-                new ItemListTema(asignaturaActual, "5.2", "Tema Primero", "", null, null),
-                new ItemListTema(asignaturaActual, "5.3", "Tema Primero", "", null, null)
-        );
-
+        // Creo las listas vacias
+        observableList_todosTemas = FXCollections.observableArrayList();
         observableList_temas = FXCollections.observableArrayList();
-
         observableList_criterios = FXCollections.observableArrayList();
 
+        // Asigno las listas
         lst_criterios.setItems(observableList_criterios);
-
         lst_temas.setItems(observableList_temas);
 
         lst_criterios.setCellFactory(param -> new CellCriterio(mouseEvent -> {
@@ -137,7 +123,24 @@ public class AsignacionController {
     }
 
     private void crearNuevoCriterio(String key, String value) {
-        observableList_criterios.add(new CriterioEvaluacionProfesor(asignacionActual, -1, key, Integer.parseInt(value)));
+
+        int porcentaje;
+
+        try{
+            porcentaje = Integer.parseInt(value);
+        } catch (NumberFormatException e){
+            porcentaje = 0;
+        }
+
+        if (porcentaje < 0) {
+            porcentaje = 0;
+        }
+
+        if (porcentaje > 100){
+            porcentaje = 100;
+        }
+
+        observableList_criterios.add(new CriterioEvaluacionProfesor(asignacionActual, -1, key, porcentaje));
     }
 
     public void btnEliminarCriterioClick(ActionEvent actionEvent) {
@@ -174,6 +177,85 @@ public class AsignacionController {
     }
 
     public void btnGuardarClick(ActionEvent actionEvent) {
+        String nombreAsignacion = txt_nombre.getText();
+        String nombreGit = txt_nombreGit.getText();
+        LocalDateTime fechaEntregaDate = datetimepck_fecha.getDateTimeValue();
+        String fechaEntrega = "";
+        String descripcion = txt_descripcion.getText();
+        String fechaCreacion = LocalDate.now().toString();
+        List<ItemListTema> temasAsignados = observableList_temas;
+        List<CriterioEvaluacionProfesor> criterios = observableList_criterios;
+
+        boolean datosCorrectos = true;
+
+        // Verificamos que cada valor es correcto
+
+        // Verificación nombre asignación
+        if(nombreAsignacion.isEmpty() || nombreAsignacion.length() > 40){
+            datosCorrectos = false;
+        }
+
+        // Verificación nombre git
+        if(nombreGit.isEmpty() || nombreGit.length() > 45){
+            datosCorrectos = false;
+        }
+
+        // Verificación descripción
+        if(descripcion.isEmpty() || descripcion.length() > 255){
+            datosCorrectos = false;
+        }
+
+        // Verificación fecha
+        if(fechaEntregaDate != null){
+            fechaEntrega = fechaEntregaDate.toString();
+            if(fechaEntrega.isEmpty()){
+                datosCorrectos = false;
+            }
+        }else{
+            datosCorrectos = false;
+        }
+
+        // Verificación criterios
+        if(criterios.size() > 0){
+            int sumaPorcentajes = 0;
+            for (CriterioEvaluacionProfesor criterio : criterios) {
+                // Verificación nombre criterio
+                if(criterio.getNombre().isEmpty() || criterio.getNombre().length() > 40){
+                    datosCorrectos = false;
+                }
+
+                // No hay que comprobar que el número este entre 0 y 100 porque ya se controla al introducirlo en la lista,
+                // solo hay que comprobar que sumen 100
+                sumaPorcentajes += criterio.getPorcentaje();
+            }
+            if(sumaPorcentajes != 100){
+                datosCorrectos = false;
+            }
+        }else{
+            datosCorrectos = false;
+        }
+
+        // Verificación temas asignados
+        if(temasAsignados.size() == 0){
+            datosCorrectos = false;
+        }
+
+        // Si los datos son correctos, se agrega o se actualiza la asignación
+        if (datosCorrectos){
+            if(asignacionActual < 0){
+                // Creamos la asignacion, sus temas asignados y sus criterios
+                ProfesorApiService.crearAsignacion(nombreAsignacion, nombreGit, descripcion, fechaEntrega, fechaCreacion).subscribe( idAsignacion -> {
+                    // Una vez creado la asignación, creamos sus temas asignados y sus criterios
+                    for (CriterioEvaluacionProfesor criterio : criterios) {
+                        ProfesorApiService.crearCriterio(String.valueOf(idAsignacion), criterio.getNombre(), String.valueOf(criterio.getPorcentaje())).subscribe();
+                    }
+
+                    for(ItemListTema tema : temasAsignados){
+                        ProfesorApiService.asignarTemaAsignacion(String.valueOf(idAsignacion), asignaturaActual, tema.getCodigoTema()).subscribe();
+                    }
+                });
+            }
+        }
     }
 
     public void btnEliminarClick(ActionEvent actionEvent) {
@@ -182,6 +264,22 @@ public class AsignacionController {
     public void setAsignacionActual(String asignaturaActual, int asignacionActual) {
         this.asignaturaActual = asignaturaActual;
         this.asignacionActual = asignacionActual;
+        btn_eliminar.setDisable(asignacionActual < 0);
+
+        // Obtengo los datos necesarios de la API
+
+        // Busco los temas para el dialogo
+        ProfesorApiService.obtenerTemasAsignatura(asignaturaActual).subscribe(temas -> {
+            observableList_todosTemas.addAll(temas);
+        });
+
+        if(asignacionActual >= 0){
+            // Busco los datos de la asignacion, sus temas asignados y sus criterios
+        }else{
+            // Ponemos datos por defecto en los campos requeridos
+            datetimepck_fecha.setValue(LocalDate.now());
+        }
+
     }
 
     public class CellCriterio extends ListCell<CriterioEvaluacionProfesor> {

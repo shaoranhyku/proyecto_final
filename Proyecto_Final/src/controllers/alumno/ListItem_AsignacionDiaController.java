@@ -4,7 +4,7 @@ import controllers.Utils;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import models.AsignacionLista;
+import models.AsignacionAlumnoLista;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
@@ -34,26 +34,26 @@ public class ListItem_AsignacionDiaController {
         parent_height = parent.getPrefHeight();
     }
 
-    public void setAsignacion(AsignacionLista asignacionLista) {
+    public void setAsignacion(AsignacionAlumnoLista asignacionAlumnoLista) {
         int sumatorio = 0;
         lbl_descripcion.setPrefHeight(lbl_descripcion_height);
         parent.setPrefHeight(parent_height);
 
-        lbl_asignatura.setText(asignacionLista.getAsignatura());
-        lbl_nombreAsignacion.setText(asignacionLista.getNombreAsignacion());
-        lbl_descripcion.setText(asignacionLista.getDescripcion());
+        lbl_asignatura.setText(asignacionAlumnoLista.getAsignatura());
+        lbl_nombreAsignacion.setText(asignacionAlumnoLista.getNombreAsignacion());
+        lbl_descripcion.setText(asignacionAlumnoLista.getDescripcion());
 
         // Creo la cadena que indica la hora del dia en la que se entrega
-        String horaEntrega = String.format("%s/%s/%s %s:%s - ", asignacionLista.getFechaEntrega().getDayOfMonth(), asignacionLista.getFechaEntrega().getMonthValue(), asignacionLista.getFechaEntrega().getYear() ,asignacionLista.getFechaEntrega().getHour(), asignacionLista.getFechaEntrega().getMinute());
+        String horaEntrega = String.format("%s/%s/%s %s:%s - ", asignacionAlumnoLista.getFechaEntrega().getDayOfMonth(), asignacionAlumnoLista.getFechaEntrega().getMonthValue(), asignacionAlumnoLista.getFechaEntrega().getYear() , asignacionAlumnoLista.getFechaEntrega().getHour(), asignacionAlumnoLista.getFechaEntrega().getMinute());
 
         // Obtengo los dias, horas y minutos restantes
         LocalDateTime actual = LocalDateTime.now();
         LocalDateTime tempDateTime = LocalDateTime.from(actual);
-        long diasRestantes = tempDateTime.until(asignacionLista.getFechaEntrega(), ChronoUnit.DAYS);
+        long diasRestantes = tempDateTime.until(asignacionAlumnoLista.getFechaEntrega(), ChronoUnit.DAYS);
         tempDateTime = tempDateTime.plusDays(diasRestantes);
-        long horasRestanttes = tempDateTime.until(asignacionLista.getFechaEntrega(), ChronoUnit.HOURS);
+        long horasRestanttes = tempDateTime.until(asignacionAlumnoLista.getFechaEntrega(), ChronoUnit.HOURS);
         tempDateTime = tempDateTime.plusHours(horasRestanttes);
-        long minutosRestantes = tempDateTime.until(asignacionLista.getFechaEntrega(), ChronoUnit.MINUTES);
+        long minutosRestantes = tempDateTime.until(asignacionAlumnoLista.getFechaEntrega(), ChronoUnit.MINUTES);
 
         // Creo cadenas para las hora, dias y minutos restantes si son mayores que 1
         if(diasRestantes>1){
@@ -75,7 +75,7 @@ public class ListItem_AsignacionDiaController {
 
         parent.setPrefHeight(parent.getPrefHeight() + sumatorio);
 
-        if(asignacionLista.isEntregado()){
+        if(asignacionAlumnoLista.isEntregado()){
             lbl_entregado.setText(LBL_ENTREGADO_TRUE);
         }else{
             lbl_entregado.setText(LBL_ENTREGADO_FALSE);

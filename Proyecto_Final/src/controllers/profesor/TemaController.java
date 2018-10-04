@@ -76,9 +76,10 @@ public class TemaController extends Application{
         LocalDate fechaTemaDate = datepck_fecha.getValue();
         String fechaTema = null;
         List<ItemListEnlace> enlaces = observableList_enlaces;
+
         Boolean datosCorrectos = true;
 
-        // Verificamos que cada valor es correcto.
+        // Verificamos que cada valor es correcto
 
         // Verificación tema padre
         if(codigoTemaPadre.isEmpty()){

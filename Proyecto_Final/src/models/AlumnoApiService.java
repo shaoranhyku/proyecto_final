@@ -51,7 +51,7 @@ public class AlumnoApiService {
         return getInstance().retrofit.obtenerAsignaturasAlumno(alumno);
     }
 
-    public static Observable<List<AsignacionLista>> obtenerUltimasAsignacionesAlumno(String alumno){
+    public static Observable<List<AsignacionAlumnoLista>> obtenerUltimasAsignacionesAlumno(String alumno){
         return getInstance().retrofit.obtenerUltimasAsignacionesAlumno(alumno);
     }
 
@@ -75,7 +75,7 @@ public class AlumnoApiService {
         return getInstance().retrofit.entregarCriterio(codigoAsignacion, codigoCriterio, alumno, clave, notaAuto);
     }
 
-    public static Observable<List<AsignacionLista>> obtenerAsignacionesDia(LocalDate fecha, String alumno){
+    public static Observable<List<AsignacionAlumnoLista>> obtenerAsignacionesDia(LocalDate fecha, String alumno){
         return getInstance().retrofit.obtenerAsignacionesDia(fecha, alumno);
     }
 

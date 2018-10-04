@@ -35,7 +35,7 @@ public class PrincipalController implements CallbackTema{
     @FXML
     private BorderPane rootPane;
     private ObservableList<ItemListAsignatura> observableList_ItemList_asignaturas;
-    private ObservableList<AsignacionLista> observableList_ItemList_asignaciones;
+    private ObservableList<AsignacionAlumnoLista> observableList_ItemList_asignaciones;
 
     public void initialize() {
         lbl_bienvenidaUsuario.setText(String.format("Bienvenido/a %s %s", Sesion.getInstance().getUsuario().getNombre(), Sesion.getInstance().getUsuario().getApellidos()));
@@ -184,7 +184,7 @@ public class PrincipalController implements CallbackTema{
 
 
 
-    private class CellUltimaAsignacion extends ListCell<AsignacionLista> {
+    private class CellUltimaAsignacion extends ListCell<AsignacionAlumnoLista> {
         private Parent itemRoot;
         private Label lbl_fechaEntrega;
         private EventHandler<MouseEvent> callback;
@@ -197,7 +197,7 @@ public class PrincipalController implements CallbackTema{
         }
 
         @Override
-        protected void updateItem(AsignacionLista asignacionUltimaLista, boolean empty) {
+        protected void updateItem(AsignacionAlumnoLista asignacionUltimaLista, boolean empty) {
             super.updateItem(asignacionUltimaLista, empty);
             if (asignacionUltimaLista == null) {
                 setText(null);

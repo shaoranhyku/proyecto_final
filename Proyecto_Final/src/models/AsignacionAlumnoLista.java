@@ -2,7 +2,7 @@ package models;
 
 import java.time.LocalDateTime;
 
-public class AsignacionLista {
+public class AsignacionAlumnoLista {
 
     private int codigoAsignacion;
     private String nombreAsignacion;
@@ -12,7 +12,7 @@ public class AsignacionLista {
     private boolean entregado;
     private String nombreGit;
 
-    public AsignacionLista(int codigoAsignacion, String nombreAsignacion, String asignatura, String descripcion, LocalDateTime fechaEntrega, boolean entregado, String nombreGit) {
+    public AsignacionAlumnoLista(int codigoAsignacion, String nombreAsignacion, String asignatura, String descripcion, LocalDateTime fechaEntrega, boolean entregado, String nombreGit) {
         this.codigoAsignacion = codigoAsignacion;
         this.nombreAsignacion = nombreAsignacion;
         this.asignatura = asignatura;

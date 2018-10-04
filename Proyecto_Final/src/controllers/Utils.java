@@ -20,7 +20,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextBoundsType;
-import models.AsignacionLista;
+import models.AsignacionAlumnoLista;
 import models.CallbackTema;
 import models.ItemListAsignatura;
 import models.ItemListTema;
@@ -495,11 +495,11 @@ public class Utils {
         }
     }
 
-    public static void setAsignacionesInVBox(List<AsignacionLista> asignaciones, VBox internVbox, PrincipalController internCallback, Class internClass) {
+    public static void setAsignacionesInVBox(List<AsignacionAlumnoLista> asignaciones, VBox internVbox, PrincipalController internCallback, Class internClass) {
         ArrayList<Parent> asignacionesItemList = new ArrayList<>();
         double sumarioHeight = 0;
 
-        for (AsignacionLista asignacionLista : asignaciones) {
+        for (AsignacionAlumnoLista asignacionAlumnoLista : asignaciones) {
             FXMLLoader loader = new FXMLLoader(internClass.getResource("/fxml/item/listItem_asignacionDia.fxml"));
             Parent node = null;
             try {
@@ -509,10 +509,10 @@ public class Utils {
             }
 
             ListItem_AsignacionDiaController controller = loader.getController();
-            controller.setAsignacion(asignacionLista);
+            controller.setAsignacion(asignacionAlumnoLista);
             node.setOnMouseEntered(event -> internVbox.getScene().setCursor(Cursor.HAND));
             node.setOnMouseExited(event -> internVbox.getScene().setCursor(Cursor.DEFAULT));
-            node.setOnMouseClicked(event -> internCallback.setCenterAsignacion(asignacionLista.getCodigoAsignacion()));
+            node.setOnMouseClicked(event -> internCallback.setCenterAsignacion(asignacionAlumnoLista.getCodigoAsignacion()));
 
             asignacionesItemList.add(node);
             sumarioHeight += controller.getHeight() + 20;

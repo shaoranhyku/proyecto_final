@@ -41,15 +41,15 @@ public class ProfesorApiService {
                 .build().create(ProfesorApiInterface.class);
     }
 
-    public static Observable<List<ItemListAsignatura>> obtenerAsignaturasProfesor(String profesor){
+    public static Observable<List<ItemListAsignatura>> obtenerAsignaturasProfesor(String profesor) {
         return getInstance().retrofit.obtenerAsignaturasProfesor(profesor);
     }
 
-    public static Observable<List<ItemListAlumno>> obtenerAlumnos(){
+    public static Observable<List<ItemListAlumno>> obtenerAlumnos() {
         return getInstance().retrofit.obtenerAlumnos();
     }
 
-    public static Observable<List<ItemListAlumno>> obtenerAlumnosPorAsignatura(String asignatura){
+    public static Observable<List<ItemListAlumno>> obtenerAlumnosPorAsignatura(String asignatura) {
         return getInstance().retrofit.obtenerAlumnosPorAsignatura(asignatura);
     }
 
@@ -61,7 +61,7 @@ public class ProfesorApiService {
         return getInstance().retrofit.eliminarAlumnoAsignatura(asignatura, alumno);
     }
 
-    public static Observable<List<ItemListTema>> obtenerTemasAsignatura(String asignatura){
+    public static Observable<List<ItemListTema>> obtenerTemasAsignatura(String asignatura) {
         return getInstance().retrofit.obtenerTemasAsignatura(asignatura);
     }
 
@@ -80,15 +80,15 @@ public class ProfesorApiService {
         return getInstance().retrofit.crearEnlaceTema(asignatura, tema, url, descripcion);
     }
 
-    public static Completable eliminarTema(String asignatura, String tema){
+    public static Completable eliminarTema(String asignatura, String tema) {
         return getInstance().retrofit.eliminarTema(asignatura, tema);
     }
 
-    public static Completable eliminarEnlace(String asignatura, String tema, String enlace){
+    public static Completable eliminarEnlace(String asignatura, String tema, String enlace) {
         return getInstance().retrofit.eliminarEnlace(asignatura, tema, enlace);
     }
 
-    public static Observable<ItemListTema> obtenerTema(String asignatura, String tema){
+    public static Observable<ItemListTema> obtenerTema(String asignatura, String tema) {
         return getInstance().retrofit.obtenerTema(asignatura, tema);
     }
 
@@ -97,7 +97,27 @@ public class ProfesorApiService {
                                          String nuevoCodTemario,
                                          String nombre,
                                          String descripcion,
-                                         String fechaComienzo){
+                                         String fechaComienzo) {
         return getInstance().retrofit.editarTema(asignatura, tema, nuevoCodTemario, nombre, descripcion, fechaComienzo);
+    }
+
+    public static Observable<Integer> crearAsignacion(String nombre,
+                                              String nombreGit,
+                                              String descripcion,
+                                              String fechaEntrega,
+                                              String fechaCreacion) {
+        return getInstance().retrofit.crearAsignacion(nombre, nombreGit, descripcion, fechaEntrega, fechaCreacion);
+    }
+
+    public static Completable asignarTemaAsignacion(String asignacion,
+                                                    String asignatura,
+                                                    String tema) {
+        return getInstance().retrofit.asignarTemaAsignacion(asignacion, asignatura, tema);
+    }
+
+    public static Completable crearCriterio(String asignacion,
+                                            String nombreCriterio,
+                                            String porcentaje) {
+        return getInstance().retrofit.crearCriterio(asignacion, nombreCriterio, porcentaje);
     }
 }

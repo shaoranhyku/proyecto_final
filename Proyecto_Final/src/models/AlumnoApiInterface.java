@@ -21,7 +21,7 @@ public interface AlumnoApiInterface {
     Observable<List<ItemListAsignatura>> obtenerAsignaturasAlumno(@Path("alumno") String alumno);
 
     @GET("ultimasAsignaciones/{alumno}/")
-    Observable<List<AsignacionLista>> obtenerUltimasAsignacionesAlumno(@Path("alumno") String alumno);
+    Observable<List<AsignacionAlumnoLista>> obtenerUltimasAsignacionesAlumno(@Path("alumno") String alumno);
 
     @GET("asignaturaAlumno/{asignatura}/{alumno}/")
     Observable<AsignaturaAlumnoResponse> obtenerAsignaturaAlumno(@Path("asignatura") String asignatura, @Path("alumno") String alumno);
@@ -41,7 +41,7 @@ public interface AlumnoApiInterface {
     Completable entregarCriterio(@Path("asignacion") int asignacion, @Path("criterio") int criterio, @Field("alumno") String alumno , @Field("clave") String clave, @Field("notaAuto") int notaAuto);
 
     @GET("asignacionesDia/{fecha}/{alumno}/")
-    Observable<List<AsignacionLista>> obtenerAsignacionesDia(@Path("fecha") LocalDate fecha, @Path("alumno") String alumno);
+    Observable<List<AsignacionAlumnoLista>> obtenerAsignacionesDia(@Path("fecha") LocalDate fecha, @Path("alumno") String alumno);
 
     @GET("numAsignacionesDia/{fecha}/{alumno}/")
     Observable<Integer> obtenerNumAsignacionesDia(@Path("fecha") LocalDate fecha, @Path("alumno") String alumno);

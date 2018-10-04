@@ -1,6 +1,6 @@
 package responses;
 
-import models.AsignacionLista;
+import models.AsignacionAlumnoLista;
 import models.ItemListTema;
 
 import java.util.List;
@@ -8,10 +8,10 @@ import java.util.List;
 public class TemaAlumnoResponse {
 
     private ItemListTema tema;
-    private List<AsignacionLista> asignaciones;
+    private List<AsignacionAlumnoLista> asignaciones;
     private List<ItemListTema> subtemas;
 
-    public TemaAlumnoResponse(ItemListTema tema, List<AsignacionLista> asignaciones, List<ItemListTema> subtemas) {
+    public TemaAlumnoResponse(ItemListTema tema, List<AsignacionAlumnoLista> asignaciones, List<ItemListTema> subtemas) {
         this.tema = tema;
         this.asignaciones = asignaciones;
         this.subtemas = subtemas;
@@ -25,11 +25,11 @@ public class TemaAlumnoResponse {
         this.tema = tema;
     }
 
-    public List<AsignacionLista> getAsignaciones() {
+    public List<AsignacionAlumnoLista> getAsignaciones() {
         return asignaciones;
     }
 
-    public void setAsignaciones(List<AsignacionLista> asignaciones) {
+    public void setAsignaciones(List<AsignacionAlumnoLista> asignaciones) {
         this.asignaciones = asignaciones;
     }
 

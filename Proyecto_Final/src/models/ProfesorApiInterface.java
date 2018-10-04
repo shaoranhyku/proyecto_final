@@ -37,9 +37,9 @@ public interface ProfesorApiInterface {
     @FormUrlEncoded
     @POST("temas/{asignatura}/{tema}/")
     Completable crearEnlaceTema(@Path("asignatura") String asignatura,
-                          @Path("tema") String tema,
-                          @Field("url") String url,
-                          @Field("descripcion") String descripcion);
+                                @Path("tema") String tema,
+                                @Field("url") String url,
+                                @Field("descripcion") String descripcion);
 
     @DELETE("temas/{asignatura}/{tema}/")
     Completable eliminarTema(@Path("asignatura") String asignatura, @Path("tema") String tema);
@@ -58,4 +58,24 @@ public interface ProfesorApiInterface {
                           @Field("nombre") String nombre,
                           @Field("descripcion") String descripcion,
                           @Field("fechaComienzo") String fechaComienzo);
+
+    @FormUrlEncoded
+    @POST("asignaciones/")
+    Observable<Integer> crearAsignacion(@Field("nombre") String nombre,
+                                @Field("nombreGit") String nombreGit,
+                                @Field("descripcion") String descripcion,
+                                @Field("fechaEntrega") String fechaEntrega,
+                                @Field("fechaCreacion") String fechaCreacion);
+
+    @FormUrlEncoded
+    @POST("asignaciones/{asignacion}/tema/")
+    Completable asignarTemaAsignacion(@Path("asignacion") String asignacion,
+                                      @Field("asignatura") String asignatura,
+                                      @Field("tema") String tema);
+
+    @FormUrlEncoded
+    @POST("asignaciones/{asignacion}/criterio/")
+    Completable crearCriterio(@Path("asignacion") String asignacion,
+                              @Field("nombre") String nombreCriterio,
+                              @Field("porcentaje") String porcentaje);
 }

@@ -23,6 +23,9 @@ if (isset($_POST['nombre']) && isset($_POST['nombreGit']) && isset($_POST['descr
         if (!$conn->query($agregarTemaQuery) === TRUE) {
             http_response_code(401);
             die();
+        }else{
+            $idAsignacion = $conn->insert_id;
+            echo $idAsignacion;
         }
 
     }

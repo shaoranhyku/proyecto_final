@@ -99,11 +99,23 @@ try {
 } catch (Exception $e){}
 
 try {
-    $router->map('POST', '/api/asignaciones/[a:asignacion]/tema/', 'endpoints/profesor/asignarTemaAsignacion.php');
+    $router->map('POST', '/api/asignacion/[a:asignacion]/tema/', 'endpoints/profesor/asignarTemaAsignacion.php');
 } catch (Exception $e){}
 
 try {
-    $router->map('POST', '/api/asignaciones/[a:asignacion]/criterio/', 'endpoints/profesor/crearCriterio.php');
+    $router->map('POST', '/api/asignacion/[a:asignacion]/criterio/', 'endpoints/profesor/crearCriterio.php');
+} catch (Exception $e){}
+
+try {
+    $router->map('GET', '/api/asignaciones/[a:asignatura]/', 'endpoints/profesor/obtenerAsignacionesProfesor.php');
+} catch (Exception $e){}
+
+try {
+    $router->map('GET', '/api/asignaciones/[a:asignatura]/[:tema]/', 'endpoints/profesor/obtenerAsignacionesPorTemaProfesor.php');
+} catch (Exception $e){}
+
+try {
+    $router->map('GET', '/api/asignacion/[a:asignacion]/', 'endpoints/profesor/obtenerAsignacionProfesor.php');
 } catch (Exception $e){}
 
 /* Match the current request */

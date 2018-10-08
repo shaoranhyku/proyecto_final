@@ -68,13 +68,13 @@ public interface ProfesorApiInterface {
                                 @Field("fechaCreacion") String fechaCreacion);
 
     @FormUrlEncoded
-    @POST("asignaciones/{asignacion}/tema/")
+    @POST("asignacion/{asignacion}/tema/")
     Completable asignarTemaAsignacion(@Path("asignacion") String asignacion,
                                       @Field("asignatura") String asignatura,
                                       @Field("tema") String tema);
 
     @FormUrlEncoded
-    @POST("asignaciones/{asignacion}/criterio/")
+    @POST("asignacion/{asignacion}/criterio/")
     Completable crearCriterio(@Path("asignacion") String asignacion,
                               @Field("nombre") String nombreCriterio,
                               @Field("porcentaje") String porcentaje);

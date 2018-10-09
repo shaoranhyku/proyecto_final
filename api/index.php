@@ -118,6 +118,22 @@ try {
     $router->map('GET', '/api/asignacion/[a:asignacion]/', 'endpoints/profesor/obtenerAsignacionProfesor.php');
 } catch (Exception $e){}
 
+try {
+    $router->map('DELETE', '/api/asignacion/[a:asignacion]/', 'endpoints/profesor/borrarAsignacion.php');
+} catch (Exception $e){}
+
+try {
+    $router->map('DELETE', '/api/asignacion/[a:asignacion]/criterio/[a:criterio]/', 'endpoints/profesor/borrarCriterio.php');
+} catch (Exception $e){}
+
+try {
+    $router->map('DELETE', '/api/asignacion/[a:asignacion]/tema/[:tema]/', 'endpoints/profesor/desasignarTemaAsignacion.php');
+} catch (Exception $e){}
+
+try {
+    $router->map('POST', '/api/asignacion/[a:asignacion]/', 'endpoints/profesor/editarAsignacion.php');
+} catch (Exception $e){}
+
 /* Match the current request */
 $match = $router->match();
 if($match) {

@@ -4,7 +4,6 @@ import com.sun.javafx.scene.text.TextLayout;
 import com.sun.javafx.tk.Toolkit;
 import controllers.alumno.ListItem_AsignacionDiaController;
 import controllers.alumno.ListItem_TemaController;
-import controllers.alumno.PrincipalController;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Bounds;
@@ -20,10 +19,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextBoundsType;
-import models.AsignacionAlumnoLista;
-import models.CallbackTema;
-import models.ItemListAsignatura;
-import models.ItemListTema;
+import models.*;
 
 import java.io.IOException;
 import java.text.Bidi;
@@ -31,7 +27,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static javafx.scene.control.OverrunStyle.*;
-import static javafx.scene.control.OverrunStyle.CENTER_WORD_ELLIPSIS;
 
 public class Utils {
 
@@ -495,7 +490,7 @@ public class Utils {
         }
     }
 
-    public static void setAsignacionesInVBox(List<AsignacionAlumnoLista> asignaciones, VBox internVbox, PrincipalController internCallback, Class internClass) {
+    public static void setAsignacionesInVBox(List<AsignacionAlumnoLista> asignaciones, VBox internVbox, CallbackAsignacion internCallback, Class internClass) {
         ArrayList<Parent> asignacionesItemList = new ArrayList<>();
         double sumarioHeight = 0;
 

@@ -43,7 +43,6 @@ public class TemaController extends Application{
     private List<ItemListEnlace> enlacesOriginales;
 
     public void initialize() {
-
         // Creamos las listas vacías
         observableList_temas = FXCollections.observableArrayList();
         observableList_enlaces = FXCollections.observableArrayList();
@@ -55,6 +54,27 @@ public class TemaController extends Application{
         lst_enlaces.setCellFactory(param -> new CellEnlace(mouseEvent -> {
             // TODO: Añadir ventana de editar si da tiempo
         }));
+    }
+
+    public void setTemaActual(String asignaturaActual, String temaActual) {
+        this.asignaturaActual = asignaturaActual;
+        this.temaActual = temaActual;
+        btn_Eliminar.setDisable(temaActual.isEmpty());
+        if (!temaActual.isEmpty()) {
+            ProfesorApiService.obtenerTemasAsignatura(asignaturaActual).subscribe(temas -> {
+                observableList_temas.addAll(temas);
+                ProfesorApiService.obtenerTema(asignaturaActual, temaActual).subscribe(tema -> {
+                    ponerDatosTema(tema);
+                });
+            });
+        }else{
+            // Obtenemos los temas de la API y seleccionamos el primero por defecto
+            ProfesorApiService.obtenerTemasAsignatura(asignaturaActual).subscribe(temas -> {
+                observableList_temas.addAll(temas);
+                cmb_temasPadre.getSelectionModel().selectFirst();
+            });
+            datepck_fecha.setValue(LocalDate.now());
+        }
     }
 
     public void btnAgregarEnlaceClick(ActionEvent actionEvent) {
@@ -191,27 +211,6 @@ public class TemaController extends Application{
         ProfesorApiService.eliminarTema(asignaturaActual, temaActual).subscribe(() -> {
             callback.setCenterListaTemas();
         });
-    }
-
-    public void setTemaActual(String asignaturaActual, String temaActual) {
-        this.asignaturaActual = asignaturaActual;
-        this.temaActual = temaActual;
-        btn_Eliminar.setDisable(temaActual.isEmpty());
-        if (!temaActual.isEmpty()) {
-            ProfesorApiService.obtenerTemasAsignatura(asignaturaActual).subscribe(temas -> {
-                observableList_temas.addAll(temas);
-                ProfesorApiService.obtenerTema(asignaturaActual, temaActual).subscribe(tema -> {
-                    ponerDatosTema(tema);
-                });
-            });
-        }else{
-            // Obtenemos los temas de la API y seleccionamos el primero por defecto
-            ProfesorApiService.obtenerTemasAsignatura(asignaturaActual).subscribe(temas -> {
-                observableList_temas.addAll(temas);
-                cmb_temasPadre.getSelectionModel().selectFirst();
-            });
-            datepck_fecha.setValue(LocalDate.now());
-        }
     }
 
     private void ponerDatosTema(ItemListTema tema){

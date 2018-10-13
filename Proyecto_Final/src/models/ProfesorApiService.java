@@ -122,31 +122,31 @@ public class ProfesorApiService {
         return getInstance().retrofit.crearCriterio(asignacion, nombreCriterio, porcentaje);
     }
 
-    Observable<List<AsignacionAlumnoLista>> obtenerAsignacionesAsignatura(String asignatura){
+    public static Observable<List<AsignacionAlumnoLista>> obtenerAsignacionesAsignatura(String asignatura){
         return getInstance().retrofit.obtenerAsignacionesAsignatura(asignatura);
     }
 
-    Observable<List<AsignacionAlumnoLista>> obtenerAsignacionesAsignaturaTema(String asignatura, String tema){
+    public static Observable<List<AsignacionAlumnoLista>> obtenerAsignacionesAsignaturaTema(String asignatura, String tema){
         return getInstance().retrofit.obtenerAsignacionesAsignaturaTema(asignatura,tema);
     }
 
-    Observable<AsignacionProfesorResponse> obtenerAsignacion(String asignacion){
+    public static Observable<AsignacionProfesorResponse> obtenerAsignacion(String asignacion){
         return getInstance().retrofit.obtenerAsignacion(asignacion);
     }
 
-    Completable borrarAsignacion(String asignacion){
+    public static Completable borrarAsignacion(String asignacion){
         return getInstance().retrofit.borrarAsignacion(asignacion);
     }
 
-    Completable borrarCriterioAsignacion(String asignacion, String criterio){
+    public static Completable borrarCriterioAsignacion(String asignacion, String criterio){
         return getInstance().retrofit.borrarCriterioAsignacion(asignacion, criterio);
     }
 
-    Completable desasignarTemaAsignacion(String asignacion, String tema){
+    public static Completable desasignarTemaAsignacion(String asignacion, String tema){
         return  getInstance().retrofit.desasignarTemaAsignacion(asignacion, tema);
     }
 
-    Completable editarAsignacion(String asignacion,
+    public static Completable editarAsignacion(String asignacion,
                                  String nombre,
                                  String nombreGit,
                                  String descripcion,

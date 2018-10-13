@@ -24,7 +24,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class PrincipalController implements CallbackTema{
+public class PrincipalController implements CallbackTema, CallbackAsignacion{
 
     @FXML
     private Label lbl_bienvenidaUsuario;

@@ -2,6 +2,7 @@ package models;
 
 import io.reactivex.Completable;
 import io.reactivex.Observable;
+import responses.AsignacionProfesorResponse;
 import retrofit2.http.*;
 
 import java.util.List;
@@ -78,4 +79,30 @@ public interface ProfesorApiInterface {
     Completable crearCriterio(@Path("asignacion") String asignacion,
                               @Field("nombre") String nombreCriterio,
                               @Field("porcentaje") String porcentaje);
+
+    @GET("asignaciones/{asignatura}/")
+    Observable<List<AsignacionAlumnoLista>> obtenerAsignacionesAsignatura(@Path("asignatura") String asignatura);
+
+    @GET("asignaciones/{asignatura}/{tema}/")
+    Observable<List<AsignacionAlumnoLista>> obtenerAsignacionesAsignaturaTema(@Path("asignatura") String asignatura, @Path("tema") String tema);
+
+    @GET("asignacion/{asignacion}/")
+    Observable<AsignacionProfesorResponse> obtenerAsignacion(@Path("asignacion") String asignacion);
+
+    @DELETE("asignacion/{asignacion}/")
+    Completable borrarAsignacion(@Path("asignacion") String asignacion);
+
+    @DELETE("asignacion/{asignacion}/criterio/{criterio}/")
+    Completable borrarCriterioAsignacion(@Path("asignacion") String asignacion, @Path("criterio") String criterio);
+
+    @DELETE("asignacion/{asignacion}/tema/{tema}/")
+    Completable desasignarTemaAsignacion(@Path("asignacion") String asignacion, @Path("tema") String tema);
+
+    @FormUrlEncoded
+    @POST("asignacion/{asignacion}/")
+    Completable editarAsignacion(@Path("asignacion") String asignacion,
+                                        @Field("nombre") String nombre,
+                                        @Field("nombreGit") String nombreGit,
+                                        @Field("descripcion") String descripcion,
+                                        @Field("fechaEntrega") String fechaEntrega);
 }

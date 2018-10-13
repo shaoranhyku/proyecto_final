@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonDeserializer;
 import io.reactivex.Completable;
 import io.reactivex.Observable;
+import responses.AsignacionProfesorResponse;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -119,5 +120,37 @@ public class ProfesorApiService {
                                             String nombreCriterio,
                                             String porcentaje) {
         return getInstance().retrofit.crearCriterio(asignacion, nombreCriterio, porcentaje);
+    }
+
+    Observable<List<AsignacionAlumnoLista>> obtenerAsignacionesAsignatura(String asignatura){
+        return getInstance().retrofit.obtenerAsignacionesAsignatura(asignatura);
+    }
+
+    Observable<List<AsignacionAlumnoLista>> obtenerAsignacionesAsignaturaTema(String asignatura, String tema){
+        return getInstance().retrofit.obtenerAsignacionesAsignaturaTema(asignatura,tema);
+    }
+
+    Observable<AsignacionProfesorResponse> obtenerAsignacion(String asignacion){
+        return getInstance().retrofit.obtenerAsignacion(asignacion);
+    }
+
+    Completable borrarAsignacion(String asignacion){
+        return getInstance().retrofit.borrarAsignacion(asignacion);
+    }
+
+    Completable borrarCriterioAsignacion(String asignacion, String criterio){
+        return getInstance().retrofit.borrarCriterioAsignacion(asignacion, criterio);
+    }
+
+    Completable desasignarTemaAsignacion(String asignacion, String tema){
+        return  getInstance().retrofit.desasignarTemaAsignacion(asignacion, tema);
+    }
+
+    Completable editarAsignacion(String asignacion,
+                                 String nombre,
+                                 String nombreGit,
+                                 String descripcion,
+                                 String fechaEntrega){
+        return getInstance().retrofit.editarAsignacion(asignacion, nombre, nombreGit, descripcion, fechaEntrega);
     }
 }

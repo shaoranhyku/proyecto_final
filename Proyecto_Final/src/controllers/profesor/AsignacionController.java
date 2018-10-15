@@ -14,14 +14,17 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.util.Pair;
+import models.AsignacionAlumnoLista;
 import models.CriterioEvaluacionProfesor;
 import models.ItemListTema;
 import models.ProfesorApiService;
+import responses.AsignacionProfesorResponse;
 import tornadofx.control.DateTimePicker;
 
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,6 +43,8 @@ public class AsignacionController {
     private ObservableList<ItemListTema> observableList_todosTemas;
     private ObservableList<ItemListTema> observableList_temas;
     private ObservableList<CriterioEvaluacionProfesor> observableList_criterios;
+    private List<ItemListTema> temasAsignadosOriginales;
+    private List<CriterioEvaluacionProfesor> criteriosOriginales;
 
     public void initialize() {
 
@@ -59,6 +64,46 @@ public class AsignacionController {
         lst_temas.setCellFactory(param -> new CellTema(mouseEvent -> {
             // TODO: Añadir ventana de editar si da tiempo
         }));
+    }
+
+    public void setAsignacionActual(String asignaturaActual, int asignacionActual) {
+        this.asignaturaActual = asignaturaActual;
+        this.asignacionActual = asignacionActual;
+        btn_eliminar.setDisable(asignacionActual < 0);
+
+        // Obtengo los datos necesarios de la API
+
+        // Busco los temas para el dialogo
+        ProfesorApiService.obtenerTemasAsignatura(asignaturaActual).subscribe(temas -> {
+            observableList_todosTemas.addAll(temas);
+        });
+
+        if(asignacionActual >= 0){
+            // Busco los datos de la asignacion, sus temas asignados y sus criterios
+            ProfesorApiService.obtenerAsignacion(String.valueOf(asignacionActual)).subscribe(asignacionProfesorResponse -> {
+                ponerDatosAsignacion(asignacionProfesorResponse);
+            });
+        }else{
+            // Ponemos datos por defecto en los campos requeridos
+            datetimepck_fecha.setValue(LocalDate.now());
+        }
+    }
+
+    private void ponerDatosAsignacion(AsignacionProfesorResponse asignacionResponse){
+
+        AsignacionAlumnoLista asignacion = asignacionResponse.getAsignacion();
+
+        // Primero, ponemos los valores en los campos
+        txt_nombre.setText(asignacion.getNombreAsignacion());
+        txt_nombreGit.setText(asignacion.getNombreGit());
+        datetimepck_fecha.setDateTimeValue(asignacion.getFechaEntrega());
+        txt_descripcion.setText(asignacion.getDescripcion());
+
+        // Luego, guardamos las listas de los criterios y temas actuales y las colocamos en sus zonas.
+        temasAsignadosOriginales = asignacionResponse.getTemas();
+        criteriosOriginales = asignacionResponse.getCriterios();
+        observableList_temas.addAll(temasAsignadosOriginales);
+        observableList_criterios.addAll(criteriosOriginales);
     }
 
     public void btnAgregarCriterioClick(ActionEvent actionEvent) {
@@ -243,43 +288,79 @@ public class AsignacionController {
         // Si los datos son correctos, se agrega o se actualiza la asignación
         if (datosCorrectos){
             if(asignacionActual < 0){
-                // Creamos la asignacion, sus temas asignados y sus criterios
-                ProfesorApiService.crearAsignacion(nombreAsignacion, nombreGit, descripcion, fechaEntrega, fechaCreacion).subscribe( idAsignacion -> {
-                    // Una vez creado la asignación, creamos sus temas asignados y sus criterios
-                    for (CriterioEvaluacionProfesor criterio : criterios) {
-                        ProfesorApiService.crearCriterio(String.valueOf(idAsignacion), criterio.getNombre(), String.valueOf(criterio.getPorcentaje())).subscribe();
-                    }
-
-                    for(ItemListTema tema : temasAsignados){
-                        ProfesorApiService.asignarTemaAsignacion(String.valueOf(idAsignacion), asignaturaActual, tema.getCodigoTema()).subscribe();
-                    }
-                });
+                crearAsignacion(nombreAsignacion, nombreGit, fechaEntrega, descripcion, fechaCreacion, temasAsignados, criterios);
+            }else{
+                modificarAsignacion(nombreAsignacion, nombreGit, fechaEntrega, descripcion);
             }
         }
     }
 
-    public void btnEliminarClick(ActionEvent actionEvent) {
+    private void modificarAsignacion(String nombreAsignacion, String nombreGit, String fechaEntrega, String descripcion) {
+        ProfesorApiService.editarAsignacion(String.valueOf(asignacionActual), nombreAsignacion, nombreGit, descripcion, fechaEntrega).subscribe(() -> {
+            // Comienza la lógica para saber que temas borro y cuales añado:
+
+            // Obtengo una copia de la lista original de los temas asignados
+            List<ItemListTema> temasBorrar = new ArrayList<>(temasAsignadosOriginales);
+            // Borro los que siguen en la lista al final de las operaciones
+            temasBorrar.removeAll(observableList_temas);
+            // Los elementos que quedan ya no están en la lista despues de las operaciones, así que han sido borrados
+            for (ItemListTema temaBorrar : temasBorrar) {
+                ProfesorApiService.desasignarTemaAsignacion(String.valueOf(asignacionActual), temaBorrar.getCodigoTema()).subscribe();
+            }
+
+            // Obtengo una copia de la lista de los temas asignados tras las operaciones
+            List<ItemListTema> temasAgregar = new ArrayList<>(observableList_temas);
+            // Borro los que ya estaban en la lista de temas
+            temasAgregar.removeAll(temasAsignadosOriginales);
+            // Los elementos que quedan son elementos nuevos que necesitan ser agregados
+            for (ItemListTema temaAgregar : temasAgregar) {
+                ProfesorApiService.asignarTemaAsignacion(String.valueOf(asignacionActual), asignaturaActual, temaAgregar.getCodigoTema()).subscribe();
+            }
+
+            // Comienza la lógica para saber que criterios borro y cuales añado:
+
+            // Obtengo una copia de la lista original de los criterios asignados
+            List<CriterioEvaluacionProfesor> criteriosBorrar = new ArrayList<>(criteriosOriginales);
+            // Borro los que siguen en la lista al final de las operaciones
+            criteriosBorrar.removeAll(observableList_criterios);
+            // Los elementos que quedan ya no están en la lista despues de las operaciones, así que han sido borrados
+            for (CriterioEvaluacionProfesor criterioBorrar : criteriosBorrar) {
+                ProfesorApiService.borrarCriterioAsignacion(String.valueOf(asignacionActual), String.valueOf(criterioBorrar.getCodCriterio())).subscribe();
+            }
+
+            // Obtengo una copia de la lista de los criterios asignados tras las operaciones
+            List<CriterioEvaluacionProfesor> criteriosAgregar = new ArrayList<>(observableList_criterios);
+            // Borro los que ya estaban en la lista de criterios
+            criteriosAgregar.removeAll(criteriosOriginales);
+            // Los elementos que quedan son elementos nuevos que necesitan ser agregados
+            for (CriterioEvaluacionProfesor criterioAgregar : criteriosAgregar) {
+                ProfesorApiService.crearCriterio(String.valueOf(asignacionActual), criterioAgregar.getNombre(), String.valueOf(criterioAgregar.getPorcentaje())).subscribe();
+            }
+
+            callback.setCenterAsignacion(asignacionActual);
+        });
     }
 
-    public void setAsignacionActual(String asignaturaActual, int asignacionActual) {
-        this.asignaturaActual = asignaturaActual;
-        this.asignacionActual = asignacionActual;
-        btn_eliminar.setDisable(asignacionActual < 0);
+    private void crearAsignacion(String nombreAsignacion, String nombreGit, String fechaEntrega, String descripcion, String fechaCreacion, List<ItemListTema> temasAsignados, List<CriterioEvaluacionProfesor> criterios) {
+        // Creamos la asignacion, sus temas asignados y sus criterios
+        ProfesorApiService.crearAsignacion(nombreAsignacion, nombreGit, descripcion, fechaEntrega, fechaCreacion).subscribe(idAsignacion -> {
+            // Una vez creado la asignación, creamos sus temas asignados y sus criterios
+            for (CriterioEvaluacionProfesor criterio : criterios) {
+                ProfesorApiService.crearCriterio(String.valueOf(idAsignacion), criterio.getNombre(), String.valueOf(criterio.getPorcentaje())).subscribe();
+            }
 
-        // Obtengo los datos necesarios de la API
+            for(ItemListTema tema : temasAsignados){
+                ProfesorApiService.asignarTemaAsignacion(String.valueOf(idAsignacion), asignaturaActual, tema.getCodigoTema()).subscribe();
+            }
 
-        // Busco los temas para el dialogo
-        ProfesorApiService.obtenerTemasAsignatura(asignaturaActual).subscribe(temas -> {
-            observableList_todosTemas.addAll(temas);
+            callback.setCenterAsignacion(idAsignacion);
         });
+    }
 
-        if(asignacionActual >= 0){
-            // Busco los datos de la asignacion, sus temas asignados y sus criterios
-        }else{
-            // Ponemos datos por defecto en los campos requeridos
-            datetimepck_fecha.setValue(LocalDate.now());
-        }
-
+    public void btnEliminarClick(ActionEvent actionEvent) {
+        ProfesorApiService.borrarAsignacion(String.valueOf(asignacionActual)).subscribe(() -> {
+            callback.setCenterListaAsignaciones();
+        });
     }
 
     public class CellCriterio extends ListCell<CriterioEvaluacionProfesor> {

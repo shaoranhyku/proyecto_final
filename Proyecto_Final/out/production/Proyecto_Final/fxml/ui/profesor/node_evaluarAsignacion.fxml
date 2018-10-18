@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
@@ -13,80 +14,95 @@
    <children>
       <AnchorPane minHeight="400.0" minWidth="100.0" prefHeight="600.0" prefWidth="1280.0">
          <children>
-            <Button graphicTextGap="1.0" layoutX="507.0" layoutY="548.0" mnemonicParsing="false" onAction="#btnGuardarClick" prefHeight="24.0" prefWidth="87.0" text="Guardar" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="686.0">
+            <Button graphicTextGap="1.0" layoutX="657.0" layoutY="545.0" mnemonicParsing="false" onAction="#btnGuardarClick" prefHeight="24.0" prefWidth="87.0" text="Guardar" AnchorPane.bottomAnchor="17.0" AnchorPane.rightAnchor="536.0">
                <font>
                   <Font size="17.0" />
                </font>
             </Button>
-            <Label layoutX="24.0" layoutY="26.0" text="Alumno" underline="true">
+            <Label layoutX="24.0" layoutY="24.0" text="Alumno" underline="true" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="24.0">
                <font>
-                  <Font size="35.0" />
+                  <Font size="32.0" />
                </font>
             </Label>
-            <Label fx:id="lbl_nombreAlumno" layoutX="24.0" layoutY="77.0" text="Lorem ipsum dolor sit amet viverra fusce. ">
+            <Label fx:id="lbl_nombreAlumno" layoutX="24.0" layoutY="67.0" text="Lorem ipsum dolor sit amet viverra fusce. " AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="67.0">
                <font>
-                  <Font size="28.0" />
+                  <Font size="22.0" />
                </font>
             </Label>
-            <Label layoutX="24.0" layoutY="127.0" text="Tema" underline="true">
+            <Label layoutX="24.0" layoutY="104.0" text="Tema" underline="true" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="104.0">
                <font>
-                  <Font size="35.0" />
+                  <Font size="32.0" />
                </font>
             </Label>
-            <Label fx:id="lbl_tema" layoutX="24.0" layoutY="178.0" text="Lorem ipsum dolor sit amet, consectetur posuere. ">
+            <Label fx:id="lbl_tema" layoutX="24.0" layoutY="151.0" text="Lorem ipsum dolor sit amet, consectetur posuere. " AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="151.0">
                <font>
-                  <Font size="28.0" />
+                  <Font size="22.0" />
                </font>
             </Label>
-            <Label layoutX="24.0" layoutY="228.0" text="Asignación" underline="true">
+            <Label layoutX="25.0" layoutY="183.0" text="Asignación" underline="true" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="183.0">
                <font>
-                  <Font size="35.0" />
+                  <Font size="32.0" />
                </font>
             </Label>
-            <Label fx:id="lbl_asignacion" layoutX="24.0" layoutY="279.0" text="Lorem ipsum dolor sit amet orci aliquam. ">
+            <Label fx:id="lbl_asignacion" layoutX="25.0" layoutY="230.0" text="Lorem ipsum dolor sit amet orci aliquam. " AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="230.0">
                <font>
-                  <Font size="28.0" />
+                  <Font size="22.0" />
                </font>
             </Label>
-            <Label layoutX="24.0" layoutY="329.0" text="Enlace" underline="true">
+            <Label layoutX="25.0" layoutY="262.0" text="Enlace" underline="true" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="262.0">
                <font>
-                  <Font size="35.0" />
+                  <Font size="32.0" />
                </font>
             </Label>
-            <Hyperlink fx:id="lbl_enlace" layoutX="24.0" layoutY="380.0" text="https://www.github.com/nombrealumno/nombreasig">
+            <Hyperlink fx:id="lbl_enlace" layoutX="25.0" layoutY="309.0" text="https://www.github.com/nombrealumno/nombreasig" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="309.0">
                <font>
-                  <Font size="23.0" />
+                  <Font size="22.0" />
                </font>
             </Hyperlink>
-            <Label layoutX="733.0" layoutY="72.0" text="Nota" underline="true">
+            <Label layoutX="842.0" layoutY="80.0" text="Nota" underline="true" AnchorPane.bottomAnchor="469.0" AnchorPane.rightAnchor="361.0">
                <font>
                   <Font size="35.0" />
                </font>
             </Label>
-            <Label layoutX="865.0" layoutY="47.0" text="Evaluacion">
+            <Label layoutX="974.0" layoutY="55.0" text="Evaluacion" AnchorPane.bottomAnchor="509.0" AnchorPane.rightAnchor="189.0">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <Label layoutX="999.0" layoutY="47.0" text="Auto Eval.">
+            <Label layoutX="1108.0" layoutY="55.0" text="Auto Eval." AnchorPane.bottomAnchor="509.0" AnchorPane.rightAnchor="62.0">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <TextField fx:id="lbl_notaTotal" layoutX="899.0" layoutY="83.0" prefHeight="44.0" prefWidth="50.0">
+            <TextField fx:id="lbl_notaTotal" layoutX="1008.0" layoutY="91.0" prefHeight="44.0" prefWidth="50.0" AnchorPane.bottomAnchor="465.0" AnchorPane.rightAnchor="222.0">
                <font>
                   <Font size="20.0" />
                </font></TextField>
-            <TextField fx:id="lbl_notaTotalAuto" editable="false" layoutX="1029.0" layoutY="83.0" prefHeight="44.0" prefWidth="50.0">
+            <TextField fx:id="lbl_notaTotalAuto" editable="false" layoutX="1138.0" layoutY="91.0" prefHeight="44.0" prefWidth="50.0" AnchorPane.bottomAnchor="465.0" AnchorPane.rightAnchor="92.0">
                <font>
                   <Font size="20.0" />
                </font>
             </TextField>
-            <ScrollPane layoutX="719.0" layoutY="154.0" prefHeight="423.0" prefWidth="415.0">
+            <ScrollPane layoutX="828.0" layoutY="162.0" prefHeight="213.0" prefWidth="415.0" AnchorPane.bottomAnchor="225.0" AnchorPane.rightAnchor="37.0">
                <content>
-                  <VBox prefHeight="421.0" prefWidth="399.0" />
+                  <VBox prefHeight="211.0" prefWidth="399.0" />
                </content>
             </ScrollPane>
+            <Label layoutX="25.0" layoutY="351.0" text="Comentario" underline="true" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="351.0">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbl_asignacion1" layoutX="25.0" layoutY="398.0" prefHeight="166.0" prefWidth="566.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at purus consequat, tincidunt magna et, maximus massa. Fusce ac iaculis mauris. Ut ultrices nibh in consequat facilisis. Ut et molestie dolor, non mattis lorem. Praesent fringilla posuere. " wrapText="true">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="txt_comentario" layoutX="828.0" layoutY="406.0" prefHeight="166.0" prefWidth="416.0" promptText="Comentario (Opcional)" wrapText="true" AnchorPane.bottomAnchor="28.0" AnchorPane.rightAnchor="36.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextArea>
          </children>
       </AnchorPane>
    </children>

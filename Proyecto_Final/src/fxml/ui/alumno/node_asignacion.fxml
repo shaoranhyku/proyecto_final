@@ -13,32 +13,32 @@
    <children>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="630.0" prefWidth="820.0">
             <children>
-               <Label fx:id="lbl_nombreAsignatura" prefHeight="66.0" prefWidth="658.0" text="Libre Configuración: PHP MySQL" wrapText="true" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="16.0">
-                  <font>
-                     <Font size="22.0" />
-                  </font>
-               </Label>
-               <Label fx:id="lbl_nombreAsignacion" layoutX="19.0" layoutY="72.0" text="EXPOSICIÓN FINAL DE PROYECTO EMPRESARIAL" AnchorPane.leftAnchor="19.0" AnchorPane.topAnchor="72.0">
-                  <font>
-                     <Font size="37.0" />
-                  </font>
-               </Label>
-               <Label fx:id="lbl_descripcion" layoutX="21.0" layoutY="126.0" maxWidth="-Infinity" prefHeight="92.0" prefWidth="779.0" text="Descripcionc larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga la" wrapText="true" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="126.0">
+               <Label fx:id="lbl_nombreAsignatura" layoutX="16.0" layoutY="10.0" prefHeight="66.0" prefWidth="658.0" text="Libre Configuración: PHP MySQL" wrapText="true" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="10.0">
                   <font>
                      <Font size="20.0" />
                   </font>
                </Label>
+               <Label fx:id="lbl_nombreAsignacion" layoutX="19.0" layoutY="72.0" text="EXPOSICIÓN FINAL DE PROYECTO EMPRESARIAL" AnchorPane.leftAnchor="19.0" AnchorPane.topAnchor="72.0">
+                  <font>
+                     <Font size="33.0" />
+                  </font>
+               </Label>
+               <Label fx:id="lbl_descripcion" layoutX="21.0" layoutY="126.0" maxWidth="-Infinity" prefHeight="92.0" prefWidth="412.0" text="Descripcionc larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga larga la" wrapText="true" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="126.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               </Label>
             <Label fx:id="lbl_fechaEntrega" layoutX="16.0" layoutY="231.0" text="Entrega: 26/03/2018 14:23 - Quedan 10 dias 5 horas 23 minutos" wrapText="true" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="231.0">
                <font>
-                  <Font size="26.0" />
+                  <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="16.0" layoutY="286.0" text="Entrega" underline="true" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="286.0">
+            <Label layoutX="14.0" layoutY="285.0" text="Entrega" underline="true" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="285.0">
                <font>
-                  <Font size="34.0" />
+                  <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="lbl_urlEjemplo" alignment="TOP_LEFT" layoutX="16.0" layoutY="336.0" prefHeight="92.0" prefWidth="449.0" text="https://github.com/JSMCKDLSPEORISTUDISOLPÑEDIUTO_KSNJIDOEIA/PROYECTOEXPOSICIÓN-FINAL_DE_PROYECTO-EMPRESARIAL" wrapText="true" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="336.0">
+            <Label fx:id="lbl_urlEjemplo" alignment="TOP_LEFT" layoutX="14.0" layoutY="326.0" prefHeight="92.0" prefWidth="449.0" text="https://github.com/JSMCKDLSPEORISTUDISOLPÑEDIUTO_KSNJIDOEIA/PROYECTOEXPOSICIÓN-FINAL_DE_PROYECTO-EMPRESARIAL" wrapText="true" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="326.0">
                <font>
                   <Font size="18.0" />
                </font>
@@ -48,41 +48,46 @@
                   <Font size="15.0" />
                </font>
             </TextArea>
-            <Label fx:id="lbl_notaTotal" layoutX="483.0" layoutY="323.0" text="Nota total" AnchorPane.rightAnchor="225.0" AnchorPane.topAnchor="323.0">
+            <Label fx:id="lbl_notaTotal" layoutX="475.0" layoutY="174.0" text="Nota total" AnchorPane.rightAnchor="233.0" AnchorPane.topAnchor="174.0">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <Label layoutX="657.0" layoutY="269.0" prefHeight="66.0" prefWidth="47.0" text="Auto Eval." textAlignment="CENTER" wrapText="true" AnchorPane.rightAnchor="116.0" AnchorPane.topAnchor="269.0">
+            <Label layoutX="658.0" layoutY="111.0" prefHeight="66.0" prefWidth="47.0" text="Auto Eval." textAlignment="CENTER" wrapText="true" AnchorPane.rightAnchor="115.0" AnchorPane.topAnchor="111.0">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="718.0" layoutY="302.0" text="Evaluacion" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="302.0">
+            <Label layoutX="718.0" layoutY="144.0" text="Evaluacion" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="144.0">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="txt_notaAuto" alignment="CENTER" editable="false" layoutX="660.0" layoutY="322.0" prefHeight="40.0" prefWidth="40.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="322.0">
+            <TextField fx:id="txt_notaAuto" alignment="CENTER" editable="false" layoutX="661.0" layoutY="172.0" prefHeight="40.0" prefWidth="40.0" AnchorPane.rightAnchor="119.0" AnchorPane.topAnchor="172.0">
                <font>
                   <Font size="17.0" />
                </font>
             </TextField>
-            <TextField fx:id="txt_notaEval" alignment="CENTER" editable="false" layoutX="733.0" layoutY="322.0" prefHeight="40.0" prefWidth="40.0" AnchorPane.rightAnchor="47.0" AnchorPane.topAnchor="322.0">
+            <TextField fx:id="txt_notaEval" alignment="CENTER" editable="false" layoutX="733.0" layoutY="172.0" prefHeight="40.0" prefWidth="40.0" AnchorPane.rightAnchor="47.0" AnchorPane.topAnchor="172.0">
                <font>
                   <Font size="17.0" />
                </font>
             </TextField>
-            <Button fx:id="btn_entregar" layoutX="622.0" layoutY="577.0" mnemonicParsing="false" onAction="#entregarAsignacionClick" prefHeight="39.0" prefWidth="166.0" text="Entregar" AnchorPane.leftAnchor="622.0" AnchorPane.topAnchor="577.0">
+            <Button fx:id="btn_entregar" layoutX="627.0" layoutY="583.0" mnemonicParsing="false" onAction="#entregarAsignacionClick" prefHeight="39.0" prefWidth="166.0" text="Entregar" AnchorPane.leftAnchor="627.0" AnchorPane.topAnchor="583.0">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <ScrollPane layoutX="475.0" layoutY="372.0" prefHeight="192.0" prefWidth="325.0" AnchorPane.bottomAnchor="66.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="372.0">
+            <ScrollPane layoutX="475.0" layoutY="230.0" prefHeight="179.0" prefWidth="325.0" AnchorPane.bottomAnchor="221.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="230.0">
                <content>
-                  <VBox fx:id="vbox_criteriosEvaluacion" prefHeight="190.0" prefWidth="320.0" />
+                  <VBox fx:id="vbox_criteriosEvaluacion" prefHeight="177.0" prefWidth="322.0" />
                </content>
             </ScrollPane>
+            <Label fx:id="lbL_comentarioProfesor" alignment="TOP_LEFT" layoutX="478.0" layoutY="430.0" prefHeight="139.0" prefWidth="325.0" wrapText="true">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
             </children>
          </AnchorPane>
    </children>

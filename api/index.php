@@ -138,6 +138,10 @@ try {
     $router->map('GET', '/api/asignaciones/[a:asignatura]/[:tema]/[a:alumno]/', 'endpoints/profesor/obtenerAsignacionesPorTemaYAlumnoProfesor.php');
 } catch (Exception $e){}
 
+try {
+    $router->map('GET', '/api/asignacion/[a:asignacion]/[a:alumno]/', 'endpoints/profesor/obtenerAsignacionEvaluarProfesor.php');
+} catch (Exception $e){}
+
 /* Match the current request */
 $match = $router->match();
 if($match) {

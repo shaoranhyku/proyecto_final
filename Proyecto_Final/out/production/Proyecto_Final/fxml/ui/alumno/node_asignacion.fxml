@@ -48,7 +48,7 @@
                   <Font size="15.0" />
                </font>
             </TextArea>
-            <Label fx:id="lbl_notaTotal" layoutX="475.0" layoutY="136.0" text="Nota total" AnchorPane.rightAnchor="233.0" AnchorPane.topAnchor="136.0">
+            <Label fx:id="lbl_notaTotal" layoutX="475.0" layoutY="174.0" text="Nota total" AnchorPane.rightAnchor="233.0" AnchorPane.topAnchor="174.0">
                <font>
                   <Font size="25.0" />
                </font>
@@ -83,7 +83,7 @@
                   <VBox fx:id="vbox_criteriosEvaluacion" prefHeight="177.0" prefWidth="322.0" />
                </content>
             </ScrollPane>
-            <Label fx:id="lbl_urlEjemplo1" alignment="TOP_LEFT" layoutX="478.0" layoutY="430.0" prefHeight="139.0" prefWidth="325.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at purus consequat, tincidunt magna et, maximus massa. Fusce ac iaculis mauris. Ut ultrices nibh in consequat facilisis. Ut et molestie dolor, non mattis lorem. Praesent fringilla posuere. " wrapText="true">
+            <Label fx:id="lbL_comentarioProfesor" alignment="TOP_LEFT" layoutX="478.0" layoutY="430.0" prefHeight="139.0" prefWidth="325.0" wrapText="true">
                <font>
                   <Font size="15.0" />
                </font>

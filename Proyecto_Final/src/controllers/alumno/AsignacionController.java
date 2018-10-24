@@ -26,6 +26,7 @@ public class AsignacionController extends Application {
     public Label lbl_fechaEntrega;
     public Label lbl_urlEjemplo;
     public TextArea txt_comentario;
+    public Label lbL_comentarioProfesor;
     public Label lbl_notaTotal;
     public TextField txt_notaAuto;
     public TextField txt_notaEval;
@@ -84,6 +85,7 @@ public class AsignacionController extends Application {
                 btn_entregar.setText("Volver a entregar");
 
                 txt_comentario.setText(asignacionAlumnoResponse.getEntrega().getComentario());
+                lbL_comentarioProfesor.setText(asignacionAlumnoResponse.getEntrega().getComentarioProfesor());
                 txt_notaEval.setText(asignacionAlumnoResponse.getEntrega().getNotaEval() == -1 ? "" : String.valueOf(asignacionAlumnoResponse.getEntrega().getNotaEval()));
                 txt_notaAuto.setText(asignacionAlumnoResponse.getEntrega().getNotaAuto() == -1 ? "" : String.valueOf(asignacionAlumnoResponse.getEntrega().getNotaAuto()));
             }

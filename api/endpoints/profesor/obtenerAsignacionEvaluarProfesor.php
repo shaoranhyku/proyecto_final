@@ -16,7 +16,7 @@ join asignacion_tema asigt on asig.cod_asignacion = asigt.cod_asignacion
 join tema t on asigt.cod_asignatura = t.cod_asignatura and asigt.cod_temario = t.cod_temario
 join asignatura asig2 on t.cod_asignatura = asig2.cod_asig
 where asig.cod_asignacion = \"%s\";", $codAsignacion);
-    $datosEntregaQuery = sprintf("select alasig.comentario, alasig.nota_evaluacion, alasig.nota_autoevaluacion, alasig.ruta_archivo from alumno_asignacion alasig
+    $datosEntregaQuery = sprintf("select alasig.comentario, alasig.nota_evaluacion, alasig.nota_autoevaluacion, alasig.ruta_archivo, alasig.comentario_profesor from alumno_asignacion alasig
 where alasig.cod_asignacion = %d and alasig.cod_alumno = \"%s\";" , $codAsignacion, $codAlumno);
     $datosCriteriosQuery = sprintf("select cri.cod_asignacion, cri.cod_criterio, cri.nombre, cri.porcentaje from criterio_evaluacion cri
 where cri.cod_asignacion = \"%s\";", $codAsignacion);
@@ -62,6 +62,7 @@ where a.cod_alumno = \"%s\" and a.cod_asignacion = %d and a.cod_criterio = %d;";
             $entregaAsignacion = new entregaAsignacion();
 
             $entregaAsignacion->comentario = $row['comentario'];
+            $entregaAsignacion->comentarioProfesor = $row['comentario_profesor'];
 
             // Si alguna nota no ha sido puesta, se devolvera -1 como valor para que el cliente sepa que no tiene
             // valor asignado. Si dejamos el campo vacio, el cliente le pondra 0 automaticamente al decodificar el JSON

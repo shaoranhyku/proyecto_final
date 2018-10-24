@@ -9,6 +9,7 @@
 class entregaAsignacion
 {
     public $comentario;
+    public $comentarioProfesor;
     public $notaEval;
     public $notaAuto;
     public $rutaArchivo;

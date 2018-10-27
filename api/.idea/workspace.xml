@@ -26,76 +26,31 @@
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2176">
+            <state relative-caret-position="855">
               <caret line="151" column="0" lean-forward="false" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="evaluarAsignacion.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/endpoints/profesor/evaluarAsignacion.php">
+      <file leaf-file-name="obtenerAsignaturaAlumno.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/endpoints/alumno/obtenerAsignaturaAlumno.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="50" lean-forward="true" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
-              <folding>
-                <marker date="1540233950038" expanded="true" signature="351:600" ph="select alcri... alumno_criterio" />
-                <marker date="1540233950038" expanded="true" signature="1132:1223" ph="select * fro... alumno_asignacion" />
-                <marker date="1540233950038" expanded="true" signature="1319:1462" ph="update alumno_asignacion... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="obtenerAsignacionEvaluarProfesor.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/endpoints/profesor/obtenerAsignacionEvaluarProfesor.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="32" column="74" lean-forward="false" selection-start-line="32" selection-start-column="74" selection-end-line="32" selection-end-column="74" />
-              <folding>
-                <marker date="1540406525710" expanded="true" signature="449:507" ph="SELECT u.nom... usuario" />
-                <marker date="1540406525710" expanded="true" signature="561:968" ph="select asig.... asignacion" />
-                <marker date="1540406525710" expanded="true" signature="1023:1242" ph="select alasi... alumno_asignacion" />
-                <marker date="1540406525710" expanded="true" signature="1312:1446" ph="select cri.c... criterio_evaluacion" />
-                <marker date="1540406525710" expanded="true" signature="1498:1646" ph="select a.not... alumno_criterio" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="obtenerAsignacionAlumno.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/endpoints/alumno/obtenerAsignacionAlumno.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="31" column="57" lean-forward="false" selection-start-line="31" selection-start-column="57" selection-end-line="31" selection-end-column="57" />
-              <folding>
-                <marker date="1540406597851" expanded="true" signature="444:851" ph="select asig.... asignacion" />
-                <marker date="1540406597851" expanded="true" signature="906:1125" ph="select alasi... alumno_asignacion" />
-                <marker date="1540406597851" expanded="true" signature="1195:1329" ph="select cri.c... criterio_evaluacion" />
-                <marker date="1540406597851" expanded="true" signature="1381:1529" ph="select a.not... alumno_criterio" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="asignacionAlumnoResponse.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/responses/asignacionAlumnoResponse.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+            <state relative-caret-position="255">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="140" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="evaluarCriterio.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/endpoints/profesor/evaluarCriterio.php">
+      <file leaf-file-name="obtenerAsignacionesDiaAlumno.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/endpoints/alumno/obtenerAsignacionesDiaAlumno.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="20" lean-forward="false" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+            <state relative-caret-position="544">
+              <caret line="32" column="94" lean-forward="false" selection-start-line="32" selection-start-column="94" selection-end-line="32" selection-end-column="94" />
               <folding>
-                <marker date="1540233171949" expanded="true" signature="507:624" ph="select * fro... alumno_criterio" />
-                <marker date="1540233171949" expanded="true" signature="727:856" ph="update alumno_criterio... " />
+                <marker date="1540636824967" expanded="true" signature="257:826" ph="select asig.... asignacion" />
+                <marker date="1540636824967" expanded="true" signature="883:985" ph="select * fro... alumno_asignacion" />
               </folding>
             </state>
           </provider>
@@ -120,7 +75,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/responses/temaAlumnoResponse.php" />
         <option value="$PROJECT_DIR$/obtenerAsignaturaAlumno.php" />
         <option value="$PROJECT_DIR$/models/itemListAsignacion.php" />
         <option value="$PROJECT_DIR$/responses/asignacionAlumnoResponse.php" />
@@ -171,6 +125,7 @@
         <option value="$PROJECT_DIR$/models/entregaAsignacion.php" />
         <option value="$PROJECT_DIR$/endpoints/profesor/obtenerAsignacionEvaluarProfesor.php" />
         <option value="$PROJECT_DIR$/endpoints/alumno/obtenerAsignacionAlumno.php" />
+        <option value="$PROJECT_DIR$/endpoints/alumno/obtenerAsignacionesDiaAlumno.php" />
       </list>
     </option>
   </component>
@@ -202,7 +157,9 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -241,8 +198,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -528,12 +483,13 @@
       <workItem from="1539889150533" duration="1850000" />
       <workItem from="1540026074493" duration="2118000" />
       <workItem from="1540231624202" duration="2381000" />
-      <workItem from="1540406330445" duration="846000" />
+      <workItem from="1540406330445" duration="917000" />
+      <workItem from="1540635636583" duration="1395000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91579000" />
+    <option name="totallyTimeSpent" value="93045000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
@@ -545,19 +501,19 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19669509" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1988273" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -824,20 +780,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/endpoints/alumno/obtenerAsignacionesDiaAlumno.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="39" lean-forward="false" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/endpoints/alumno/obtenerAsignaturaAlumno.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="69" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/endpoints/profesor/obtenerAsignacionesPorTemaYAlumnoProfesor.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -872,12 +814,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" column="60" lean-forward="true" selection-start-line="13" selection-start-column="60" selection-end-line="13" selection-end-column="60" />
-          <folding>
-            <marker date="1529417435593" expanded="true" signature="578:831" ph="select alcri... alumno_criterio" />
-            <marker date="1529417435593" expanded="true" signature="1404:1495" ph="select * fro... alumno_asignacion" />
-            <marker date="1529417435593" expanded="true" signature="1597:1756" ph="update alumno_asignacion... " />
-            <marker date="1529417435593" expanded="true" signature="1885:2030" ph="insert into alumno_asignacion... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -885,11 +821,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="29" lean-forward="true" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
-          <folding>
-            <marker date="1529417435641" expanded="true" signature="660:777" ph="select * fro... alumno_criterio" />
-            <marker date="1529417435641" expanded="true" signature="886:1019" ph="update alumno_criterio... " />
-            <marker date="1529417435641" expanded="true" signature="1116:1235" ph="insert into alumno_criterio... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -912,35 +843,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2176">
-          <caret line="151" column="0" lean-forward="false" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/endpoints/profesor/evaluarAsignacion.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="21" column="50" lean-forward="true" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
+          <caret line="21" column="50" lean-forward="false" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
           <folding>
             <marker date="1540233950038" expanded="true" signature="351:600" ph="select alcri... alumno_criterio" />
             <marker date="1540233950038" expanded="true" signature="1132:1223" ph="select * fro... alumno_asignacion" />
             <marker date="1540233950038" expanded="true" signature="1319:1462" ph="update alumno_asignacion... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/endpoints/alumno/obtenerAsignacionAlumno.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="31" column="57" lean-forward="false" selection-start-line="31" selection-start-column="57" selection-end-line="31" selection-end-column="57" />
-          <folding>
-            <marker date="1540406597851" expanded="true" signature="444:851" ph="select asig.... asignacion" />
-            <marker date="1540406597851" expanded="true" signature="906:1125" ph="select alasi... alumno_asignacion" />
-            <marker date="1540406597851" expanded="true" signature="1195:1329" ph="select cri.c... criterio_evaluacion" />
-            <marker date="1540406597851" expanded="true" signature="1381:1529" ph="select a.not... alumno_criterio" />
           </folding>
         </state>
       </provider>
@@ -971,6 +881,46 @@
             <marker date="1540406525710" expanded="true" signature="1023:1242" ph="select alasi... alumno_asignacion" />
             <marker date="1540406525710" expanded="true" signature="1312:1446" ph="select cri.c... criterio_evaluacion" />
             <marker date="1540406525710" expanded="true" signature="1498:1646" ph="select a.not... alumno_criterio" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/endpoints/alumno/obtenerAsignacionAlumno.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" column="57" lean-forward="false" selection-start-line="31" selection-start-column="57" selection-end-line="31" selection-end-column="57" />
+          <folding>
+            <marker date="1540406597851" expanded="true" signature="444:851" ph="select asig.... asignacion" />
+            <marker date="1540406597851" expanded="true" signature="906:1125" ph="select alasi... alumno_asignacion" />
+            <marker date="1540406597851" expanded="true" signature="1195:1329" ph="select cri.c... criterio_evaluacion" />
+            <marker date="1540406597851" expanded="true" signature="1381:1529" ph="select a.not... alumno_criterio" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="151" column="0" lean-forward="false" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/endpoints/alumno/obtenerAsignaturaAlumno.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="140" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/endpoints/alumno/obtenerAsignacionesDiaAlumno.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="94" lean-forward="false" selection-start-line="32" selection-start-column="94" selection-end-line="32" selection-end-column="94" />
+          <folding>
+            <marker date="1540636824967" expanded="true" signature="257:826" ph="select asig.... asignacion" />
+            <marker date="1540636824967" expanded="true" signature="883:985" ph="select * fro... alumno_asignacion" />
           </folding>
         </state>
       </provider>

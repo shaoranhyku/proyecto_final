@@ -13,6 +13,7 @@ join asignatura asig2 on t.cod_asignatura = asig2.cod_asig
 join alumno_asignatura almasig2 on asig2.cod_asig = almasig2.cod_asignatura
 join alumno alum on almasig2.cod_alumno = alum.nombre_login
 where alum.nombre_login = \"%s\" and asig.fecha_entrega like \"%s%%\" order by fecha_entrega;", $alumno, $fecha);
+    $datosAsignacionAlumnoQuery = "select * from alumno_asignacion alasig where alasig.cod_alumno = \"%s\" and alasig.cod_asignacion = %d;";
 
     $result = $conn->query($alumnoQuery);
 
@@ -28,6 +29,15 @@ where alum.nombre_login = \"%s\" and asig.fecha_entrega like \"%s%%\" order by f
             $asignacion->asignatura = $row["asignatura"];
             $asignacion->descripcion = $row["descripcion"];
             $asignacion->fechaEntrega = $row["fecha_entrega"];
+
+            $result2 = $conn->query(sprintf($datosAsignacionAlumnoQuery, $alumno, $row["codigo"]));
+
+            if($result2->num_rows > 0){
+                $asignacion->entregado = true;
+            }else{
+                $asignacion->entregado = false;
+            }
+
             array_push($asignaciones, $asignacion);
         }
 

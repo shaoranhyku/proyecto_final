@@ -2,6 +2,7 @@ package models;
 
 import io.reactivex.Completable;
 import io.reactivex.Observable;
+import responses.AsignacionEvaluarProfesorResponse;
 import responses.AsignacionProfesorResponse;
 import retrofit2.http.*;
 
@@ -105,4 +106,23 @@ public interface ProfesorApiInterface {
                                         @Field("nombreGit") String nombreGit,
                                         @Field("descripcion") String descripcion,
                                         @Field("fechaEntrega") String fechaEntrega);
+
+    @GET("asignaciones/{asignatura}/{tema}/{alumno}/")
+    Observable<List<AsignacionAlumnoLista>> obtenerAsignacionesAsignaturaTemaAlumno(@Path("asignatura") String asignatura, @Path("tema") String tema, @Path("alumno") String alumno);
+
+    @GET("asignacion/{asignatura}/{alumno}/")
+    Observable<AsignacionEvaluarProfesorResponse> obtenerAsignacionEvaluar(@Path("asignatura") String asignatura, @Path("alumno") String alumno);
+
+    @FormUrlEncoded
+    @POST("asignacion/{asignacion}/{alumno}/")
+    Completable evaluarAsignacion(@Path("asignacion") String asignacion,
+                                  @Path("alumno") String alumno,
+                                  @Field("comentario") String comentario);
+
+    @FormUrlEncoded
+    @POST("asignacion/{asignacion}/{alumno}/{criterio}/")
+    Completable evaluarCriterio(@Path("asignacion") String asignacion,
+                                @Path("alumno") String alumno,
+                                @Path("criterio") String criterio,
+                                @Field("notaEval") int notaEval);
 }

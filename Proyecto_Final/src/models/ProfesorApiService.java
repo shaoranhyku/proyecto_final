@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonDeserializer;
 import io.reactivex.Completable;
 import io.reactivex.Observable;
+import responses.AsignacionEvaluarProfesorResponse;
 import responses.AsignacionProfesorResponse;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
@@ -152,5 +153,26 @@ public class ProfesorApiService {
                                  String descripcion,
                                  String fechaEntrega){
         return getInstance().retrofit.editarAsignacion(asignacion, nombre, nombreGit, descripcion, fechaEntrega);
+    }
+
+    public static Observable<List<AsignacionAlumnoLista>> obtenerAsignacionesAsignaturaTemaAlumno(String asignatura, String tema, String alumno){
+        return getInstance().retrofit.obtenerAsignacionesAsignaturaTemaAlumno(asignatura, tema, alumno);
+    }
+
+    public static Observable<AsignacionEvaluarProfesorResponse> obtenerAsignacionEvaluar(String asignatura, String alumno){
+        return getInstance().retrofit.obtenerAsignacionEvaluar(asignatura, alumno);
+    }
+
+    public static Completable evaluarAsignacion(String asignacion,
+                                                String alumno,
+                                                String comentario){
+        return getInstance().retrofit.evaluarAsignacion(asignacion, alumno, comentario);
+    }
+
+    public static Completable evaluarCriterio(String asignacion,
+                                              String alumno,
+                                              String criterio,
+                                              int notaEval){
+        return  getInstance().retrofit. evaluarCriterio(asignacion, alumno, criterio, notaEval);
     }
 }

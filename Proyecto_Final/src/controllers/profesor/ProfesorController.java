@@ -10,12 +10,13 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import models.CallbackAsignacion;
+import models.CallbackAsignacionEvaluar;
 import models.CallbackTema;
 import models.Sesion;
 
 import java.io.IOException;
 
-public class ProfesorController implements CallbackTema, CallbackAsignacion{
+public class ProfesorController implements CallbackTema, CallbackAsignacion, CallbackAsignacionEvaluar {
 
     public BorderPane rootPane;
     public Label lbl_bienvenidaUsuario;
@@ -189,6 +190,7 @@ public class ProfesorController implements CallbackTema, CallbackAsignacion{
 
         SeleccionarAsignacionEvaluarController controller = loader.getController();
         controller.callback = this;
+        controller.buscarAlumnosYTemas();
         rootPane.setCenter(center);
     }
 
@@ -226,5 +228,10 @@ public class ProfesorController implements CallbackTema, CallbackAsignacion{
         controller.callback = this;
         controller.setAsignacionActual(asignaturaSeleccionada, codigoAsignacion);
         rootPane.setCenter(center);
+    }
+
+    @Override
+    public void setCenterAsignacionEvaluar(int codigoAsignacion) {
+        System.out.printf("Seleccionado asignacion evaluar %d%n", codigoAsignacion);
     }
 }

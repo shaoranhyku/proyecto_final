@@ -522,6 +522,42 @@ public class Utils {
         internVbox.setPrefHeight(sumarioHeight);
     }
 
+    public static void setAsignacionesEvaluarInVBox(List<AsignacionAlumnoLista> asignaciones, VBox internVbox, CallbackAsignacionEvaluar internCallback, Class internClass) {
+        ArrayList<Parent> asignacionesItemList = new ArrayList<>();
+        double sumarioHeight = 0;
+
+        for (AsignacionAlumnoLista asignacionAlumnoLista : asignaciones) {
+            FXMLLoader loader = new FXMLLoader(internClass.getResource("/fxml/item/listItem_asignacionDia.fxml"));
+            Parent node = null;
+            try {
+                node = loader.load();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            ListItem_AsignacionDiaController controller = loader.getController();
+            controller.setAsignacion(asignacionAlumnoLista);
+            node.setOnMouseEntered(event -> internVbox.getScene().setCursor(Cursor.HAND));
+            node.setOnMouseExited(event -> internVbox.getScene().setCursor(Cursor.DEFAULT));
+            node.setOnMouseClicked(event -> {
+                if (asignacionAlumnoLista.isEntregado()){
+                    internCallback.setCenterAsignacionEvaluar(asignacionAlumnoLista.getCodigoAsignacion());
+                }
+            });
+
+            asignacionesItemList.add(node);
+            sumarioHeight += controller.getHeight() + 20;
+        }
+
+        internVbox.getChildren().setAll(asignacionesItemList);
+
+        for (Parent node : asignacionesItemList) {
+            VBox.setMargin(node, new Insets(10, 10, 10, 10));
+        }
+
+        internVbox.setPrefHeight(sumarioHeight);
+    }
+
     public static void setTemasInVBox(List<ItemListTema> temas, VBox internVbox, CallbackTema internCallback, Class internClass) {
         ArrayList<Parent> temasItemList = new ArrayList<>();
         double sumarioHeight = 0;

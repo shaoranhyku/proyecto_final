@@ -19,7 +19,6 @@ public class SeleccionarAsignacionController {
         // Creamos la lista de temas para filtrar vacia
         observableList_temas = FXCollections.observableArrayList();
         cmb_temas.setItems(observableList_temas);
-
     }
 
     public void buscarAsignaciones(){

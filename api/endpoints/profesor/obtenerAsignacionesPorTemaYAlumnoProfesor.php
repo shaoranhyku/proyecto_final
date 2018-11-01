@@ -45,7 +45,7 @@ where asig2.cod_asig = \"%s\" and t.cod_temario =\"%s\";", $codAsignatura, $tema
         echo json_encode($asignaciones);
 
     } else {
-        http_response_code(401);
+        echo json_encode(array());
     }
 
 } else {

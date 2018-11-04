@@ -159,8 +159,8 @@ public class ProfesorApiService {
         return getInstance().retrofit.obtenerAsignacionesAsignaturaTemaAlumno(asignatura, tema, alumno);
     }
 
-    public static Observable<AsignacionEvaluarProfesorResponse> obtenerAsignacionEvaluar(String asignatura, String alumno){
-        return getInstance().retrofit.obtenerAsignacionEvaluar(asignatura, alumno);
+    public static Observable<AsignacionEvaluarProfesorResponse> obtenerAsignacionEvaluar(String asignacion, String alumno){
+        return getInstance().retrofit.obtenerAsignacionEvaluar(asignacion, alumno);
     }
 
     public static Completable evaluarAsignacion(String asignacion,

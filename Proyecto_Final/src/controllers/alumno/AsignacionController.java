@@ -94,7 +94,7 @@ public class AsignacionController extends Application {
             listaCriterios = asignacionAlumnoResponse.getCriteriosNota();
 
             for (CriterioEvaluacionAlumno criterio : asignacionAlumnoResponse.getCriteriosNota()) {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/item/listItem_criterioEvaluacion.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/item/listItem_criterioEvaluacionAlumno.fxml"));
                 Parent node = null;
                 try {
                     node = loader.load();
@@ -102,7 +102,7 @@ public class AsignacionController extends Application {
                     e.printStackTrace();
                 }
 
-                ListItem_CriterioEvaluacion controller = loader.getController();
+                ListItem_CriterioEvaluacionAlumno controller = loader.getController();
                 controller.setCriterio(criterio);
 
                 criteriosLista.add(node);

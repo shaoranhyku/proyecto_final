@@ -33,7 +33,7 @@ public class SeleccionarAsignacionEvaluarController {
         String temaSeleccionado = ((ItemListTema)cmb_temas.getSelectionModel().getSelectedItem()).getCodigoTema();
 
         ProfesorApiService.obtenerAsignacionesAsignaturaTemaAlumno(callback.asignaturaSeleccionada, temaSeleccionado, alumnoSeleccionado).subscribe(asignaciones -> {
-            Utils.setAsignacionesEvaluarInVBox(asignaciones, vbox_asignaciones, callback, getClass());
+            Utils.setAsignacionesEvaluarInVBox(asignaciones, alumnoSeleccionado, vbox_asignaciones, callback, getClass());
         });
     }
 

@@ -231,7 +231,20 @@ public class ProfesorController implements CallbackTema, CallbackAsignacion, Cal
     }
 
     @Override
-    public void setCenterAsignacionEvaluar(int codigoAsignacion) {
-        System.out.printf("Seleccionado asignacion evaluar %d%n", codigoAsignacion);
+    public void setCenterAsignacionEvaluar(int codigoAsignacion, String alumno) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ui/profesor/node_evaluarAsignacion.fxml"));
+
+        Parent center = null;
+
+        try {
+            center = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        EvaluarAsignacionController controller = loader.getController();
+        controller.callback = this;
+        controller.setAsignacionEvaluarActual(asignaturaSeleccionada, codigoAsignacion, alumno);
+        rootPane.setCenter(center);
     }
 }

@@ -522,7 +522,7 @@ public class Utils {
         internVbox.setPrefHeight(sumarioHeight);
     }
 
-    public static void setAsignacionesEvaluarInVBox(List<AsignacionAlumnoLista> asignaciones, VBox internVbox, CallbackAsignacionEvaluar internCallback, Class internClass) {
+    public static void setAsignacionesEvaluarInVBox(List<AsignacionAlumnoLista> asignaciones, String alumno, VBox internVbox, CallbackAsignacionEvaluar internCallback, Class internClass) {
         ArrayList<Parent> asignacionesItemList = new ArrayList<>();
         double sumarioHeight = 0;
 
@@ -541,7 +541,7 @@ public class Utils {
             node.setOnMouseExited(event -> internVbox.getScene().setCursor(Cursor.DEFAULT));
             node.setOnMouseClicked(event -> {
                 if (asignacionAlumnoLista.isEntregado()){
-                    internCallback.setCenterAsignacionEvaluar(asignacionAlumnoLista.getCodigoAsignacion());
+                    internCallback.setCenterAsignacionEvaluar(asignacionAlumnoLista.getCodigoAsignacion(), alumno);
                 }
             });
 

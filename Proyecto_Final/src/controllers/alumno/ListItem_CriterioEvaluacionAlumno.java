@@ -5,7 +5,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import models.CriterioEvaluacionAlumno;
 
-public class ListItem_CriterioEvaluacion {
+public class ListItem_CriterioEvaluacionAlumno {
 
     @FXML
     private Label lbl_nombreCriterio;

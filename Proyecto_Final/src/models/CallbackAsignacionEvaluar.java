@@ -2,5 +2,5 @@ package models;
 
 public interface CallbackAsignacionEvaluar {
 
-    void setCenterAsignacionEvaluar(int codigoAsignacion);
+    void setCenterAsignacionEvaluar(int codigoAsignacion, String alumno);
 }

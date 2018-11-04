@@ -110,8 +110,8 @@ public interface ProfesorApiInterface {
     @GET("asignaciones/{asignatura}/{tema}/{alumno}/")
     Observable<List<AsignacionAlumnoLista>> obtenerAsignacionesAsignaturaTemaAlumno(@Path("asignatura") String asignatura, @Path("tema") String tema, @Path("alumno") String alumno);
 
-    @GET("asignacion/{asignatura}/{alumno}/")
-    Observable<AsignacionEvaluarProfesorResponse> obtenerAsignacionEvaluar(@Path("asignatura") String asignatura, @Path("alumno") String alumno);
+    @GET("asignacion/{asignacion}/{alumno}/")
+    Observable<AsignacionEvaluarProfesorResponse> obtenerAsignacionEvaluar(@Path("asignacion") String asignacion, @Path("alumno") String alumno);
 
     @FormUrlEncoded
     @POST("asignacion/{asignacion}/{alumno}/")

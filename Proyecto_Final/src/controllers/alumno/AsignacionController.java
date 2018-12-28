@@ -161,11 +161,11 @@ public class AsignacionController extends Application {
         contador = 0;
 
         for (CriterioEvaluacionAlumno criterio : listaCriterios) {
-            AlumnoApiService.entregarCriterio(codigoAsignacion, criterio.getCriterio().getCodCriterio(), Sesion.getInstance().getUsuario().getNombreLogin(), Sesion.getInstance().getUsuario().getClave(), criterio.getNotaAuto()).subscribe(() -> {
+            AlumnoApiService.entregarCriterio(codigoAsignacion, criterio.getCriterio().getCodCriterio(), criterio.getNotaAuto()).subscribe(() -> {
                 if (contador < listaCriterios.size() - 1) {
                     contador++;
                 } else {
-                    AlumnoApiService.entregarAsignacion(codigoAsignacion, Sesion.getInstance().getUsuario().getNombreLogin(), Sesion.getInstance().getUsuario().getClave(), ruta, comentario)
+                    AlumnoApiService.entregarAsignacion(codigoAsignacion, ruta, comentario)
                             .subscribe(() -> {
                                 callBack.setCenterAsignacion(codigoAsignacion);
                             });

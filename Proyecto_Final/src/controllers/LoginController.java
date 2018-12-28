@@ -1,7 +1,5 @@
 package controllers;
 
-import models.AlumnoApiService;
-import models.Sesion;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -10,10 +8,13 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import responses.LoginResponse;
+import models.AlumnoApiService;
+import models.Sesion;
 import retrofit2.HttpException;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.util.Base64;
 
 public class LoginController {
 
@@ -26,9 +27,17 @@ public class LoginController {
 
         String usuario = txt_usuario.getText();
         String clave = txt_clave.getText();
+        String autorizacion = "";
 
-        AlumnoApiService.login(usuario, clave).subscribe(loginResponse -> {
-            login(loginResponse);
+        try {
+            autorizacion = String.format("Basic %s",Base64.getEncoder().encodeToString(String.format("%s:%s", usuario, clave).getBytes("UTF-8")));
+
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
+        AlumnoApiService.login(autorizacion).subscribe(loginResponse -> {
+            login(loginResponse.response().headers().get("Authorization"));
         }, error -> {
             int code = ((HttpException) error).code();
             handleError(code);
@@ -39,14 +48,16 @@ public class LoginController {
         lbl_mensaje.setText("Usuario o contraseña incorrecto.");
     }
 
-    private void login(LoginResponse loginResponse) throws IOException {
+    private void login(String jwtToken) throws IOException {
 
-        Sesion.crearSesion(loginResponse.getUsuario());
+        String cleanToken = jwtToken.substring(7, jwtToken.length());
+
+        Sesion.crearSesion(cleanToken);
 
         Stage stage = (Stage) lbl_mensaje.getScene().getWindow();
         Parent root = null;
 
-        switch (loginResponse.getTipo()){
+        switch (Sesion.getInstance().getUsuario().getRol()){
             case "alumno":
                 root = FXMLLoader.load(getClass().getResource("/fxml/ui/alumno/scene_principal.fxml"));/* Exception */
                 break;

@@ -3,14 +3,14 @@ package models;
 public class Usuario {
 
     private String nombreLogin;
-    private String clave;
     private String nombre;
     private String apellidos;
     private String nombreGit;
+    private String rol;
 
-    public Usuario(String nombreLogin, String clave, String nombre, String apellidos, String nombreGit) {
+    public Usuario(String nombreLogin, String clave, String nombre, String apellidos, String nombreGit, String rol) {
         this.nombreLogin = nombreLogin;
-        this.clave = clave;
+        this.rol = rol;
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.nombreGit = nombreGit;
@@ -22,14 +22,6 @@ public class Usuario {
 
     public void setNombreLogin(String nombreLogin) {
         this.nombreLogin = nombreLogin;
-    }
-
-    public String getClave() {
-        return clave;
-    }
-
-    public void setClave(String clave) {
-        this.clave = clave;
     }
 
     public String getNombre() {
@@ -54,5 +46,13 @@ public class Usuario {
 
     public void setNombreGit(String nombreGit) {
         this.nombreGit = nombreGit;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
     }
 }

@@ -48,38 +48,47 @@ public class AlumnoApiService {
     }
 
     public static Observable<List<ItemListAsignatura>> obtenerAsignaturasAlumno(String alumno){
-        return getInstance().retrofit.obtenerAsignaturasAlumno(Sesion.getInstance().getToken(), alumno);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.obtenerAsignaturasAlumno(bearerToken, alumno);
     }
 
     public static Observable<List<AsignacionAlumnoLista>> obtenerUltimasAsignacionesAlumno(String alumno){
-        return getInstance().retrofit.obtenerUltimasAsignacionesAlumno(Sesion.getInstance().getToken(), alumno);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.obtenerUltimasAsignacionesAlumno(bearerToken, alumno);
     }
 
     public static Observable<AsignaturaAlumnoResponse> obtenerAsignaturaAlumno(String asignatura, String alumno){
-        return getInstance().retrofit.obtenerAsignaturaAlumno(Sesion.getInstance().getToken(), asignatura, alumno);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.obtenerAsignaturaAlumno(bearerToken, asignatura, alumno);
     }
 
     public static Observable<TemaAlumnoResponse> obtenerTemaAlumno(String asignatura, String tema, String alumno){
-        return getInstance().retrofit.obtenerTemaAlumno(Sesion.getInstance().getToken(), asignatura, tema, alumno);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.obtenerTemaAlumno(bearerToken, asignatura, tema, alumno);
     }
 
     public static Observable<AsignacionAlumnoResponse> obtenerAsignacionAlumno(int asignacion, String alumno){
-        return getInstance().retrofit.obtenerAsignacionAlumno(Sesion.getInstance().getToken(), asignacion, alumno);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.obtenerAsignacionAlumno(bearerToken, asignacion, alumno);
     }
 
     public static Completable entregarAsignacion(int codigoAsignacion, String ruta, String comentario) {
-        return getInstance().retrofit.entregarAsignacion(Sesion.getInstance().getToken(), codigoAsignacion, ruta, comentario);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.entregarAsignacion(bearerToken, codigoAsignacion, ruta, comentario);
     }
 
     public static Completable entregarCriterio(int codigoAsignacion, int codigoCriterio, int notaAuto){
-        return getInstance().retrofit.entregarCriterio(Sesion.getInstance().getToken(), codigoAsignacion, codigoCriterio, notaAuto);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.entregarCriterio(bearerToken, codigoAsignacion, codigoCriterio, notaAuto);
     }
 
     public static Observable<List<AsignacionAlumnoLista>> obtenerAsignacionesDia(LocalDate fecha, String alumno){
-        return getInstance().retrofit.obtenerAsignacionesDia(Sesion.getInstance().getToken(), fecha, alumno);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.obtenerAsignacionesDia(bearerToken, fecha, alumno);
     }
 
     public static Observable<Integer> obtenerNumAsignacionesDia(LocalDate fecha, String alumno){
-        return getInstance().retrofit.obtenerNumAsignacionesDia(Sesion.getInstance().getToken(), fecha, alumno);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.obtenerNumAsignacionesDia(bearerToken, fecha, alumno);
     }
 }

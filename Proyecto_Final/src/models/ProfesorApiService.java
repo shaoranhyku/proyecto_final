@@ -44,27 +44,33 @@ public class ProfesorApiService {
     }
 
     public static Observable<List<ItemListAsignatura>> obtenerAsignaturasProfesor(String profesor) {
-        return getInstance().retrofit.obtenerAsignaturasProfesor(Sesion.getInstance().getToken(), profesor);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.obtenerAsignaturasProfesor(bearerToken, profesor);
     }
 
     public static Observable<List<ItemListAlumno>> obtenerAlumnos() {
-        return getInstance().retrofit.obtenerAlumnos(Sesion.getInstance().getToken());
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.obtenerAlumnos(bearerToken);
     }
 
     public static Observable<List<ItemListAlumno>> obtenerAlumnosPorAsignatura(String asignatura) {
-        return getInstance().retrofit.obtenerAlumnosPorAsignatura(Sesion.getInstance().getToken(), asignatura);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.obtenerAlumnosPorAsignatura(bearerToken, asignatura);
     }
 
     public static Completable agregarAlumnosAsignatura(String asignatura, String alumno) {
-        return getInstance().retrofit.agregarAlumnoAsignatura(Sesion.getInstance().getToken(), asignatura, alumno);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.agregarAlumnoAsignatura(bearerToken, asignatura, alumno);
     }
 
     public static Completable eliminarAlumnosAsignatura(String asignatura, String alumno) {
-        return getInstance().retrofit.eliminarAlumnoAsignatura(Sesion.getInstance().getToken(), asignatura, alumno);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.eliminarAlumnoAsignatura(bearerToken, asignatura, alumno);
     }
 
     public static Observable<List<ItemListTema>> obtenerTemasAsignatura(String asignatura) {
-        return getInstance().retrofit.obtenerTemasAsignatura(Sesion.getInstance().getToken(), asignatura);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.obtenerTemasAsignatura(bearerToken, asignatura);
     }
 
     public static Completable crearTema(String asignatura,
@@ -72,26 +78,31 @@ public class ProfesorApiService {
                                         String nombre,
                                         String descripcion,
                                         String fechaComienzo) {
-        return getInstance().retrofit.crearTema(Sesion.getInstance().getToken(), asignatura, codTemario, nombre, descripcion, fechaComienzo);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.crearTema(bearerToken, asignatura, codTemario, nombre, descripcion, fechaComienzo);
     }
 
     public static Completable crearEnlaceTema(String asignatura,
                                               String tema,
                                               String url,
                                               String descripcion) {
-        return getInstance().retrofit.crearEnlaceTema(Sesion.getInstance().getToken(), asignatura, tema, url, descripcion);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.crearEnlaceTema(bearerToken, asignatura, tema, url, descripcion);
     }
 
     public static Completable eliminarTema(String asignatura, String tema) {
-        return getInstance().retrofit.eliminarTema(Sesion.getInstance().getToken(), asignatura, tema);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.eliminarTema(bearerToken, asignatura, tema);
     }
 
     public static Completable eliminarEnlace(String asignatura, String tema, String enlace) {
-        return getInstance().retrofit.eliminarEnlace(Sesion.getInstance().getToken(), asignatura, tema, enlace);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.eliminarEnlace(bearerToken, asignatura, tema, enlace);
     }
 
     public static Observable<ItemListTema> obtenerTema(String asignatura, String tema) {
-        return getInstance().retrofit.obtenerTema(Sesion.getInstance().getToken(), asignatura, tema);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.obtenerTema(bearerToken, asignatura, tema);
     }
 
     public static Completable editarTema(String asignatura,
@@ -100,7 +111,8 @@ public class ProfesorApiService {
                                          String nombre,
                                          String descripcion,
                                          String fechaComienzo) {
-        return getInstance().retrofit.editarTema(Sesion.getInstance().getToken(), asignatura, tema, nuevoCodTemario, nombre, descripcion, fechaComienzo);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.editarTema(bearerToken, asignatura, tema, nuevoCodTemario, nombre, descripcion, fechaComienzo);
     }
 
     public static Observable<Integer> crearAsignacion(String nombre,
@@ -108,43 +120,52 @@ public class ProfesorApiService {
                                               String descripcion,
                                               String fechaEntrega,
                                               String fechaCreacion) {
-        return getInstance().retrofit.crearAsignacion(Sesion.getInstance().getToken(), nombre, nombreGit, descripcion, fechaEntrega, fechaCreacion);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.crearAsignacion(bearerToken, nombre, nombreGit, descripcion, fechaEntrega, fechaCreacion);
     }
 
     public static Completable asignarTemaAsignacion(String asignacion,
                                                     String asignatura,
                                                     String tema) {
-        return getInstance().retrofit.asignarTemaAsignacion(Sesion.getInstance().getToken(), asignacion, asignatura, tema);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.asignarTemaAsignacion(bearerToken, asignacion, asignatura, tema);
     }
 
     public static Completable crearCriterio(String asignacion,
                                             String nombreCriterio,
                                             String porcentaje) {
-        return getInstance().retrofit.crearCriterio(Sesion.getInstance().getToken(), asignacion, nombreCriterio, porcentaje);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.crearCriterio(bearerToken, asignacion, nombreCriterio, porcentaje);
     }
 
     public static Observable<List<AsignacionAlumnoLista>> obtenerAsignacionesAsignatura(String asignatura){
-        return getInstance().retrofit.obtenerAsignacionesAsignatura(Sesion.getInstance().getToken(), asignatura);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.obtenerAsignacionesAsignatura(bearerToken, asignatura);
     }
 
     public static Observable<List<AsignacionAlumnoLista>> obtenerAsignacionesAsignaturaTema(String asignatura, String tema){
-        return getInstance().retrofit.obtenerAsignacionesAsignaturaTema(Sesion.getInstance().getToken(), asignatura,tema);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.obtenerAsignacionesAsignaturaTema(bearerToken, asignatura,tema);
     }
 
     public static Observable<AsignacionProfesorResponse> obtenerAsignacion(String asignacion){
-        return getInstance().retrofit.obtenerAsignacion(Sesion.getInstance().getToken(), asignacion);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.obtenerAsignacion(bearerToken, asignacion);
     }
 
     public static Completable borrarAsignacion(String asignacion){
-        return getInstance().retrofit.borrarAsignacion(Sesion.getInstance().getToken(), asignacion);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.borrarAsignacion(bearerToken, asignacion);
     }
 
     public static Completable borrarCriterioAsignacion(String asignacion, String criterio){
-        return getInstance().retrofit.borrarCriterioAsignacion(Sesion.getInstance().getToken(), asignacion, criterio);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.borrarCriterioAsignacion(bearerToken, asignacion, criterio);
     }
 
     public static Completable desasignarTemaAsignacion(String asignacion, String tema){
-        return  getInstance().retrofit.desasignarTemaAsignacion(Sesion.getInstance().getToken(), asignacion, tema);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return  getInstance().retrofit.desasignarTemaAsignacion(bearerToken, asignacion, tema);
     }
 
     public static Completable editarAsignacion(String asignacion,
@@ -152,27 +173,32 @@ public class ProfesorApiService {
                                  String nombreGit,
                                  String descripcion,
                                  String fechaEntrega){
-        return getInstance().retrofit.editarAsignacion(Sesion.getInstance().getToken(), asignacion, nombre, nombreGit, descripcion, fechaEntrega);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.editarAsignacion(bearerToken, asignacion, nombre, nombreGit, descripcion, fechaEntrega);
     }
 
     public static Observable<List<AsignacionAlumnoLista>> obtenerAsignacionesAsignaturaTemaAlumno(String asignatura, String tema, String alumno){
-        return getInstance().retrofit.obtenerAsignacionesAsignaturaTemaAlumno(Sesion.getInstance().getToken(), asignatura, tema, alumno);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.obtenerAsignacionesAsignaturaTemaAlumno(bearerToken, asignatura, tema, alumno);
     }
 
     public static Observable<AsignacionEvaluarProfesorResponse> obtenerAsignacionEvaluar(String asignacion, String alumno){
-        return getInstance().retrofit.obtenerAsignacionEvaluar(Sesion.getInstance().getToken(), asignacion, alumno);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.obtenerAsignacionEvaluar(bearerToken, asignacion, alumno);
     }
 
     public static Completable evaluarAsignacion(String asignacion,
                                                 String alumno,
                                                 String comentario){
-        return getInstance().retrofit.evaluarAsignacion(Sesion.getInstance().getToken(), asignacion, alumno, comentario);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return getInstance().retrofit.evaluarAsignacion(bearerToken, asignacion, alumno, comentario);
     }
 
     public static Completable evaluarCriterio(String asignacion,
                                               String alumno,
                                               String criterio,
                                               int notaEval){
-        return  getInstance().retrofit. evaluarCriterio(Sesion.getInstance().getToken(), asignacion, alumno, criterio, notaEval);
+        String bearerToken = "Bearer "+Sesion.getInstance().getToken();
+        return  getInstance().retrofit. evaluarCriterio(bearerToken, asignacion, alumno, criterio, notaEval);
     }
 }
